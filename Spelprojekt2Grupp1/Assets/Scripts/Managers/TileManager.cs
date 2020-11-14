@@ -8,43 +8,70 @@ using UnityEngine;
 public class TileManager : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("Check if Debug.Log should be called.")]
-    private bool myDebugMode;
-    private Dictionary<Vector3, Tile> myTiles;
+    [Tooltip("Level of how much should be debugged.\t0 = Nothing1 = Amount of tiles added2 = All Debug.Logs")]
+    private uint myDebugLevel = 0;
+    private Dictionary<Vector3Int, Tile> myTiles;
 
     #region Singleton Pattern
-    private static TileManager myInstance;
-    public static TileManager ourInstance
+    public static TileManager ourInstance { get; private set; }
+    private void Awake()
     {
-        get
+        if (ourInstance != null && ourInstance != this)
         {
-            return myInstance;
+            Destroy(this);
+        }
+        else
+        {
+            ourInstance = this;
+
+            // Not Singleton Pattern
+            LoadTiles();
         }
     }
     #endregion
 
-    void Start()
+    void LoadTiles()
     {
         // Fetch all tiles in current Scene
-        myTiles = new Dictionary<Vector3, Tile>();
+        myTiles = new Dictionary<Vector3Int, Tile>();
         foreach (var tile in FindObjectsOfType<Tile>())
         {
-            myTiles.Add(tile.transform.position, tile.GetComponent<Tile>());
+            myTiles.Add(Vector3Int.FloorToInt(tile.transform.position), tile.GetComponent<Tile>());
+            if (myDebugLevel >= 2)
+            {
+                Debug.Log("TileManager: Added Tile at " + Vector3Int.FloorToInt(tile.transform.position).ToString());
+            }
+            
         }
 
-        if (myDebugMode)
+        if (myDebugLevel >= 1)
         {
-            Debug.Log(myTiles.Count.ToString() + " tiles found.");
+            Debug.Log("TileManager: " + myTiles.Count.ToString() + " tiles added.");
         }
     }
 
     /// <summary>
-    /// Returns the tile at given position
+    /// Tries to return the tile at given position
     /// </summary>
     /// <param name="aPosition">Position of expected tile</param>
-    /// <returns>Tile</returns>
-    public Tile GetTileAt(Vector3 aPosition)
+    /// <returns>If successful, returns the tile at given position. Otherwise, returns null</returns>
+    public Tile TGATryGetTileAt(Vector3 aPosition)
     {
-        return myTiles[aPosition];
+        try
+        {
+            if (myDebugLevel >= 2)
+            {
+                Debug.Log("TileManager: Trying to return Tile at " + Vector3Int.FloorToInt(aPosition).ToString());
+            }
+            return myTiles[Vector3Int.FloorToInt(aPosition)];
+        }
+        catch (KeyNotFoundException)
+        {
+            if (myDebugLevel >= 2)
+            {
+                Debug.LogWarning("TileManager: Return null");
+            }
+            return null;
+        }
     }
 }
