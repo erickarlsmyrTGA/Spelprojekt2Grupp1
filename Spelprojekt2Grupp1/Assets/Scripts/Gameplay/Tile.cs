@@ -11,5 +11,5 @@ public class Tile : MonoBehaviour
     /// Executes a behaviour according its type
     /// </summary>
     /// <param name="aGameActor">The gameobject belonging to the Player</param>
-    public void TGAExecute(GameObject aGameActor) { }
+    public IEnumerator TGAExecute(GameObject aGameActor) { yield return null; }
 }
