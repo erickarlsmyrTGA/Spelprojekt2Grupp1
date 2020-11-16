@@ -58,4 +58,16 @@ public class Player : MonoBehaviour
         // TODO: Implement this
         yield return null;
     }
+
+    public IEnumerator TGAChangeToGasState()
+    {
+        // TODO: Implement this
+        yield return null;
+    }
+
+    public IEnumerator TGAChangeToSolidState()
+    {
+        // TODO: Implement this
+        yield return null;
+    }
 }
