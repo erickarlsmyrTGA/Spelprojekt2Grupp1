@@ -16,7 +16,7 @@ public class OvenTile : Tile
     /// <returns></returns>
     public override IEnumerator TGAExecute(GameObject aGameActor)
     {
-        //aGameActor. ändra state
+        yield return StartCoroutine(aGameActor.GetComponent<Player>().TGAChangeToGasState());
         yield return null;
     }
 }
