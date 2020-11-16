@@ -17,6 +17,39 @@ public class Tile : MonoBehaviour
     }
 
     /// <summary>
+    /// Set by TGASetPosition. Do not edit this directly.
+    /// </summary>
+    private Vector3Int myKey;
+    /// <summary>
+    /// Sets the position of the tile in the TileManager.
+    /// Not to be confused with transform.position
+    /// </summary>
+    /// <param name="aPosition">The new position of the Tile</param>
+    public void TGASetPosition(Vector3 aPosition)
+    {
+        Vector3Int intPosition = Vector3Int.FloorToInt(aPosition);
+        if (myKey != intPosition)
+        {
+            TileManager.ourInstance.TGAChangeKey(myKey, intPosition, this);
+            myKey = intPosition;
+        }
+    }
+
+    /// <summary>
+    /// Sets the position of the tile in the TileManager.
+    /// Not to be confused with transform.position
+    /// </summary>
+    /// <param name="aPosition">The new position of the Tile</param>
+    public void TGASetPosition(Vector3Int aPosition)
+    {
+        if (myKey != aPosition)
+        {
+            TileManager.ourInstance.TGAChangeKey(myKey, aPosition, this);
+            myKey = aPosition;
+        }
+    }
+
+    /// <summary>
     /// Executes a behaviour according its type
     /// </summary>
     /// <param name="aGameActor">The gameobject belonging to the Player</param>
