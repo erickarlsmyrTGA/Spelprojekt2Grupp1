@@ -5,10 +5,23 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.Android;
 
-#region Singleton Pattern
-
 public class CameraController : MonoBehaviour
 {
+    #region Singleton Pattern
+    public static CameraController ourInstance { get; private set; }
+    private void Awake()
+    {
+        if (ourInstance != null && ourInstance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            ourInstance = this;
+        }
+    }
+    #endregion
+
     Vector3[] mySnapPoints = { new Vector3(0, 0, 0), new Vector3(0, 90, 0), new Vector3(0, 180, 0), new Vector3(0, 270, 0), new Vector3(0, 360, 0), };
     [SerializeField] float mySnapSpeed = 20f;
     [SerializeField] float myRotateSpeed = 100;
@@ -90,5 +103,3 @@ public class CameraController : MonoBehaviour
         return mySnapPoints[index];
     }
 }
-
-#endregion
