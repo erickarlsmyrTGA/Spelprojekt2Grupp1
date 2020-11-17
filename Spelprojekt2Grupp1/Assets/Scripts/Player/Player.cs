@@ -43,9 +43,36 @@ public class Player : MonoBehaviour
         // [2020-11-14 17:37][Jesper]
         // Example code 
         // Wait for Mouse Input
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        // yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
-        // TODO: Implement this
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S));
+
+        Vector3 direction = Vector3.zero;
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            direction = new Vector3(2, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            direction = new Vector3(-1, 0, 0);
+        }
+
+        // Move to target
+        {
+            Vector3 position = transform.position;
+            Vector3 target = position + direction;
+            float divider = Mathf.Abs(Vector3.Distance(position, target));
+
+            float percentage = 0.0f;
+            while (percentage < 1.0f)
+            {
+                transform.position = Vector3.Lerp(position, target, percentage);
+                percentage += Time.deltaTime / divider;
+                yield return null;
+            }
+            transform.position = target;
+        }
     }
 
     IEnumerator ExecuteCurrentTile()
