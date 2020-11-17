@@ -36,6 +36,14 @@ public class Tile : MonoBehaviour
     }
 
     /// <summary>
+    /// !! Do not call this outside of TileManager.cs !!
+    /// </summary>
+    public void TGASetKey(Vector3Int aKey)
+    {
+        myKey = aKey;
+    }
+
+    /// <summary>
     /// Sets the position of the tile in the TileManager.
     /// Not to be confused with transform.position
     /// </summary>
@@ -54,4 +62,9 @@ public class Tile : MonoBehaviour
     /// </summary>
     /// <param name="aGameActor">The gameobject belonging to the Player</param>
     public virtual IEnumerator TGAExecute(GameObject aGameActor) { yield return null; }
+
+    /// <summary>
+    /// Executes a behaviour according its type
+    /// </summary>
+    public virtual IEnumerator TGAExecute(Object anObject) { yield return null; }
 }

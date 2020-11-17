@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jitter_2 : MonoBehaviour
+public class GroundTile : Tile
 {
     // Start is called before the first frame update
     void Start()
