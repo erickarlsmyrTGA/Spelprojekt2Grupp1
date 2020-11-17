@@ -5,6 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     bool myCoroutineIsNotInAction;
+    bool myStateIsSolid = true;
+
+    [SerializeField] GameObject mySolidState;
+    [SerializeField] GameObject myGasState;
 
     private void Start()
     {
@@ -59,15 +63,35 @@ public class Player : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Part of the player coroutine. Changes the player-state to gas.
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator TGAChangeToGasState()
     {
-        // TODO: Implement this
+        if (myStateIsSolid == true)
+        {
+            mySolidState.SetActive(false);
+            myGasState.SetActive(true);
+
+            myStateIsSolid = false;
+        }
         yield return null;
     }
 
+    /// <summary>
+    /// Part of the player coroutine. Changes the player-state to solid.
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator TGAChangeToSolidState()
     {
-        // TODO: Implement this
+        if(myStateIsSolid != true)
+        {
+            myGasState.SetActive(false);
+            mySolidState.SetActive(true);
+
+            myStateIsSolid = true;
+        }
         yield return null;
     }
 }
