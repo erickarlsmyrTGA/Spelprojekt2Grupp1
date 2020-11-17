@@ -36,6 +36,14 @@ public class Tile : MonoBehaviour
     }
 
     /// <summary>
+    /// !! Do not call this outside of TileManager.cs !!
+    /// </summary>
+    public void TGASetKey(Vector3Int aKey)
+    {
+        myKey = aKey;
+    }
+
+    /// <summary>
     /// Sets the position of the tile in the TileManager.
     /// Not to be confused with transform.position
     /// </summary>
