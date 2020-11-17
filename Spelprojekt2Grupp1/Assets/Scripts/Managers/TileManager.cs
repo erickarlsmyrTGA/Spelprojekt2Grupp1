@@ -32,16 +32,22 @@ public class TileManager : MonoBehaviour
 
     void LoadTiles()
     {
+        if (myDebugLevel >= 1)
+        {
+            Debug.Log("TileManager: Loading Tiles");
+        }
+
         // Fetch all tiles in current Scene
         myTiles = new Dictionary<Vector3Int, Tile>();
         foreach (var tile in FindObjectsOfType<Tile>())
         {
             Vector3Int key = Vector3Int.FloorToInt(tile.transform.position);
-            tile.TGASetPosition(key);
-
-            if (myTiles.ContainsKey(key) && myDebugLevel >= 2)
+            if (myTiles.ContainsKey(key))
             {
-                Debug.LogWarning("TileManager: Found and removed duplicate key " + key.ToString());
+                if (myDebugLevel >= 2)
+                {
+                    Debug.LogWarning("TileManager: Found and removed duplicate key " + key.ToString());
+                }
                 myTiles.Remove(key);
             }
 
@@ -50,6 +56,7 @@ public class TileManager : MonoBehaviour
                 Debug.Log("TileManager: Adding tile at " + key.ToString());
             }
             myTiles.Add(key, tile.GetComponent<Tile>());
+            tile.TGASetKey(key);
             if (myDebugLevel >= 2)
             {
                 Debug.Log("TileManager: Added Tile at " + key.ToString());
@@ -65,8 +72,6 @@ public class TileManager : MonoBehaviour
     /// <summary>
     /// !! Do not call this outside of Tile.cs !!
     /// </summary>
-    /// <param name="anOldKey"></param>
-    /// <param name="aNewKey"></param>
     public void TGAChangeKey(Vector3Int anOldKey, Vector3Int aNewKey, Tile aTile)
     {
         if (myDebugLevel >= 2)
