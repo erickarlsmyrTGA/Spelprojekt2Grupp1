@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
     Vector2 myStartCoords;
     TouchState myCurrentTouchState;
 
-    enum TouchState
+    public enum TouchState
     {
         Holding,
         Swiping, 
@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
 
     void ListenForTouchPhase()
     {
-        if (TouchingScreen())
+        if (TGATouchingScreen())
         {
             myTouch = Input.GetTouch(0);
 
@@ -83,7 +83,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressed()
     {
-        if (TouchingScreen())
+        if (TGATouchingScreen())
         {
             if (Vector2.Distance(GetTouchScreenPos(myTouch), myStartCoords) <= 0.03 && myCurrentTouchState == TouchState.Released)
             {
@@ -99,7 +99,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public Vector2 TGASwipe()
     {
-        if (TouchingScreen())
+        if (TGATouchingScreen())
         {
             if (Vector2.Distance(GetTouchScreenPos(myTouch), myStartCoords) > 0.03)
             {
@@ -110,6 +110,11 @@ public class InputManager : MonoBehaviour
         }
 
         return new Vector2(0.0f, 0.0f);
+    }
+
+    public TouchState TGACurrentTouchState()
+    {
+        return myCurrentTouchState;
     }
 
     Vector2 DeltaTouchPos()
@@ -149,7 +154,7 @@ public class InputManager : MonoBehaviour
         return false;
     }
 
-    bool TouchingScreen()
+    public bool TGATouchingScreen()
     {
         return (Input.touches.Length != 0);
     }
