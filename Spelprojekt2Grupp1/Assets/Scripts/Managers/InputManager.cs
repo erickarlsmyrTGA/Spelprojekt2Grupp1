@@ -51,6 +51,12 @@ public class InputManager : MonoBehaviour
         TGAPressed();
         TGASwipe();
 
+        // Reset pressed bools
+        myPresssedForward = false;
+        myPresssedBackward = false;
+        myPresssedRight = false;
+        myPresssedLeft = false;
+
         if (myFirstFrame)
         {
             CalculatePoint();
@@ -72,15 +78,12 @@ public class InputManager : MonoBehaviour
             {
                 myCurrentTouchState = TouchState.Holding;
                 myStartCoords = GetTouchScreenPos(myTouch);
+                CalculatePoint();
 
                 Debug.Log(myStartCoords.x + ", " + myStartCoords.y);
-
-                myFirstFrame = true;
             }
             else
             {
-                myFirstFrame = false;
-
                 if (myTouch.phase == TouchPhase.Ended)
                 {
                     if (myCurrentTouchState == TouchState.Holding)
@@ -120,12 +123,6 @@ public class InputManager : MonoBehaviour
 
     void CalculatePoint()
     {
-        // Reset pressed bools
-        myPresssedForward = false;
-        myPresssedBackward = false;
-        myPresssedRight = false;
-        myPresssedLeft = false;
-
         // Create offset based of the middle of the screen
         Vector3 offset = new Vector3(Screen.width >> 1, Screen.height >> 1);
 
