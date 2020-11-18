@@ -7,13 +7,41 @@ using UnityEngine;
 /// </summary>
 public class Tile : MonoBehaviour
 {
+    [System.Flags]
+    public enum TileType
+    {
+        /// <summary>
+        /// Movables can freely move within these tiles.
+        /// </summary>
+        Air = 1 << 0,
+        /// <summary>
+        /// Movables can not move through these tiles.
+        /// </summary>
+        Barrier = 1 << 1,
+        /// <summary>
+        /// Movables can move on top of these tiles.
+        /// </summary>
+        Ground = 1 << 2,
+        /// <summary>
+        /// Movables can move and will glide on top of these tiles.
+        /// </summary>
+        Ice = 1 << 3
+    }
+
     /// <summary>
     /// The name of the Tile. Base class has "Empty" as name.
     /// </summary>
     public string myName { get; protected set; }
+
+    /// <summary>
+    /// The type of the Tile. Base class har "Air" as type.
+    /// </summary>
+    public TileType myType { get; protected set; }
+
     protected Tile()
     {
         myName = "Empty";
+        myType |= TileType.Air;
     }
 
     /// <summary>
