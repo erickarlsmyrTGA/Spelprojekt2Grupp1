@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject myGasState;
 
     [SerializeField]
-    float mySpeed = 0.0f;
+    float myMoveSpeed = 0.0f;
+    [SerializeField]
+    float myGravity = 0.0f;
     [SerializeField]
     [Min(5)]
     int myMaxFallDistance;
@@ -88,20 +90,20 @@ public class Player : MonoBehaviour
                 else
                 {
                     // Move to target
-                    yield return StartCoroutine(MoveInDirection(direction));
+                    yield return StartCoroutine(MoveInDirection(direction, myMoveSpeed));
                 }
             }
             else
             {
                 // Move to target
-                yield return StartCoroutine(MoveInDirection(direction));
+                yield return StartCoroutine(MoveInDirection(direction, myMoveSpeed));
             }
         }
 
         
     }
 
-    IEnumerator MoveInDirection(Vector3 aDirection)
+    IEnumerator MoveInDirection(Vector3 aDirection, float aSpeed)
     {
         Vector3 position = transform.position;
         Vector3 target = position + aDirection;
@@ -111,7 +113,7 @@ public class Player : MonoBehaviour
         while (percentage < 1.0f)
         {
             transform.position = Vector3.Lerp(position, target, percentage);
-            percentage += Time.deltaTime * mySpeed / divider;
+            percentage += Time.deltaTime * aSpeed / divider;
             yield return null;
         }
         transform.position = target;
@@ -147,7 +149,7 @@ public class Player : MonoBehaviour
 
         Debug.Log("Player: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
-        yield return StartCoroutine(MoveInDirection(direction));
+        yield return StartCoroutine(MoveInDirection(direction, myGravity));
     }
 
     /// <summary>

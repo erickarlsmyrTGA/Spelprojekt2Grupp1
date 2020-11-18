@@ -5,7 +5,9 @@ using UnityEngine;
 public class PushTile : Tile
 {
     [SerializeField]
-    float mySpeed = 0.0f;
+    float myMoveSpeed = 0.0f;
+    [SerializeField]
+    float myGravity = 0.0f;
     [SerializeField]
     [Min(5)]
     int myMaxFallDistance;
@@ -18,30 +20,28 @@ public class PushTile : Tile
 
     public IEnumerator TGAMoveInDirection(Vector3 aDirection)
     {
-        Debug.Log("Ice");
-
         // Check if next tile is not barrier
         {
             var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + aDirection);
             if (tile)
             {
-                if (!tile.myType.HasFlag(Tile.TileType.Barrier))
+                if (!tile.myType.HasFlag(TileType.Barrier))
                 {
                     // Move in direction
-                    yield return StartCoroutine(MoveInDirection(aDirection));
+                    yield return StartCoroutine(MoveInDirection(aDirection, myMoveSpeed));
                 }
             }
             else
             {
                 // Move in direction
-                yield return StartCoroutine(MoveInDirection(aDirection));
+                yield return StartCoroutine(MoveInDirection(aDirection, myMoveSpeed));
             }
         }
 
         yield return StartCoroutine(CheckFallDistanceAndFall());
     }
 
-    IEnumerator MoveInDirection(Vector3 aDirection)
+    IEnumerator MoveInDirection(Vector3 aDirection, float aSpeed)
     {
         Vector3 position = transform.position;
         Vector3 target = position + aDirection;
@@ -51,7 +51,7 @@ public class PushTile : Tile
         while (percentage < 1.0f)
         {
             transform.position = Vector3.Lerp(position, target, percentage);
-            percentage += Time.deltaTime * mySpeed / divider;
+            percentage += Time.deltaTime * aSpeed / divider;
             yield return null;
         }
         transform.position = target;
@@ -76,7 +76,7 @@ public class PushTile : Tile
 
         Debug.Log("PushTile: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
-        yield return StartCoroutine(MoveInDirection(direction));
+        yield return StartCoroutine(MoveInDirection(direction, myGravity));
         TGASetPosition(transform.position);
     }
 }
