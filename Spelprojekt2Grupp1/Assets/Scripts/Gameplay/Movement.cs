@@ -13,8 +13,22 @@ public class Movement
     /// <returns>Returns an IEnumerator to be used in StartCoroutine</returns>
     public IEnumerator MoveInDirection(Transform aTransform, Vector3 aDirection, float aSpeed)
     {
+        Vector3 direction = aDirection;
+        //Checking for Ice
+        if(direction.y == 0)
+        {
+            var tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+            while (tile && tile.myType.HasFlag(Tile.TileType.Ice))
+            {
+                tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+                direction += aDirection;
+            }
+            direction -= aDirection;
+        }
+
+        //Movement
         Vector3 position = aTransform.position;
-        Vector3 target = position + aDirection;
+        Vector3 target = position + direction;
         float divider = Mathf.Abs(Vector3.Distance(position, target));
 
         float percentage = 0.0f;
@@ -27,3 +41,12 @@ public class Movement
         aTransform.position = target;
     }
 }
+//                else if(tile.myType.HasFlag(Tile.TileType.Ice))
+//                {
+//                    while(tile.myType.HasFlag(Tile.TileType.Ice))
+//                    {
+//                        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
+//                        tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
+//                    }
+//                    CheckFallDistanceAndFall();
+//                }
