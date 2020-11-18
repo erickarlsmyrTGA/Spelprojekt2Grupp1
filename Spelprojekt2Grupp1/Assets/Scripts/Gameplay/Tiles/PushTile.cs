@@ -12,10 +12,13 @@ public class PushTile : Tile
     [Min(5)]
     int myMaxFallDistance;
 
+    Movement myMovement;
+
     PushTile()
     {
         myName = "PushTile";
         myType = TileType.Barrier | TileType.Ground;
+        myMovement = new Movement();
     }
 
     public IEnumerator TGAMoveInDirection(Vector3 aDirection)
@@ -28,33 +31,17 @@ public class PushTile : Tile
                 if (!tile.myType.HasFlag(TileType.Barrier))
                 {
                     // Move in direction
-                    yield return StartCoroutine(MoveInDirection(aDirection, myMoveSpeed));
+                    yield return StartCoroutine(myMovement.MoveInDirection(transform, aDirection, myMoveSpeed));
                 }
             }
             else
             {
                 // Move in direction
-                yield return StartCoroutine(MoveInDirection(aDirection, myMoveSpeed));
+                yield return StartCoroutine(myMovement.MoveInDirection(transform, aDirection, myMoveSpeed));
             }
         }
 
         yield return StartCoroutine(CheckFallDistanceAndFall());
-    }
-
-    IEnumerator MoveInDirection(Vector3 aDirection, float aSpeed)
-    {
-        Vector3 position = transform.position;
-        Vector3 target = position + aDirection;
-        float divider = Mathf.Abs(Vector3.Distance(position, target));
-
-        float percentage = 0.0f;
-        while (percentage < 1.0f)
-        {
-            transform.position = Vector3.Lerp(position, target, percentage);
-            percentage += Time.deltaTime * aSpeed / divider;
-            yield return null;
-        }
-        transform.position = target;
     }
 
     IEnumerator CheckFallDistanceAndFall()
@@ -76,7 +63,7 @@ public class PushTile : Tile
 
         Debug.Log("PushTile: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
-        yield return StartCoroutine(MoveInDirection(direction, myGravity));
+        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myGravity));
         TGASetPosition(transform.position);
     }
 }
