@@ -11,7 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject myGasState;
 
     [SerializeField]
-    float mySpeed;
+    float mySpeed = 0.0f;
+    [SerializeField]
+    [Min(5)]
+    int myMaxFallDistance;
 
     private void Start()
     {
@@ -75,7 +78,14 @@ public class Player : MonoBehaviour
             var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
             if (tile)
             {
-                if (!tile.myType.HasFlag(Tile.TileType.Barrier))
+                if (tile.myType.HasFlag(Tile.TileType.Barrier))
+                {
+                    if (tile.myName == "PushTile")
+                    {
+                        yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
+                    }
+                }
+                else
                 {
                     // Move to target
                     yield return StartCoroutine(MoveInDirection(direction));
@@ -124,13 +134,13 @@ public class Player : MonoBehaviour
 
         Vector3 direction = Vector3.zero;
 
-        for (int i = 0; i < 10; i++) // MAGIC_NUMBER (10) MAX_FALL_DISTANCE
+        for (int i = 0; i < myMaxFallDistance; i++)
         {
             direction += Vector3.down;
             var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
             if (tile && (tile.myType.HasFlag(Tile.TileType.Ground) || tile.myType.HasFlag(Tile.TileType.Barrier)))
             {
-                i = 10; // MAGIC_NUMBER (10) MAX_FALL_DISTANCE
+                i = myMaxFallDistance;
             }
         }
         direction += Vector3.up;
