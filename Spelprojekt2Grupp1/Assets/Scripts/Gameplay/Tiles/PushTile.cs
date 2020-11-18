@@ -20,7 +20,24 @@ public class PushTile : Tile
     {
         Debug.Log("Ice");
 
-        yield return StartCoroutine(MoveInDirection(aDirection));
+        // Check if next tile is not barrier
+        {
+            var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + aDirection);
+            if (tile)
+            {
+                if (!tile.myType.HasFlag(Tile.TileType.Barrier))
+                {
+                    // Move in direction
+                    yield return StartCoroutine(MoveInDirection(aDirection));
+                }
+            }
+            else
+            {
+                // Move in direction
+                yield return StartCoroutine(MoveInDirection(aDirection));
+            }
+        }
+
         yield return StartCoroutine(CheckFallDistanceAndFall());
     }
 
