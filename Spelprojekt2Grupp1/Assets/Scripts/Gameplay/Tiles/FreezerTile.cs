@@ -8,6 +8,7 @@ public class FreezerTile : Tile
     FreezerTile()
     {
         myName = "Freezer";
+        myType = TileType.Barrier | TileType.Ground;
     }
     /// <summary>
     /// Change the player state to solid

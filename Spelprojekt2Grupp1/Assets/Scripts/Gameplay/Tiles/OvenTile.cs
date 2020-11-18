@@ -7,6 +7,7 @@ public class OvenTile : Tile
     OvenTile()
     {
         myName = "Oven";
+        myType = TileType.Barrier | TileType.Ground;
     }
 
     /// <summary>
