@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject mySolidState;
     [SerializeField] GameObject myGasState;
 
+    [SerializeField]
+    float mySpeed;
+
     private void Start()
     {
         myCoroutineIsNotInAction = true;
@@ -45,34 +48,46 @@ public class Player : MonoBehaviour
         // Wait for Mouse Input
         // yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S));
+        // TODO: Change to WaitIntil() InputManager Touch
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D));
 
         Vector3 direction = Vector3.zero;
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            direction = new Vector3(2, 0, 0);
+            direction += new Vector3(1, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            direction = new Vector3(-1, 0, 0);
+            direction += new Vector3(-1, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            direction += new Vector3(0, 0, 1);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            direction += new Vector3(0, 0, -1);
         }
 
         // Move to target
-        {
-            Vector3 position = transform.position;
-            Vector3 target = position + direction;
-            float divider = Mathf.Abs(Vector3.Distance(position, target));
+        yield return StartCoroutine(MoveInDirection(direction));
+    }
 
-            float percentage = 0.0f;
-            while (percentage < 1.0f)
-            {
-                transform.position = Vector3.Lerp(position, target, percentage);
-                percentage += Time.deltaTime / divider;
-                yield return null;
-            }
-            transform.position = target;
+    IEnumerator MoveInDirection(Vector3 aDirection)
+    {
+        Vector3 position = transform.position;
+        Vector3 target = position + aDirection;
+        float divider = Mathf.Abs(Vector3.Distance(position, target));
+
+        float percentage = 0.0f;
+        while (percentage < 1.0f)
+        {
+            transform.position = Vector3.Lerp(position, target, percentage);
+            percentage += Time.deltaTime * mySpeed / divider;
+            yield return null;
         }
+        transform.position = target;
     }
 
     IEnumerator ExecuteCurrentTile()
@@ -87,7 +102,25 @@ public class Player : MonoBehaviour
     IEnumerator CheckFallDistanceAndFall()
     {
         // TODO: Implement this
-        yield return null;
+
+        Debug.Log("Player: Checking fall distance...");
+
+        Vector3 direction = Vector3.zero;
+
+        for (int i = 0; i < 10; i++)
+        {
+            direction += Vector3.down;
+            var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
+            if (tile && (tile.myType.HasFlag(Tile.TileType.Ground) || tile.myType.HasFlag(Tile.TileType.Barrier)))
+            {
+                i = 10;
+            }
+        }
+        direction += Vector3.up;
+
+        Debug.Log("Player: Fall distance was " + direction.ToString());
+
+        yield return StartCoroutine(MoveInDirection(direction));
     }
 
     /// <summary>
