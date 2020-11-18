@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class GroundTile : Tile
 {
-    // Start is called before the first frame update
-    void Start()
+    GroundTile()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        myName = "Ground";
+        myType = TileType.Ground | TileType.Barrier;
     }
 }
