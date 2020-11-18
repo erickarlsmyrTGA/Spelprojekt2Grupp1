@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8848059cb0cf70439448cc33fd2daf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySpeed: 1
+  myMoveSpeed: 2
+  myGravity: 3
   myMaxFallDistance: 5
 --- !u!1 &8976550981669370491
 GameObject:
