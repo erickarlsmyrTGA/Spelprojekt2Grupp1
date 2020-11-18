@@ -90,6 +90,15 @@ public class Player : MonoBehaviour
                         yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
                     }
                 }
+                else if(tile.myType.HasFlag(Tile.TileType.Ice))
+                {
+                    while(tile.myType.HasFlag(Tile.TileType.Ice))
+                    {
+                        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
+                        tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
+                    }
+                    CheckFallDistanceAndFall();
+                }
                 else
                 {
                     // Move to target
@@ -102,8 +111,6 @@ public class Player : MonoBehaviour
                 yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
             }
         }
-
-        
     }
 
     IEnumerator MoveInDirection(Vector3 aDirection, float aSpeed)
