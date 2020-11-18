@@ -90,15 +90,6 @@ public class Player : MonoBehaviour
                         yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
                     }
                 }
-                else if(tile.myType.HasFlag(Tile.TileType.Ice))
-                {
-                    while(tile.myType.HasFlag(Tile.TileType.Ice))
-                    {
-                        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
-                        tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
-                    }
-                    CheckFallDistanceAndFall();
-                }
                 else
                 {
                     // Move to target
@@ -134,7 +125,7 @@ public class Player : MonoBehaviour
         var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position);
         if (tile)
         {
-            yield return StartCoroutine(tile.TGAExecute(gameObject));
+            yield return StartCoroutine(tile.TGAExecute());
         }
     }
 
