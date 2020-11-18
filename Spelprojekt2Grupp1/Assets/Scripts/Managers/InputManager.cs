@@ -132,10 +132,12 @@ public class InputManager : MonoBehaviour
         Vector3 rotatedMousePosition = relativeMousePosition;
 
         // Manually checks if at snap point
-        float angle = CameraController.ourInstance.ClosestSnapPointVector3().y;
+        float angle = -1.0f;
+        float snapPoint = CameraController.ourInstance.ClosestSnapPointVector3().y;
 
-        if (angle % 90 == 0)
+        if (snapPoint % 90 == 0)
         {
+            angle = snapPoint;
             Debug.LogWarning("ANGLE: " + angle);
         }
 
