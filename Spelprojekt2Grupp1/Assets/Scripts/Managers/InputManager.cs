@@ -55,6 +55,11 @@ public class InputManager : MonoBehaviour
         {
             CalculatePoint();
         }
+
+        if (myPresssedForward) Debug.LogWarning("PRESSED FORWARD");
+        if (myPresssedBackward) Debug.LogWarning("PRESSED BACKWARD");
+        if (myPresssedRight) Debug.LogWarning("PRESSED RIGHT");
+        if (myPresssedLeft) Debug.LogWarning("PRESSED LEFT");
     }
 
     void ListenForTouchPhase()
