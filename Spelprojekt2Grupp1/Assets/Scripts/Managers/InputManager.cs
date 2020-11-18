@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
     public enum TouchState
     {
         Holding,
-        Swiping, 
+        Swiping,
         Released
     }
 
@@ -47,25 +47,24 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ListenForTouchPhase();
-        TGAPressed();
-        TGASwipe();
-
         // Reset pressed bools
         myPresssedForward = false;
         myPresssedBackward = false;
         myPresssedRight = false;
         myPresssedLeft = false;
 
+        
+        ListenForTouchPhase();
+        TGAPressed();
+        TGASwipe();
+
         if (myFirstFrame)
         {
-            CalculatePoint();
+            if (myPresssedForward) Debug.LogWarning("PRESSED FORWARD");
+            if (myPresssedBackward) Debug.LogWarning("PRESSED BACKWARD");
+            if (myPresssedRight) Debug.LogWarning("PRESSED RIGHT");
+            if (myPresssedLeft) Debug.LogWarning("PRESSED LEFT");
         }
-
-        if (myPresssedForward) Debug.LogWarning("PRESSED FORWARD");
-        if (myPresssedBackward) Debug.LogWarning("PRESSED BACKWARD");
-        if (myPresssedRight) Debug.LogWarning("PRESSED RIGHT");
-        if (myPresssedLeft) Debug.LogWarning("PRESSED LEFT");
     }
 
     void ListenForTouchPhase()
@@ -76,14 +75,15 @@ public class InputManager : MonoBehaviour
 
             if (myTouch.phase == TouchPhase.Began)
             {
+                myFirstFrame = true;
                 myCurrentTouchState = TouchState.Holding;
                 myStartCoords = GetTouchScreenPos(myTouch);
-                CalculatePoint();
-
                 Debug.Log(myStartCoords.x + ", " + myStartCoords.y);
+                CalculatePoint();
             }
             else
             {
+                myFirstFrame = false;
                 if (myTouch.phase == TouchPhase.Ended)
                 {
                     if (myCurrentTouchState == TouchState.Holding)
@@ -131,10 +131,11 @@ public class InputManager : MonoBehaviour
 
         Vector3 rotatedMousePosition = relativeMousePosition;
 
-        float angle = -1.0f;
-        if (CameraController.ourInstance.AtSnapPoint())
+        // Manually checks if at snap point
+        float angle = CameraController.ourInstance.ClosestSnapPointVector3().y;
+
+        if (angle % 90 == 0)
         {
-            angle = CameraController.ourInstance.ClosestSnapPointVector3().y;
             Debug.LogWarning("ANGLE: " + angle);
         }
 
