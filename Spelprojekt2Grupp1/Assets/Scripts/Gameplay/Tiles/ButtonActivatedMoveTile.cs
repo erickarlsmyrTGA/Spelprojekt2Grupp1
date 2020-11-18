@@ -12,7 +12,7 @@ public class ButtonActivatedMoveTile : Tile
 
     void Update()
     {
-        //if (myIsMoving)
+        //if (myIsPressed)
         //{
         //    StartCoroutine(TGAExecute(this));
         //}
@@ -23,6 +23,8 @@ public class ButtonActivatedMoveTile : Tile
         myName = "Button Activated Platform";
         myType = myType = TileType.Barrier | TileType.Ground;
         myMovement = new Movement();
+        myIsPressed = false;
+        Debug.Log("BAMT STARTED");
     }
 
     /// <summary>
@@ -30,9 +32,9 @@ public class ButtonActivatedMoveTile : Tile
     /// </summary>
     /// <param name="aGameActor"></param>
     /// <returns></returns>
-    public override IEnumerator TGAExecute(GameObject aGameActor)
+    public override IEnumerator TGAExecute()
     {
-        yield return StartCoroutine(myMovement.MoveInDirection(transform, ((myIsPressed) ? myEndPos - myStartPos : myStartPos - myEndPos), 2));
+        yield return StartCoroutine(myMovement.MoveToPosition(transform, ((myIsPressed) ? myEndPos: myStartPos), 2));
         yield return null;
     }
 
@@ -40,7 +42,7 @@ public class ButtonActivatedMoveTile : Tile
     {
         Debug.LogError("BUTTON PRESSED");
         myIsPressed = !myIsPressed;
-        StartCoroutine(TGAExecute(gameObject));
+        StartCoroutine(TGAExecute());
     }
         
 }
