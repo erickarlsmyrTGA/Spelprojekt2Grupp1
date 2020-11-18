@@ -32,22 +32,54 @@ public class TileManager : MonoBehaviour
 
     void LoadTiles()
     {
+        if (myDebugLevel >= 1)
+        {
+            Debug.Log("TileManager: Loading Tiles");
+        }
+
         // Fetch all tiles in current Scene
         myTiles = new Dictionary<Vector3Int, Tile>();
         foreach (var tile in FindObjectsOfType<Tile>())
         {
-            myTiles.Add(Vector3Int.FloorToInt(tile.transform.position), tile.GetComponent<Tile>());
+            Vector3Int key = Vector3Int.FloorToInt(tile.transform.position);
+            if (myTiles.ContainsKey(key))
+            {
+                if (myDebugLevel >= 2)
+                {
+                    Debug.LogWarning("TileManager: Found and removed duplicate key " + key.ToString());
+                }
+                myTiles.Remove(key);
+            }
+
             if (myDebugLevel >= 2)
             {
-                Debug.Log("TileManager: Added Tile at " + Vector3Int.FloorToInt(tile.transform.position).ToString());
+                Debug.Log("TileManager: Adding tile at " + key.ToString());
             }
-            
+            myTiles.Add(key, tile.GetComponent<Tile>());
+            tile.TGASetKey(key);
+            if (myDebugLevel >= 2)
+            {
+                Debug.Log("TileManager: Added Tile at " + key.ToString());
+            }
         }
 
         if (myDebugLevel >= 1)
         {
             Debug.Log("TileManager: " + myTiles.Count.ToString() + " tiles added.");
         }
+    }
+
+    /// <summary>
+    /// !! Do not call this outside of Tile.cs !!
+    /// </summary>
+    public void TGAChangeKey(Vector3Int anOldKey, Vector3Int aNewKey, Tile aTile)
+    {
+        if (myDebugLevel >= 2)
+        {
+            Debug.Log("TileManager: Moved " + anOldKey.ToString() + " to " + aNewKey.ToString());
+        }
+        myTiles.Add(aNewKey, aTile);
+        myTiles.Remove(anOldKey);
     }
 
     /// <summary>
