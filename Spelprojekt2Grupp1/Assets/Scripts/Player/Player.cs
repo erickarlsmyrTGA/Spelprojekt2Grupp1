@@ -18,9 +18,12 @@ public class Player : MonoBehaviour
     [Min(5)]
     int myMaxFallDistance;
 
+    Movement myMovement;
+
     private void Start()
     {
         myCoroutineIsNotInAction = true;
+        myMovement = new Movement();
     }
 
     // Update is called once per frame
@@ -90,13 +93,13 @@ public class Player : MonoBehaviour
                 else
                 {
                     // Move to target
-                    yield return StartCoroutine(MoveInDirection(direction, myMoveSpeed));
+                    yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
                 }
             }
             else
             {
                 // Move to target
-                yield return StartCoroutine(MoveInDirection(direction, myMoveSpeed));
+                yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
             }
         }
 
@@ -149,7 +152,7 @@ public class Player : MonoBehaviour
 
         Debug.Log("Player: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
-        yield return StartCoroutine(MoveInDirection(direction, myGravity));
+        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myGravity));
     }
 
     /// <summary>
