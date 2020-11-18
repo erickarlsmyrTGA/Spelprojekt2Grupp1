@@ -95,4 +95,12 @@ public class Tile : MonoBehaviour
     /// Executes a behaviour according its type
     /// </summary>
     public virtual IEnumerator TGAExecute(Object anObject) { yield return null; }
+
+    /// <summary>
+    /// Executes a behaviour according its type
+    /// </summary>
+    public virtual IEnumerator TGAExecute()
+    {
+        yield return null;
+    }
 }
