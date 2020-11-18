@@ -70,8 +70,25 @@ public class Player : MonoBehaviour
             direction += new Vector3(0, 0, -1);
         }
 
-        // Move to target
-        yield return StartCoroutine(MoveInDirection(direction));
+        // Check if next tile is barrier
+        {
+            var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
+            if (tile)
+            {
+                if (!tile.myType.HasFlag(Tile.TileType.Barrier))
+                {
+                    // Move to target
+                    yield return StartCoroutine(MoveInDirection(direction));
+                }
+            }
+            else
+            {
+                // Move to target
+                yield return StartCoroutine(MoveInDirection(direction));
+            }
+        }
+
+        
     }
 
     IEnumerator MoveInDirection(Vector3 aDirection)
@@ -107,18 +124,18 @@ public class Player : MonoBehaviour
 
         Vector3 direction = Vector3.zero;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++) // MAGIC_NUMBER (10) MAX_FALL_DISTANCE
         {
             direction += Vector3.down;
             var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
             if (tile && (tile.myType.HasFlag(Tile.TileType.Ground) || tile.myType.HasFlag(Tile.TileType.Barrier)))
             {
-                i = 10;
+                i = 10; // MAGIC_NUMBER (10) MAX_FALL_DISTANCE
             }
         }
         direction += Vector3.up;
 
-        Debug.Log("Player: Fall distance was " + direction.ToString());
+        Debug.Log("Player: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
         yield return StartCoroutine(MoveInDirection(direction));
     }
