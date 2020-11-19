@@ -102,8 +102,6 @@ public class Player : MonoBehaviour
                 yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
             }
         }
-
-        
     }
 
     IEnumerator MoveInDirection(Vector3 aDirection, float aSpeed)
@@ -124,10 +122,10 @@ public class Player : MonoBehaviour
 
     IEnumerator ExecuteCurrentTile()
     {
-        var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position);
+        var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
         if (tile)
         {
-            yield return StartCoroutine(tile.TGAExecute(gameObject));
+            yield return StartCoroutine(tile.TGAExecute());
         }
     }
 

@@ -24,10 +24,17 @@ public class InputManager : MonoBehaviour
     Vector2 myStartCoords;
     TouchState myCurrentTouchState;
 
+
+    bool myFirstFrame = false;
+    bool myPresssedForward = false;
+    bool myPresssedBackward = false;
+    bool myPresssedRight = false;
+    bool myPresssedLeft = false;
+
     public enum TouchState
     {
         Holding,
-        Swiping, 
+        Swiping,
         Released
     }
 
@@ -40,9 +47,24 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Reset pressed bools
+        myPresssedForward = false;
+        myPresssedBackward = false;
+        myPresssedRight = false;
+        myPresssedLeft = false;
+
+        
         ListenForTouchPhase();
         TGAPressed();
         TGASwipe();
+
+        if (myFirstFrame)
+        {
+            if (myPresssedForward) Debug.LogWarning("PRESSED FORWARD");
+            if (myPresssedBackward) Debug.LogWarning("PRESSED BACKWARD");
+            if (myPresssedRight) Debug.LogWarning("PRESSED RIGHT");
+            if (myPresssedLeft) Debug.LogWarning("PRESSED LEFT");
+        }
     }
 
     void ListenForTouchPhase()
@@ -53,16 +75,21 @@ public class InputManager : MonoBehaviour
 
             if (myTouch.phase == TouchPhase.Began)
             {
+                myFirstFrame = true;
                 myCurrentTouchState = TouchState.Holding;
                 myStartCoords = GetTouchScreenPos(myTouch);
-
                 Debug.Log(myStartCoords.x + ", " + myStartCoords.y);
+                CalculatePoint();
             }
-            else if (myTouch.phase == TouchPhase.Ended)
+            else
             {
-                if (myCurrentTouchState == TouchState.Holding)
+                myFirstFrame = false;
+                if (myTouch.phase == TouchPhase.Ended)
                 {
-                    myCurrentTouchState = TouchState.Released;
+                    if (myCurrentTouchState == TouchState.Holding)
+                    {
+                        myCurrentTouchState = TouchState.Released;
+                    }
                 }
             }
         }
@@ -92,6 +119,78 @@ public class InputManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    void CalculatePoint()
+    {
+        // Create offset based of the middle of the screen
+        Vector3 offset = new Vector3(Screen.width >> 1, Screen.height >> 1);
+
+        // Get mouse position relative to offset
+        Vector3 relativeMousePosition = Input.mousePosition - offset;
+
+        Vector3 rotatedMousePosition = relativeMousePosition;
+
+        // Manually checks if at snap point
+        float angle = -1.0f;
+        float snapPoint = CameraController.ourInstance.ClosestSnapPointVector3().y;
+
+        if (snapPoint % 90 == 0)
+        {
+            angle = snapPoint;
+            Debug.LogWarning("ANGLE: " + angle);
+        }
+
+        // Rotate MouseCoords around origo depending on the angle
+        switch (angle)
+        {
+            case 0.0f:
+                // Rotate back 0 aka 0
+                rotatedMousePosition = relativeMousePosition;
+                break;
+            case 90.0f:
+                // Rotate back 90 aka 270
+                rotatedMousePosition = new Vector3(-relativeMousePosition.y, relativeMousePosition.x);
+                break;
+            case 180.0f:
+                // Rotate back 180 aka 180
+                rotatedMousePosition = new Vector3(-relativeMousePosition.x, -relativeMousePosition.y);
+                break;
+            case 270.0f:
+                // Rotate back 270 aka 90
+                rotatedMousePosition = new Vector3(relativeMousePosition.y, -relativeMousePosition.x);
+                break;
+        }
+
+        // Move back MouseCoords around origo
+        rotatedMousePosition += offset;
+
+        if (rotatedMousePosition.x > offset.x) // Right of Offset
+        {
+            if (rotatedMousePosition.y > offset.y) // Above Offset
+            {
+                // R U ==> TopRight
+                myPresssedForward = true;
+            }
+            else // Below Offset
+            {
+                // R D ==> BottomRight
+                myPresssedRight = true;
+            }
+        }
+        else // Left of Offset
+        {
+            if (rotatedMousePosition.y > offset.y) // Above Offset
+            {
+                // L U ==> TopLeft
+                myPresssedLeft = true;
+            }
+            else // Below Offset
+            {
+                // L D ==> BottomLeft
+                myPresssedBackward = true;
+            }
+        }
     }
 
     /// <summary>
@@ -127,7 +226,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedForward()
     {
-        return false;
+        return myPresssedForward;
     }
 
     /// <summary>
@@ -135,7 +234,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedBackward()
     {
-        return false;
+        return myPresssedBackward;
     }
 
     /// <summary>
@@ -143,7 +242,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedRight()
     {
-        return false;
+        return myPresssedRight;
     }
 
     /// <summary>
@@ -151,7 +250,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedLeft()
     {
-        return false;
+        return myPresssedLeft;
     }
 
     public bool TGATouchingScreen()

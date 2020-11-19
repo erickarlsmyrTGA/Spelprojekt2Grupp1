@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public void TransitionNextStage()
     {
+        // TODO: goto next stage.
+        Debug.Log("Goal reached! Goto next if exists.");
     }
 
     public void RestartCurrentStage()
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
 
     private void OnStageBegin(int aStageIndex)
     {
+    }
+
+    public void OnStageCompleted()
+    {
+        // TODO: handle end of stage
+        GameManager.ourInstance.TransitionNextStage();        
     }
 
     private void Start()

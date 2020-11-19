@@ -13,8 +13,39 @@ public class Movement
     /// <returns>Returns an IEnumerator to be used in StartCoroutine</returns>
     public IEnumerator MoveInDirection(Transform aTransform, Vector3 aDirection, float aSpeed)
     {
+        Vector3 direction = aDirection;
+        //Handling Ice Tiles
+        if(direction.y == 0)
+        {
+            var tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+            while (tile && tile.myType.HasFlag(Tile.TileType.Ice))
+            {
+                direction += aDirection;
+                tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+            }
+            direction -= aDirection;
+        }
+
+        //Movement
         Vector3 position = aTransform.position;
-        Vector3 target = position + aDirection;
+        Vector3 target = position + direction;
+        float divider = Mathf.Abs(Vector3.Distance(position, target));
+
+        float percentage = 0.0f;
+        while (percentage < 1.0f)
+        {
+            aTransform.position = Vector3.Lerp(position, target, percentage);
+            percentage += Time.deltaTime * aSpeed / divider;
+            yield return null;
+        }
+        aTransform.position = target;
+    }
+
+    public IEnumerator MoveToPosition(Transform aTransform, Vector3 anEndPosition, float aSpeed)
+    {
+        //Movement
+        Vector3 position = aTransform.position;
+        Vector3 target = anEndPosition;
         float divider = Mathf.Abs(Vector3.Distance(position, target));
 
         float percentage = 0.0f;
