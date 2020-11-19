@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     #endregion
 
     [SerializeField] Transform myPlayer;
+    [SerializeField] float mySwipeThreashold = 0.75f;
     Touch myTouch;
     Vector2 myStartCoords;
     TouchState myCurrentTouchState;
@@ -56,8 +57,8 @@ public class InputManager : MonoBehaviour
 
         
         ListenForTouchPhase();
-        TGAPressed();
-        TGASwipe();
+        //TGAPressed();
+        //TGASwipe();
 
         if (myFirstFrame)
         {
@@ -67,6 +68,12 @@ public class InputManager : MonoBehaviour
             if (myPresssedLeft) Debug.LogWarning("PRESSED LEFT");
         }
     }
+
+    public float TGAGetSwipeThreashold()
+    {
+        return mySwipeThreashold;
+    }
+
 
     void ListenForTouchPhase()
     {
@@ -106,6 +113,15 @@ public class InputManager : MonoBehaviour
         return touchPos;
     }
 
+    Vector2 ConvertVector2ToScreenSpace(Vector2 aCoord)
+    {
+        Vector2 temp;
+        temp.y = (Screen.height - aCoord.y) / Screen.height;
+        temp.x = 1 - (Screen.width - aCoord.x) / Screen.width;
+
+        return temp;
+    }
+
     /// <summary>
     /// Returns true during the frame the user pressed in the application area.
     /// </summary>
@@ -120,6 +136,23 @@ public class InputManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    /// <summary>
+    /// Returns the amount the user swiped the screen between this frame and last frame.
+    /// </summary>
+    public Vector2 TGASwipe()
+    {
+        if (TGATouchingScreen())
+        {
+            if (myCurrentTouchState == TouchState.Swiping)
+            {
+                Debug.LogError("MOVED! " + DeltaTouchPos());
+                return DeltaTouchPos();
+            }
+        }
+
+        return new Vector2(0.0f, 0.0f);
     }
 
     void CalculatePoint()
@@ -193,24 +226,15 @@ public class InputManager : MonoBehaviour
                 myPresssedBackward = true;
             }
         }
-    }
 
-    /// <summary>
-    /// Returns the amount the user swiped the screen between this frame and last frame.
-    /// </summary>
-    public Vector2 TGASwipe()
-    {
-        if (TGATouchingScreen())
+        if (myStartCoords.y >= mySwipeThreashold)
         {
-            if (Vector2.Distance(GetTouchScreenPos(myTouch), myStartCoords) > 0.03)
-            {
-                myCurrentTouchState = TouchState.Swiping;
-                Debug.LogError("MOVED! " + DeltaTouchPos());
-                return DeltaTouchPos();
-            }
+            myPresssedForward = false;
+            myPresssedBackward = false;
+            myPresssedRight = false;
+            myPresssedLeft = false;
+            myCurrentTouchState = TouchState.Swiping;
         }
-
-        return new Vector2(0.0f, 0.0f);
     }
 
     public TouchState TGACurrentTouchState()
@@ -228,7 +252,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedForward()
     {
-        return myPresssedForward;
+        return (myPresssedForward);
     }
 
     /// <summary>
@@ -236,7 +260,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedBackward()
     {
-        return myPresssedBackward;
+        return (myPresssedBackward);
     }
 
     /// <summary>
@@ -244,7 +268,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedRight()
     {
-        return myPresssedRight;
+        return (myPresssedRight);
     }
 
     /// <summary>
@@ -252,7 +276,7 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool TGAPressedLeft()
     {
-        return myPresssedLeft;
+        return (myPresssedLeft);
     }
 
     public bool TGATouchingScreen()
