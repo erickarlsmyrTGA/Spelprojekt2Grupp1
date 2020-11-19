@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] Transform myPlayer;
     Touch myTouch;
     Vector2 myStartCoords;
     TouchState myCurrentTouchState;
@@ -124,12 +125,13 @@ public class InputManager : MonoBehaviour
     void CalculatePoint()
     {
         // Create offset based of the middle of the screen
-        Vector3 offset = new Vector3(Screen.width >> 1, Screen.height >> 1);
+        
+        Vector2 offset = Camera.main.WorldToScreenPoint(myPlayer.position);
 
         // Get mouse position relative to offset
-        Vector3 relativeMousePosition = Input.mousePosition - offset;
+        Vector2 relativeMousePosition = myTouch.position - offset;
 
-        Vector3 rotatedMousePosition = relativeMousePosition;
+        Vector2 rotatedMousePosition = relativeMousePosition;
 
         // Manually checks if at snap point
         float angle = -1.0f;
