@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public void OnStageCompleted()
     {
         // TODO: handle end of stage
+        // TODO: show current stage's score  
         GameManager.ourInstance.TransitionNextStage();        
     }
 

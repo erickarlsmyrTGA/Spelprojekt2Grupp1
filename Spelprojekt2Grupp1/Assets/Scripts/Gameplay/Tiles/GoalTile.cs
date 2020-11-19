@@ -12,7 +12,6 @@ public class GoalTile : Tile
     /// <summary>
     /// Win stage, trigger GameManager's OnStageCompleted
     /// </summary>
-    /// <param name="aGameActor"></param>
     /// <returns></returns>
     public override IEnumerator TGAExecute()
     {        

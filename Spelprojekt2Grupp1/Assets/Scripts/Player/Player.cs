@@ -57,23 +57,32 @@ public class Player : MonoBehaviour
         // yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
         // TODO: Change to WaitIntil() InputManager Touch
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D));
+        yield return new WaitUntil(() =>
+               Input.GetKeyDown(KeyCode.W)
+            || Input.GetKeyDown(KeyCode.S)
+            || Input.GetKeyDown(KeyCode.A)
+            || Input.GetKeyDown(KeyCode.D)
+            || InputManager.ourInstance.TGAPressedForward()
+            || InputManager.ourInstance.TGAPressedBackward()
+            || InputManager.ourInstance.TGAPressedLeft()
+            || InputManager.ourInstance.TGAPressedRight()
+        );
 
         Vector3 direction = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || InputManager.ourInstance.TGAPressedForward())
         {
             direction += new Vector3(1, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || InputManager.ourInstance.TGAPressedBackward())
         {
             direction += new Vector3(-1, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || InputManager.ourInstance.TGAPressedLeft())
         {
             direction += new Vector3(0, 0, 1);
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || InputManager.ourInstance.TGAPressedRight())
         {
             direction += new Vector3(0, 0, -1);
         }

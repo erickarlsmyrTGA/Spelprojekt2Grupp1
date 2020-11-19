@@ -15,15 +15,17 @@ public class Movement
     {
         Vector3 direction = aDirection;
         //Handling Ice Tiles
-        if(direction.y == 0)
+        if (direction.y == 0)
         {
-            var tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
-            while (tile && tile.myType.HasFlag(Tile.TileType.Ice))
+            var tile1 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+            if (tile1 && tile1.myType.HasFlag(Tile.TileType.Ice))
             {
-                direction += aDirection;
-                tile = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+                while (tile1 && tile1.myType.HasFlag(Tile.TileType.Ice))
+                {
+                    direction += aDirection;
+                    tile1 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
+                }
             }
-            direction -= aDirection;
         }
 
         //Movement

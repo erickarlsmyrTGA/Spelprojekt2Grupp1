@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnowflakeCollectionScript : MonoBehaviour
+public class SnowflakeTile : Tile
 {
+    bool myIsPickedUp = false;
+    [SerializeField] private GameObject mySnowflake = null;
+
+
+    SnowflakeTile()
+    {
+        myName = "Snowflake"; 
+    }
     /*
      * 
      * Det måste nog finnas en privat player-klass 
@@ -41,6 +49,13 @@ public class SnowflakeCollectionScript : MonoBehaviour
      * den öppnas. Det här kanske ska köras med klass, på
      * samma sätt i Kasino-uppgifterna. Kanske. Idk.)
      * 
+     * 
+     * 
+     * Vidare tankar om kod finns i Davids anteckningsblock. 
+     * Fråga honom om du läser igenom detta och har tankar.
+     * 
+     * 
+     * 
      */
 
 
@@ -50,12 +65,25 @@ public class SnowflakeCollectionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //den här är inte viktig än, men kommer behövas senare
+        mySnowflake.SetActive(true);
+        myIsPickedUp = false;
+        if (mySnowflake == null)
+        {
+            Debug.LogError("mySnowflake is fuckywucky");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override IEnumerator TGAExecute()
     {
-        
+        if (myIsPickedUp == false)
+        {
+            myIsPickedUp = true;
+            CollectableManager.ourInstance.OnPickUp();
+            mySnowflake.SetActive(false);
+        }
+
+        yield return null;
+
     }
+
 }
