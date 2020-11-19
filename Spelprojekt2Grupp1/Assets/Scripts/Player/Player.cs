@@ -122,7 +122,7 @@ public class Player : MonoBehaviour
 
     IEnumerator ExecuteCurrentTile()
     {
-        var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position);
+        var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
         if (tile)
         {
             yield return StartCoroutine(tile.TGAExecute());
