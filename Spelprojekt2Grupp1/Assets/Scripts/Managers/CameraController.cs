@@ -28,12 +28,16 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        Rotate();
+        if (InputManager.ourInstance.TGATouchingScreen())
+        {
+            Rotate();
+        }
         Snap();
     }
 
     void Rotate()
     {
+        InputManager.ourInstance.TGASwipe();
         if (InputManager.ourInstance.TGACurrentTouchState() == InputManager.TouchState.Swiping)
         {
             transform.Rotate(0, InputManager.ourInstance.TGASwipe().x * myRotateSpeed * Time.deltaTime, 0, Space.World);
