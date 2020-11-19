@@ -40,4 +40,21 @@ public class Movement
         }
         aTransform.position = target;
     }
+
+    public IEnumerator MoveToPosition(Transform aTransform, Vector3 anEndPosition, float aSpeed)
+    {
+        //Movement
+        Vector3 position = aTransform.position;
+        Vector3 target = anEndPosition;
+        float divider = Mathf.Abs(Vector3.Distance(position, target));
+
+        float percentage = 0.0f;
+        while (percentage < 1.0f)
+        {
+            aTransform.position = Vector3.Lerp(position, target, percentage);
+            percentage += Time.deltaTime * aSpeed / divider;
+            yield return null;
+        }
+        aTransform.position = target;
+    }
 }
