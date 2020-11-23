@@ -34,14 +34,7 @@ public class ButtonActivatedMoveTile : Tile
     /// <returns></returns>
     public override IEnumerator TGAExecute(GameObject aGameObject)
     {
-        if (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up))
-        {
-            myIsPressed = true;
-        }
-        else
-        {
-            myIsPressed = false;
-        }
+        myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) == null);
 
         yield return StartCoroutine(myMovement.MoveToPosition(transform, ((myIsPressed) ? myEndPos: myStartPos), 3));
         TGASetPosition(transform.position);
