@@ -17,7 +17,7 @@ public class ButtonTile : Tile
 
     public override IEnumerator TGAExecute()
     {
-        yield return StartCoroutine(myTargetTile.TGAExecute());
+        yield return StartCoroutine(myTargetTile.TGAExecute(gameObject));
         yield return null;
     }
 }
