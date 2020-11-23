@@ -42,6 +42,7 @@ public class PushTile : Tile
         }
 
         yield return StartCoroutine(CheckFallDistanceAndFall());
+        yield return StartCoroutine(ExecuteCurrentTile());
     }
 
     IEnumerator CheckFallDistanceAndFall()
@@ -65,5 +66,14 @@ public class PushTile : Tile
 
         yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myGravity));
         TGASetPosition(transform.position);
+    }
+
+    IEnumerator ExecuteCurrentTile()
+    {
+        var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
+        if (tile)
+        {
+            yield return StartCoroutine(tile.TGAExecute());
+        }
     }
 }

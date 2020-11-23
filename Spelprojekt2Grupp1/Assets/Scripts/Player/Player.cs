@@ -42,8 +42,8 @@ public class Player : MonoBehaviour
         myCoroutineIsNotInAction = false;
 
         yield return StartCoroutine(HandleMouseInput());
-        yield return StartCoroutine(ExecuteCurrentTile());
         yield return StartCoroutine(CheckFallDistanceAndFall());
+        yield return StartCoroutine(ExecuteCurrentTile());
 
         // Mark Coroutine has ended
         myCoroutineIsNotInAction = true;

@@ -11,6 +11,7 @@ public class SnowflakeTile : Tile
     SnowflakeTile()
     {
         myName = "Snowflake";
+        myType = TileType.Barrier | TileType.Ground;
     }
     /*
      * 

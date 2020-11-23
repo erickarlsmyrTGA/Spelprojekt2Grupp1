@@ -35,8 +35,9 @@ public class ButtonActivatedMoveTile : Tile
     public override IEnumerator TGAExecute()
     {
         myIsPressed = !myIsPressed;
-        yield return StartCoroutine(myMovement.MoveToPosition(transform, ((myIsPressed) ? myEndPos: myStartPos), 2));
-        yield return null;
+        // if 
+        yield return StartCoroutine(myMovement.MoveToPosition(transform, ((myIsPressed) ? myEndPos: myStartPos), 3));
+        TGASetPosition(transform.position);
     }
 
     public void ActivatedByButton()
