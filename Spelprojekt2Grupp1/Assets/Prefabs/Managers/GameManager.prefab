@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6291233496677858463}
   - component: {fileID: 6684015931256868823}
+  - component: {fileID: 6902148458776097705}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -43,3 +44,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1375a0ccac4d4ba0ab456be996717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6902148458776097705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684015931256868816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14848ae77b9c9946b0ab46a7ded4b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world1Level1:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world1Level2:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world1Level3:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world1Level4:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world2Level1:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world2Level2:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world2Level3:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world2Level4:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world3Level1:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world3Level2:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world3Level3:
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  world3Level4:
+    sceneAsset: {fileID: 0}
+    scenePath: 

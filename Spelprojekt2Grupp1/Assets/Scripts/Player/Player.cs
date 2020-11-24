@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     bool myCoroutineIsNotInAction;
     bool myStateIsSolid = true;
 
+
+
     [SerializeField] GameObject mySolidState;
     [SerializeField] GameObject myGasState;
 
@@ -42,8 +44,8 @@ public class Player : MonoBehaviour
         myCoroutineIsNotInAction = false;
 
         yield return StartCoroutine(HandleMouseInput());
-        yield return StartCoroutine(ExecuteCurrentTile());
         yield return StartCoroutine(CheckFallDistanceAndFall());
+        yield return StartCoroutine(ExecuteCurrentTile());
 
         // Mark Coroutine has ended
         myCoroutineIsNotInAction = true;
@@ -94,7 +96,7 @@ public class Player : MonoBehaviour
             {
                 if (tile.myType.HasFlag(Tile.TileType.Barrier))
                 {
-                    if (tile.myName == "PushTile")
+                    if (tile.myName == "PushTile" && myStateIsSolid)
                     {
                         yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
                     }
@@ -170,6 +172,8 @@ public class Player : MonoBehaviour
     {
         if (myStateIsSolid == true)
         {
+            Debug.Log("now I'm a cloud");
+            
             mySolidState.SetActive(false);
             myGasState.SetActive(true);
 
@@ -186,6 +190,8 @@ public class Player : MonoBehaviour
     {
         if(myStateIsSolid != true)
         {
+            Debug.Log("now I'm a snowman");
+
             myGasState.SetActive(false);
             mySolidState.SetActive(true);
 
