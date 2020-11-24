@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OvenTile : Tile
 {
+    [SerializeField] Player myPlayer;
+    
     OvenTile()
     {
         myName = "Oven";
@@ -15,9 +17,10 @@ public class OvenTile : Tile
     /// </summary>
     /// <param name="aGameActor"></param>
     /// <returns></returns>
-    public override IEnumerator TGAExecute(GameObject aGameActor)
+    public override IEnumerator TGAExecute()
     {
-        yield return StartCoroutine(aGameActor.GetComponent<Player>().TGAChangeToGasState());
+        Debug.Log("Now I'm a cloud");
+        yield return StartCoroutine(myPlayer.TGAChangeToGasState());
         yield return null;
     }
 }

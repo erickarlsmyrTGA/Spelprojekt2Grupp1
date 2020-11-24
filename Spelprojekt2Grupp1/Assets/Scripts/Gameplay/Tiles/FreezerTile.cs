@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FreezerTile : Tile
 {
+    [SerializeField] Player myPlayer;
+
     FreezerTile()
     {
         myName = "Freezer";
@@ -15,9 +17,10 @@ public class FreezerTile : Tile
     /// </summary>
     /// <param name="aGameActor"></param>
     /// <returns></returns>
-    public override IEnumerator TGAExecute(GameObject aGameActor)
+    public override IEnumerator TGAExecute()
     {
-        yield return StartCoroutine(aGameActor.GetComponent<Player>().TGAChangeToSolidState());
+        Debug.Log("Now I'm a cloud");
+        yield return StartCoroutine(myPlayer.TGAChangeToSolidState());
         yield return null;
     }
 }
