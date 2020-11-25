@@ -140,6 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySolidState: {fileID: 350859754494922200}
   myGasState: {fileID: 350859754126590457}
+  myMoveSpeed: 0
+  myGravity: 0
+  myMaxFallDistance: 0
 --- !u!1 &350859754126590457
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &350859754126590456
 Transform:
   m_ObjectHideFlags: 0
@@ -280,7 +283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &350859754494922203
 Transform:
   m_ObjectHideFlags: 0
