@@ -10,6 +10,16 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void SelectLevel()
+    {
+
+    }
+
+    public void Credits()
+    {
+
+    }
+
     public void QuitGame()
     {
         Debug.Log("Scene: QUIT");
