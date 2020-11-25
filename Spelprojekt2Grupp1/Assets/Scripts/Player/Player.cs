@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Tile
 {
     bool myCoroutineIsNotInAction;
     bool myStateIsSolid = true;
 
+    Player()
+    {
+        myType = TileType.Barrier | TileType.Ground;
+    }
 
 
     [SerializeField] GameObject mySolidState;
@@ -112,6 +116,7 @@ public class Player : MonoBehaviour
                 // Move to target
                 yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
             }
+            TGASetPosition(transform.position);
         }
     }
 
