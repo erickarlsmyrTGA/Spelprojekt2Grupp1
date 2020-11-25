@@ -56,15 +56,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14848ae77b9c9946b0ab46a7ded4b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myIsDebugging: 0
   world1Level1:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+    sceneAsset: {fileID: 102900000, guid: 81601fdf038546e4f9685b312b050124, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_1.unity
   world1Level2:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+    sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_2.unity
   world1Level3:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+    sceneAsset: {fileID: 102900000, guid: 65ffe241b5de7924bb5a55927055e6b9, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_3.unity
   world1Level4:
     sceneAsset: {fileID: 0}
     scenePath: 

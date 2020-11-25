@@ -5,12 +5,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
+    private StageManager myStageLoader;
 
-
-    public bool HasNextStage()
-    {
-        return false;
-    }
 
     public void TransitionNextStage()
     {
@@ -67,5 +63,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ourInstance = this;
 
+        myStageLoader = GetComponent<StageManager>();
     }
 }
