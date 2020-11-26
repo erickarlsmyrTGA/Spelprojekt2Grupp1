@@ -28,11 +28,11 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    public void GoToNextScene()
+    public void GoToNextStage()
     {
-        var scene = levels[myCurrentSceneIndex];
+        var scene = levels[++myCurrentSceneIndex];
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
-        myCurrentSceneIndex++;
+        
     }
     public bool HasNextStage()
     {
@@ -45,12 +45,12 @@ public class StageManager : MonoBehaviour
         {
             foreach (var scene in levels)
             {
-                DisplayLevel(scene);
+                DisplayStageButton(scene);
             }
         }
     }
 
-    public void DisplayLevel(SceneReference scene)
+    public void DisplayStageButton(SceneReference scene)
     {
         GUILayout.Label(new GUIContent("Scene name Path: " + scene));
         if (GUILayout.Button("Load " + scene))

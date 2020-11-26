@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
-    private StageManager myStageLoader;
+    private StageManager myStageManager;
+
 
 
     public void TransitionNextStage()
-    {
-        // TODO: goto next stage.
-        Debug.Log("Goal reached! Goto next if exists.");
+    {        
+        myStageManager.GoToNextStage();
+        // TODO: use coroutine LoadStage - but if above works ok, scratch this for reducing complexity
     }
 
     public void RestartCurrentStage()
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void TransitionToStage(int aStageIndex)
     {
+        // TODO: Start coroutine for LoadStage async
     }
 
     public void TransitionToMainMenu()
@@ -63,6 +65,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ourInstance = this;
 
-        myStageLoader = GetComponent<StageManager>();
+        myStageManager = GetComponent<StageManager>();
     }
 }
