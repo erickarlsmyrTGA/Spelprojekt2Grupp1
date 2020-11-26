@@ -25,7 +25,9 @@ public class Tile : MonoBehaviour
         /// <summary>
         /// Movables can move and will glide on top of these tiles.
         /// </summary>
-        Ice = 1 << 3
+        Ice = 1 << 3,
+
+        Button = 1 << 4
     }
 
     /// <summary>
@@ -95,6 +97,8 @@ public class Tile : MonoBehaviour
     /// Executes a behaviour according its type
     /// </summary>
     public virtual IEnumerator TGAExecute(Object anObject) { yield return null; }
+
+    public virtual IEnumerator TGAExecute(System.Object anObject) { yield return null; }
 
     /// <summary>
     /// Executes a behaviour according its type

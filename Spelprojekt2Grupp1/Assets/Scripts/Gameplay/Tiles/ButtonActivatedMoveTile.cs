@@ -8,7 +8,6 @@ public class ButtonActivatedMoveTile : Tile
     [SerializeField] Vector3 myStartPos;
     [SerializeField] Vector3 myEndPos;
     Movement myMovement;
-    bool myIsPressed;
 
     void Update()
     {
@@ -23,7 +22,6 @@ public class ButtonActivatedMoveTile : Tile
         myName = "Button Activated Platform";
         myType = TileType.Barrier | TileType.Ground;
         myMovement = new Movement();
-        myIsPressed = false;
         Debug.Log("BAMT STARTED");
     }
 
@@ -32,11 +30,10 @@ public class ButtonActivatedMoveTile : Tile
     /// </summary>
     /// <param name="aGameActor"></param>
     /// <returns></returns>
-    public override IEnumerator TGAExecute(GameObject aGameObject)
+    public override IEnumerator TGAExecute(System.Object anObject)
     {
-        myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) == null);
-
-        yield return StartCoroutine(myMovement.MoveToPosition(transform, ((myIsPressed) ? myEndPos: myStartPos), 3));
+        bool isPressed = (bool)anObject;
+        yield return StartCoroutine(myMovement.MoveToPosition(transform, ((isPressed) ? myEndPos: myStartPos), 3));
         TGASetPosition(transform.position);
     }
 

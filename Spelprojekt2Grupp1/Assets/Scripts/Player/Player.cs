@@ -139,7 +139,8 @@ public class Player : Tile
     IEnumerator ExecuteCurrentTile()
     {
         var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
-        if (tile)
+
+        if (tile && tile.myType != TileType.Button)
         {
             yield return StartCoroutine(tile.TGAExecute());
         }
@@ -167,6 +168,7 @@ public class Player : Tile
         Debug.Log("Player: Fall distance was " + Vector3Int.FloorToInt(direction).ToString());
 
         yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myGravity));
+        TGASetPosition(transform.position);
     }
 
     /// <summary>
