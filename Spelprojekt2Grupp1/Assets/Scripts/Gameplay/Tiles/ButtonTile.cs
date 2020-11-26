@@ -25,7 +25,6 @@ public class ButtonTile : Tile
     public override IEnumerator TGAExecute()
     {
         myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) != null);
-        Debug.Log(myIsPressed);
         yield return StartCoroutine(myTargetTile.TGAExecute(myIsPressed));
         yield return null;
     }
