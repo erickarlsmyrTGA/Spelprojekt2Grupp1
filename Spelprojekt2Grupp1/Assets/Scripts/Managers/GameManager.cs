@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartCurrentStage()
     {
+        myStageManager.ReloadCurrentStage();
     }
 
     public void TransitionToStage(int aStageIndex)
