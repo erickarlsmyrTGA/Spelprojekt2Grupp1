@@ -3,7 +3,12 @@ guid: c5d73d5d462a3a44796d978719d61f58
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ice_texture
+    second: {fileID: 2100000, guid: 57c243055dab446468cf0ea44c63ecc4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

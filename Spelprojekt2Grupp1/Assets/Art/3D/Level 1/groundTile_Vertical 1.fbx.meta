@@ -3,7 +3,17 @@ guid: 4625796afe3e6964cbd870be76678605
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: groundTile_Vertical1
+    second: {fileID: 2100000, guid: 654473b6f4b5f6a4ab4c3de7afc60c9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 66e75140699675441a1dec335317d5eb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

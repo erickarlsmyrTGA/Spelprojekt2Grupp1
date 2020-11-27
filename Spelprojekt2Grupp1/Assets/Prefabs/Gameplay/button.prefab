@@ -751,7 +751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5977658120842943184}
   m_Layer: 0
-  m_Name: knapp
+  m_Name: button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,10 +900,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: f4868cd6e96b6724dbb3d7ae41a4e283, type: 3}
-  - {fileID: 8368722655750445499, guid: f4868cd6e96b6724dbb3d7ae41a4e283, type: 3}
-  - {fileID: 8748892135801146194, guid: f4868cd6e96b6724dbb3d7ae41a4e283, type: 3}
-  - {fileID: -4838933450186888610, guid: f4868cd6e96b6724dbb3d7ae41a4e283, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: 869e9b974672376498d8a87557a85744, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
