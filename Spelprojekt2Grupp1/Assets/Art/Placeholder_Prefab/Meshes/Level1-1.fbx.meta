@@ -3,7 +3,57 @@ guid: efeaecf05e39af94bacdf2ac9eaff1f9
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black1
+    second: {fileID: 2100000, guid: cea0904a407b47e47b6f0f61ff867986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeepBlue
+    second: {fileID: 2100000, guid: 79723272a9d2b2b4c8b4ceb8f50bcde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Deepred3
+    second: {fileID: 2100000, guid: dbda6f58794f8fa4fbce559d99eec675, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold1
+    second: {fileID: 2100000, guid: 8954fff6eadaab5499838ac7a802dd73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold4
+    second: {fileID: 2100000, guid: 9f3928ad15fa77f44aa2539ab94d614a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold5
+    second: {fileID: 2100000, guid: 91ab20d24ad82dc4084960e0871f1a68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ice3
+    second: {fileID: 2100000, guid: df43ff3451c051349af786421dbc2be8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow
+    second: {fileID: 2100000, guid: 4b112a671d68e1b46af6c7439caeb1e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Snow3
+    second: {fileID: 2100000, guid: 242464097078f7a408a39c48341e3ad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: 8c30f7c9251fe4341ba9f71b2ce4ab96, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
