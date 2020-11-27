@@ -3,7 +3,17 @@ guid: 74b7f5a418c737248831f305af155329
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: groundTile_side
+    second: {fileID: 2100000, guid: c21d337a5f68484498828ccced7e49a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: groundtile_Horizontal
+    second: {fileID: 2100000, guid: 63490538100cc394ebeab0cd08790eda, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
