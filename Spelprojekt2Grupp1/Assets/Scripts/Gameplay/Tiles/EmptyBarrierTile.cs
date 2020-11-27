@@ -13,6 +13,6 @@ public class EmptyBarrierTile : Tile
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + new Vector3(-0.5f, 0.5f, -0.5f), Vector3.one);
+        Gizmos.DrawWireCube(transform.position + new Vector3(0.5f, 0.5f, -0.5f), Vector3.one);
     }
 }
