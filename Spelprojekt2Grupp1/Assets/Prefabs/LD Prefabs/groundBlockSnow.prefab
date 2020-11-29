@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7169844321246533090}
   - component: {fileID: 5132170865419109684}
   m_Layer: 0
-  m_Name: groundBlock1
+  m_Name: groundBlockSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8017473274258166882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.702601, y: -6.666086, z: 0.7656646}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3840561341063649865}
@@ -85,17 +85,17 @@ PrefabInstance:
     - target: {fileID: 223234767116298095, guid: 3a0cad558861d6d4bbf158912bb166f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.784264
+      value: 19.754
       objectReference: {fileID: 0}
     - target: {fileID: 223234767116298095, guid: 3a0cad558861d6d4bbf158912bb166f4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8408856
+      value: 2.675
       objectReference: {fileID: 0}
     - target: {fileID: 223234767116298095, guid: 3a0cad558861d6d4bbf158912bb166f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.238646
+      value: -9.847
       objectReference: {fileID: 0}
     - target: {fileID: 223234767116298095, guid: 3a0cad558861d6d4bbf158912bb166f4,
         type: 3}
