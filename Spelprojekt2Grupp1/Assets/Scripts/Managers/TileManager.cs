@@ -106,4 +106,15 @@ public class TileManager : MonoBehaviour
             return null;
         }
     }
+
+
+    public void RemoveTileAt(Vector3 aPosition)
+    {
+        Vector3Int key = Vector3Int.FloorToInt(aPosition);
+        myTiles.Remove(key);
+        if (myDebugLevel >= 2)
+        {
+            Debug.LogWarning("TileManager: Removed key " + key.ToString());
+        }
+    }
 }
