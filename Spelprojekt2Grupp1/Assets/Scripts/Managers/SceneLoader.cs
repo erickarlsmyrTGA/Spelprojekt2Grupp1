@@ -7,7 +7,12 @@ public class SceneLoader : MonoBehaviour
 {
     public void PlayButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void SelectLevel()
