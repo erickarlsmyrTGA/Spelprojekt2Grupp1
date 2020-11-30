@@ -586,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1df1bec32c89e74e9710d28058e3017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPlayer: {fileID: 880996714}
   myPauseMenu: {fileID: 436899517}
 --- !u!4 &137033206
 Transform:
@@ -4298,6 +4299,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855933ae04eb1684cbce64e731d9c8f6, type: 3}
+--- !u!114 &880996714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 314309707879726876, guid: 855933ae04eb1684cbce64e731d9c8f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 880996713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa540ad9a87916429cb221a0f4ed1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &896416878
 PrefabInstance:
   m_ObjectHideFlags: 0

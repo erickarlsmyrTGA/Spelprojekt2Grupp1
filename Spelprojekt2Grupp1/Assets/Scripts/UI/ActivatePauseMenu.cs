@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ActivatePauseMenu : MonoBehaviour
 {
-
+   [SerializeField] Player myPlayer;
    [SerializeField] GameObject myPauseMenu;
 
    void OnApplicationPause(bool aPause)
    {
       if (aPause == true)
       {
+         myPlayer.myGameIsOn = false;
          myPauseMenu.SetActive(true);
          Debug.Log("Pausad!");
       }
@@ -20,6 +21,7 @@ public class ActivatePauseMenu : MonoBehaviour
    {
       if (aFocus == false)
       {
+         myPlayer.myGameIsOn = false;
          myPauseMenu.SetActive(true);
          Debug.Log("Ur Fokus!");
       }
@@ -27,6 +29,7 @@ public class ActivatePauseMenu : MonoBehaviour
 
    public void ActivateGame()
    {
+      myPlayer.myGameIsOn = true;
       myPauseMenu.SetActive(false);
       Debug.Log("INTE pausad!");
    }
