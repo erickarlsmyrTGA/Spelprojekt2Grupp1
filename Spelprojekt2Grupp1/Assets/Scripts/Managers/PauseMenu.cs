@@ -13,12 +13,14 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         myPauseMenu.SetActive(false);
+        myInGameUI.SetActive(true);
         Time.timeScale = 1f; // stops ingame time
         myGameIsPaused = false;
     }
     public void Pause()
     {
         myPauseMenu.SetActive(true);
+        myInGameUI.SetActive(false);
         Time.timeScale = 0f; 
         myGameIsPaused = true;
     }
