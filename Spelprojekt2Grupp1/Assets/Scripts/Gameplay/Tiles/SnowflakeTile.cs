@@ -59,7 +59,7 @@ public class SnowflakeTile : Tile
      * 
      */
 
-
+    static public int myId { get; private set; }
 
 
 
@@ -79,7 +79,7 @@ public class SnowflakeTile : Tile
         if (myIsPickedUp == false)
         {
             myIsPickedUp = true;
-            CollectableManager.ourInstance.OnPickUp();
+            CollectableManager.ourInstance.OnPickUp(this);
             mySnowflake.SetActive(false);
         }
 

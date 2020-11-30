@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CollectableManager : MonoBehaviour
 {
-    public int mySnowflakeScore = 0;
+    public int mySnowflakeScore = 0;    
+    GameData.StageData myStageData = GameData.StageData.ourInvalid;
 
-    public void OnPickUp()
+    public void OnPickUp(SnowflakeTile collectable)
     {
+        myStageData.myCollectables.Add(collectable);
         mySnowflakeScore += 1;
+
+        // Notify UI
     }
 
     #region Singleton Pattern
@@ -35,7 +39,7 @@ public class CollectableManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        myStageData = GameManager.ourInstance.GetStageData();
     }
 
     // Update is called once per frame

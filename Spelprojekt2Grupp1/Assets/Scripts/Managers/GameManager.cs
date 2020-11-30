@@ -1,12 +1,23 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
     private StageManager myStageManager;
+    private GameData myGameData;
 
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            TransitionNextStage();
+        }
+    }
 
 
     public void TransitionNextStage()
@@ -18,6 +29,39 @@ public class GameManager : MonoBehaviour
     public void RestartCurrentStage()
     {
         myStageManager.ReloadCurrentStage();
+    }
+
+    /// <summary>
+    /// Load data when game is started. Always in memory.
+    /// </summary>
+    void LoadGameData()
+    {
+        string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(filePath, FileMode.Open);
+            myGameData = (GameData)bf.Deserialize(file);
+            file.Close();
+            Debug.Log("Game data loaded!");
+        }
+        else
+        {
+            Debug.LogError("There is no save data!");
+        }            
+    }
+
+    /// <summary>
+    /// Save data every time a stage is completed.
+    /// </summary>
+    void SaveGameData()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
+        FileStream file = File.Create(filePath);        
+        bf.Serialize(file, myGameData);
+        file.Close();
+        Debug.Log("Game data saved!");
     }
 
     public void TransitionToStage(int aStageIndex)
@@ -62,10 +106,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         DontDestroyOnLoad(gameObject);
         ourInstance = this;
 
         myStageManager = GetComponent<StageManager>();
+
+        LoadGameData();
     }
 }
