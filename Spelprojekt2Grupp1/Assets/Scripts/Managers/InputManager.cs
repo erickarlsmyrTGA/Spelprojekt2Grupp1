@@ -185,7 +185,7 @@ public class InputManager : MonoBehaviour
                 break;
             case 90.0f:
                 // Rotate back 90 aka 270
-                rotatedMousePosition = new Vector3(-relativeMousePosition.y, relativeMousePosition.x);
+                rotatedMousePosition = new Vector3(relativeMousePosition.y, -relativeMousePosition.x);
                 break;
             case 180.0f:
                 // Rotate back 180 aka 180
@@ -193,7 +193,7 @@ public class InputManager : MonoBehaviour
                 break;
             case 270.0f:
                 // Rotate back 270 aka 90
-                rotatedMousePosition = new Vector3(relativeMousePosition.y, -relativeMousePosition.x);
+                rotatedMousePosition = new Vector3(-relativeMousePosition.y, relativeMousePosition.x);
                 break;
         }
 
