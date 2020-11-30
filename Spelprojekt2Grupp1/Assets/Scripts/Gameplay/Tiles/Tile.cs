@@ -26,8 +26,14 @@ public class Tile : MonoBehaviour
         /// Movables can move and will glide on top of these tiles.
         /// </summary>
         Ice = 1 << 3,
-
-        Button = 1 << 4
+        /// <summary>
+        /// Movables can trigger these by standing on them.
+        /// </summary>
+        Button = 1 << 4,
+        /// <summary>
+        /// Is movable.
+        /// </summary>
+        Movable = 1 << 5
     }
 
     /// <summary>
