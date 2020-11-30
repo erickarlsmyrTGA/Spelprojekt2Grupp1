@@ -145,7 +145,7 @@ public class Player : Tile
    {
       var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
 
-      if (tile && tile.myType != TileType.Button)
+      if (tile && !tile.myType.HasFlag(TileType.Button))
       {
          yield return StartCoroutine(tile.TGAExecute());
       }
