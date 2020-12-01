@@ -19,6 +19,14 @@ public class LadderTile : Tile
 
     Vector3 myLadderPosition;
 
+    public int TGADirection { get { return myDirection; } private set { myDirection = value; } }
+
+    LadderTile()
+    {
+        myName = "Ladder";
+        myType |= TileType.Barrier | TileType.Ground;
+    }
+
     private void OnValidate()
     {
         if (myDirection == 0)
