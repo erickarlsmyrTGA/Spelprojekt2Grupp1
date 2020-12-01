@@ -13,7 +13,7 @@ public class GameData
     
     public int myTotalCollected { get {
             int tot = 0;
-            foreach (var d in myStageDataInt)
+            foreach (var d in myStageDataStr)
             {
                 tot += d.Value.myNumCollected;
             }
@@ -21,7 +21,7 @@ public class GameData
         } }
     public int myTotalNumAvailableCol { get {
             int tot = 0;
-            foreach (var d in myStageDataInt)
+            foreach (var d in myStageDataStr)
             {
                 tot += d.Value.myNumCollected;
             }
