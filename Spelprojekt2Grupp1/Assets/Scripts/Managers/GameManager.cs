@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
 
     public void TransitionNextStage()
-    {        
+    {
         myStageManager.GoToNextStage();
         // TODO: use coroutine LoadStage - but if above works ok, scratch this for reducing complexity
     }
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("There is no save data!");
-        }            
+        }
     }
 
     /// <summary>
@@ -58,10 +58,65 @@ public class GameManager : MonoBehaviour
     {
         BinaryFormatter bf = new BinaryFormatter();
         string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
-        FileStream file = File.Create(filePath);        
+        FileStream file = File.Create(filePath);
         bf.Serialize(file, myGameData);
         file.Close();
         Debug.Log("Game data saved!");
+    }
+
+
+    public GameData.StageData GetSavedCurrentStageData()
+    {
+        var currentScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+        return GetSavedStageData(currentScenePath);
+    }
+
+    public GameData.StageData GetSavedStageData(string aScenePath)
+    {
+        // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
+        if (!myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
+        {
+            data = GameData.StageData.ourInvalid;
+        }
+        return data;
+    }
+
+    public void UpdateSavedStageData()
+    {
+        var currentScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+        UpdateSavedStageData(currentScenePath, CollectableManager.ourInstance.myStageData);
+    }
+    public void UpdateSavedStageData(string aScenePath, GameData.StageData someNewData)
+    {
+        GameData.StageData currentData = GetSavedStageData(aScenePath); // Gets current save if exists, otherwise get default instance of StageData
+        
+        // if entirely new data, save it.
+        if (currentData.myIsStageCleared == false && someNewData.myIsStageCleared)
+        {            
+            myGameData.myStageDataStr[aScenePath] = someNewData;
+            SaveGameData();
+        }
+        else
+        {
+            bool replaceOldData = false;
+            // Merge hashsets
+            foreach (var snowflake in someNewData.myCollectables)
+            {
+                if (!currentData.myCollectables.Contains(snowflake)) // A brand new flake
+                {
+                    currentData.myCollectables.Add(snowflake);
+                    currentData.myNumCollected++;
+                    replaceOldData = true;
+                }
+            }
+            if (replaceOldData)
+            {
+                myGameData.myStageDataStr[aScenePath] = currentData;
+                SaveGameData();
+            }
+
+        }
+
     }
 
     public void TransitionToStage(int aStageIndex)
@@ -86,13 +141,15 @@ public class GameManager : MonoBehaviour
 
     private void OnStageBegin(int aStageIndex)
     {
+        Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
     }
 
     public void OnStageCompleted()
     {
-        // TODO: handle end of stage
+        UpdateSavedStageData();
+
         // TODO: show current stage's score  
-        GameManager.ourInstance.TransitionNextStage();        
+        GameManager.ourInstance.TransitionNextStage();
     }
 
     private void Start()
