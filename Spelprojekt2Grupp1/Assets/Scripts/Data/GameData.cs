@@ -7,8 +7,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class GameData
-{    
-    public Dictionary<string, StageData> myStageDataStr; // scenepath as key
+{     
+    public Dictionary<string, StageData> myStageDataStr = new Dictionary<string, StageData>(); // scenepath as key
     //public Dictionary<int, StageData> myStageDataInt; // sceneIndex as key  TODO: remove the unused variant after testing.
     
     public int myTotalCollected { get {
@@ -28,6 +28,7 @@ public class GameData
             return tot;
         } } // TODO: replace with known constant eventually
 
+    [System.Serializable]
     public struct StageData
     {
         public static StageData ourInvalid => new StageData { myNumAvailable = 0, myNumCollected= 0, myIsStageCleared = false };

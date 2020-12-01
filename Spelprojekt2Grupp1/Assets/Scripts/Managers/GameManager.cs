@@ -10,12 +10,47 @@ public class GameManager : MonoBehaviour
     private StageManager myStageManager;
     private GameData myGameData;
 
+    [SerializeField] public bool myIsDebugging = false;
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (myIsDebugging)
         {
-            TransitionNextStage();
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                TransitionNextStage();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Debug.Log("Loading data");
+                LoadGameData();
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                Debug.Log("Deleting data");
+                DeleteSavedGameData();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Debug.Log("Saving data");
+                SaveGameData();
+            }
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log("Inspecting");
+                Debug.Log(myGameData.ToString());
+            }
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                GameData.StageData testData = GameData.StageData.ourInvalid;
+                testData.myNumCollected += 2;
+                testData.myIsStageCleared = true;
+                testData.myNumAvailable = 5;
+                var currentScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+                myGameData.myStageDataStr[currentScenePath] = testData;
+                // TODO: test with snowflaketiles!
+                Debug.Log(myGameData.ToString());
+            }
         }
     }
 
@@ -47,8 +82,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is no save data!");
+            myGameData = new GameData();
+            //Debug.LogError("There is no save data!");
         }
+    }
+
+    void DeleteSavedGameData()
+    {
+        string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }        
     }
 
     /// <summary>
@@ -74,7 +119,7 @@ public class GameManager : MonoBehaviour
     public GameData.StageData GetSavedStageData(string aScenePath)
     {
         // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
-        if (!myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
+        if (myGameData.myStageDataStr == null || myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
         {
             data = GameData.StageData.ourInvalid;
         }
