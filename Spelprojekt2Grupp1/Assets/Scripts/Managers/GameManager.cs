@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
     private StageManager myStageManager;
+    private GameData myGameData;
 
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            TransitionNextStage();
+        }
+    }
 
 
     public void TransitionNextStage()
-    {        
+    {
         myStageManager.GoToNextStage();
         // TODO: use coroutine LoadStage - but if above works ok, scratch this for reducing complexity
     }
@@ -18,6 +29,94 @@ public class GameManager : MonoBehaviour
     public void RestartCurrentStage()
     {
         myStageManager.ReloadCurrentStage();
+    }
+
+    /// <summary>
+    /// Load data when game is started. Always in memory.
+    /// </summary>
+    void LoadGameData()
+    {
+        string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
+        if (File.Exists(filePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(filePath, FileMode.Open);
+            myGameData = (GameData)bf.Deserialize(file);
+            file.Close();
+            Debug.Log("Game data loaded!");
+        }
+        else
+        {
+            Debug.LogError("There is no save data!");
+        }
+    }
+
+    /// <summary>
+    /// Save data every time a stage is completed.
+    /// </summary>
+    void SaveGameData()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
+        FileStream file = File.Create(filePath);
+        bf.Serialize(file, myGameData);
+        file.Close();
+        Debug.Log("Game data saved!");
+    }
+
+
+    public GameData.StageData GetSavedCurrentStageData()
+    {
+        var currentScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+        return GetSavedStageData(currentScenePath);
+    }
+
+    public GameData.StageData GetSavedStageData(string aScenePath)
+    {
+        // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
+        if (!myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
+        {
+            data = GameData.StageData.ourInvalid;
+        }
+        return data;
+    }
+
+    public void UpdateSavedStageData()
+    {
+        var currentScenePath = UnityEngine.SceneManagement.SceneManager.GetActiveScene().path;
+        UpdateSavedStageData(currentScenePath, CollectableManager.ourInstance.myStageData);
+    }
+    public void UpdateSavedStageData(string aScenePath, GameData.StageData someNewData)
+    {
+        GameData.StageData currentData = GetSavedStageData(aScenePath); // Gets current save if exists, otherwise get default instance of StageData
+        
+        // if entirely new data, save it.
+        if (currentData.myIsStageCleared == false && someNewData.myIsStageCleared)
+        {            
+            myGameData.myStageDataStr[aScenePath] = someNewData;
+            SaveGameData();
+        }
+        else
+        {
+            bool replaceOldData = false;
+            // Merge hashsets
+            foreach (var snowflake in someNewData.myCollectables)
+            {
+                if (!currentData.myCollectables.Contains(snowflake)) // A brand new flake
+                {
+                    currentData.myCollectables.Add(snowflake);
+                    currentData.myNumCollected++;
+                    replaceOldData = true;
+                }
+            }
+            if (replaceOldData)
+            {
+                myGameData.myStageDataStr[aScenePath] = currentData;
+                SaveGameData();
+            }
+
+        }
+
     }
 
     public void TransitionToStage(int aStageIndex)
@@ -42,13 +141,15 @@ public class GameManager : MonoBehaviour
 
     private void OnStageBegin(int aStageIndex)
     {
+        Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
     }
 
     public void OnStageCompleted()
     {
-        // TODO: handle end of stage
+        UpdateSavedStageData();
+
         // TODO: show current stage's score  
-        GameManager.ourInstance.TransitionNextStage();        
+        GameManager.ourInstance.TransitionNextStage();
     }
 
     private void Start()
@@ -62,10 +163,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         DontDestroyOnLoad(gameObject);
         ourInstance = this;
 
         myStageManager = GetComponent<StageManager>();
+
+        LoadGameData();
     }
 }

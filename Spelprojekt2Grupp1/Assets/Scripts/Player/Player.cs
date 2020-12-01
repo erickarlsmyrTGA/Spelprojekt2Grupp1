@@ -10,6 +10,9 @@ public class Player : Tile
 
     bool myCheckFallDistanceThisFrame = true;
 
+    public Movement TGAMovement { get { return myMovement; } }
+    public bool IsSolidState { get { return myStateIsSolid; } }
+
     Player()
     {
         myType = TileType.Barrier | TileType.Ground;
