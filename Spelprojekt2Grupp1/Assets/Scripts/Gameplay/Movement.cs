@@ -11,11 +11,11 @@ public class Movement
    /// <param name="aDirection">The direction the GameObject will move to</param>
    /// <param name="aSpeed">The speed of the movement. The execution will happen in (1 / aSpeed) seconds.</param>
    /// <returns>Returns an IEnumerator to be used in StartCoroutine</returns>
-   public IEnumerator MoveInDirection(Transform aTransform, Vector3 aDirection, float aSpeed)
+   public IEnumerator MoveInDirection(Transform aTransform, Vector3 aDirection, float aSpeed, bool aIsSolid = true)
    {
       Vector3 direction = aDirection;
       //Handling Ice Tiles
-      if (direction.y == 0 && direction != Vector3.zero)
+      if (direction.y == 0 && direction != Vector3.zero && aIsSolid == true)
       {
          var tile1 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
          var tile2 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + aDirection);
