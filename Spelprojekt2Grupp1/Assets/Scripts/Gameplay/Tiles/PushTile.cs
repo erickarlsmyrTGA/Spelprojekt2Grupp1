@@ -17,7 +17,7 @@ public class PushTile : Tile
     PushTile()
     {
         myName = "PushTile";
-        myType = TileType.Barrier | TileType.Ground;
+        myType = TileType.Barrier | TileType.Ground | TileType.Movable;
         myMovement = new Movement();
     }
 
