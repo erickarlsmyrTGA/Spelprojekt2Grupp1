@@ -5,20 +5,42 @@ using UnityEngine;
 public class WindTile : Tile
 {
     [SerializeField]
-    private Vector3 myDestinationPoint;
-    
-    WindTile() 
+    private Vector3 myFanStrength;
+
+    [SerializeField]
+    private Player myPlayer;
+
+    [SerializeField]
+    private float myFanSpeed;
+
+    /*[SerializeField]
+    private Transform myPlayerTransform;*/
+
+    WindTile()
     {
         myName = "Wind";
+        myType = TileType.Ground | TileType.Barrier;
+            
     }
-    public override IEnumerator TGAExecute(GameObject aGameActor)
+    public override IEnumerator TGAExecute()
     {
         Debug.Log("Wind Tile activated");
-        yield return null; 
+        if (myPlayer.IsSolidState == false)
+        {
+            yield return StartCoroutine(myPlayer.TGAMovement.MoveInDirection(myPlayer.transform, myFanStrength, myFanSpeed));
+        }
     }
 
     private void Start()
     {
         StartCoroutine(TGAExecute(gameObject));
     }
+
+    /*Movement myMovement;
+    WindTile()
+    {
+        myName = "Wind";
+        myType = TileType.Air;
+    }*/
 }
+
