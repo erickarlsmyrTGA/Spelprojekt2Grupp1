@@ -64,7 +64,7 @@ public class Player : Tile
 
             yield return StartCoroutine(HandleMouseInput());
 
-            if (myCheckFallDistanceThisFrame)
+            if (myCheckFallDistanceThisFrame && myStateIsSolid)
             {
                 yield return StartCoroutine(CheckFallDistanceAndFall());
             }
