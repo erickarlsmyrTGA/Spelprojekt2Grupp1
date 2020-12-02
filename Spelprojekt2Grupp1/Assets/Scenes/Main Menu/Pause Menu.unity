@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPauseMenu: {fileID: 110986686}
   myInGameUI: {fileID: 26988318}
-  myOptionsMenu: {fileID: 0}
+  myOptionsMenu: {fileID: 838622988}
 --- !u!1 &292160489
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +581,7 @@ PrefabInstance:
     - target: {fileID: 8703444160988469116, guid: c09948fe88e7a994f8dc5e4a5fbc40fb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8703444160988469116, guid: c09948fe88e7a994f8dc5e4a5fbc40fb,
         type: 3}
@@ -653,11 +653,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 110986686}
-    - target: {fileID: 8703444161336671396, guid: c09948fe88e7a994f8dc5e4a5fbc40fb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c09948fe88e7a994f8dc5e4a5fbc40fb, type: 3}
 --- !u!224 &430656111 stripped
@@ -861,6 +856,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &838622988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8703444160988469059, guid: c09948fe88e7a994f8dc5e4a5fbc40fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 430656110}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &858987750
 GameObject:
   m_ObjectHideFlags: 0
