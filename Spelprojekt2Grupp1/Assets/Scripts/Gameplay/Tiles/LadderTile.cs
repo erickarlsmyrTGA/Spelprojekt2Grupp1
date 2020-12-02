@@ -65,9 +65,9 @@ public class LadderTile : Tile
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position + myPivot, 0.125f);
+        Gizmos.DrawWireCube(transform.position + myPivot, 0.125f);
         Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(transform.position, Vector3.one);
+        Gizmos.DrawSphere(transform.position, Vector3.one);
         if (myShowGizmos)
         {
             Gizmos.DrawWireCube(myLadderPosition, Vector3.one);
