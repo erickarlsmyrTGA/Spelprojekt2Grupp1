@@ -54,13 +54,20 @@ public class Player : Tile
 
         if (myGameIsOn == true)
         {
+            Vector3 lastPos = transform.position;
+
             yield return StartCoroutine(HandleMouseInput());
+
             if (myCheckFallDistanceThisFrame)
             {
                 yield return StartCoroutine(CheckFallDistanceAndFall());
             }
             myCheckFallDistanceThisFrame = true;
-            yield return StartCoroutine(ExecuteCurrentTile());
+
+            if (lastPos != transform.position)
+            {
+                yield return StartCoroutine(ExecuteCurrentTile());
+            }
         }
 
 
@@ -87,74 +94,85 @@ public class Player : Tile
             || InputManager.ourInstance.TGAPressedRight()
         );
 
-        Vector3 direction = Vector3.zero;
+        if (myGameIsOn == true)
+        {
+            Vector3 direction = Vector3.zero;
 
-        if (Input.GetKeyDown(KeyCode.W) || InputManager.ourInstance.TGAPressedForward())
-        {
-            direction += new Vector3(1, 0, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.S) || InputManager.ourInstance.TGAPressedBackward())
-        {
-            direction += new Vector3(-1, 0, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A) || InputManager.ourInstance.TGAPressedLeft())
-        {
-            direction += new Vector3(0, 0, 1);
-        }
-        if (Input.GetKeyDown(KeyCode.D) || InputManager.ourInstance.TGAPressedRight())
-        {
-            direction += new Vector3(0, 0, -1);
-        }
-
-        // Check if next tile is barrier
-        {
-            var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
-            if (tile)
+            if (Input.GetKeyDown(KeyCode.W) || InputManager.ourInstance.TGAPressedForward())
             {
-                if (tile.myType.HasFlag(Tile.TileType.Barrier))
+                direction += new Vector3(1, 0, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.S) || InputManager.ourInstance.TGAPressedBackward())
+            {
+                direction += new Vector3(-1, 0, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.A) || InputManager.ourInstance.TGAPressedLeft())
+            {
+                direction += new Vector3(0, 0, 1);
+            }
+            if (Input.GetKeyDown(KeyCode.D) || InputManager.ourInstance.TGAPressedRight())
+            {
+                direction += new Vector3(0, 0, -1);
+            }
+
+            // Check if next tile is barrier
+            {
+                var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + direction);
+                if (tile)
                 {
-                    if (tile.myName == "PushTile" && myStateIsSolid)
+                    if (tile.myType.HasFlag(Tile.TileType.Barrier))
                     {
-                        yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
-                        myCheckFallDistanceThisFrame = false;
+                        if (tile.myName == "PushTile" && myStateIsSolid)
+                        {
+                            yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
+                            myCheckFallDistanceThisFrame = false;
+                        }
+                        else if (tile.myName == "Ladder" && myStateIsSolid)
+                        {
+                            Debug.LogWarning("DIRECTION = " + (tile.transform.position - transform.position).ToString());
+
+                            var directionToLadder = (tile.transform.position - transform.position);
+                            if (directionToLadder == new Vector3(-1f, 0f, 0f) && ((LadderTile)tile).TGADirection == 1)
+                            {
+                                yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
+                            }
+                            if (directionToLadder == new Vector3(0f, 0f, -1f) && ((LadderTile)tile).TGADirection == 2)
+                            {
+                                yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
+                            }
+                            if (directionToLadder == new Vector3(1f, 0f, 0f) && ((LadderTile)tile).TGADirection == 3)
+                            {
+                                yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
+                            }
+                            if (directionToLadder == new Vector3(0f, 0f, 1f) && ((LadderTile)tile).TGADirection == 4)
+                            {
+                                yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
+                            }
+
+                            myCheckFallDistanceThisFrame = false;
+                        }
                     }
-                    else if (tile.myName == "Ladder" && myStateIsSolid)
+                    else
                     {
-                        Debug.LogWarning("DIRECTION = " + (tile.transform.position - transform.position).ToString());
-
-                        var directionToLadder = (tile.transform.position - transform.position);
-                        if (directionToLadder == new Vector3(-1f, 0f, 0f) && ((LadderTile)tile).TGADirection == 1)
-                        {
-                            yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
-                        }
-                        if (directionToLadder == new Vector3(0f, 0f, -1f) && ((LadderTile)tile).TGADirection == 2)
-                        {
-                            yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
-                        }
-                        if (directionToLadder == new Vector3(1f, 0f, 0f) && ((LadderTile)tile).TGADirection == 3)
-                        {
-                            yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
-                        }
-                        if (directionToLadder == new Vector3(0f, 0f, 1f) && ((LadderTile)tile).TGADirection == 4)
-                        {
-                            yield return StartCoroutine(myMovement.MoveInDirection(transform, Vector2.up, myMoveSpeed));
-                        }
-
-                        myCheckFallDistanceThisFrame = false;
+                        // Move to target
+                        yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
                     }
                 }
                 else
                 {
                     // Move to target
+                    Vector3 lastPos = transform.position;
                     yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
+
+                    var lastTile = TileManager.ourInstance.TGATryGetTileAt(lastPos + Vector3.down);
+
+                    if (lastTile)
+                    {
+                        yield return StartCoroutine(lastTile.TGAExecute());
+                    }
                 }
+                TGASetPosition(transform.position);
             }
-            else
-            {
-                // Move to target
-                yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
-            }
-            TGASetPosition(transform.position);
         }
     }
 
@@ -178,7 +196,7 @@ public class Player : Tile
     {
         var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.down);
 
-        if (tile && !tile.myType.HasFlag(TileType.Button))
+        if (tile)
         {
             yield return StartCoroutine(tile.TGAExecute());
         }
