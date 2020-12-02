@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool myGameIsPaused = false;
     public GameObject myPauseMenu;
     public GameObject myInGameUI;
+   [SerializeField] GameObject myOptionsMenu;
 
 
     public void Resume()
@@ -38,4 +39,10 @@ public class PauseMenu : MonoBehaviour
         ///SceneManager.LoadScene(myCurrentScene);
 
     }
+
+   public void ActivateOptionsMenu()
+   {
+      myOptionsMenu.SetActive(true);
+      myPauseMenu.SetActive(false);
+   }
 }
