@@ -672,6 +672,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 8703444160988469059, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8703444160988469116, guid: 1cc654155eb68b448ad7b63b2698a6d9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -776,6 +781,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703444161184057726, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703444161332198620, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703444161336671396, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 110986686}
+    - target: {fileID: 8703444161336671396, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703444161755703536, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703444162043214449, guid: 1cc654155eb68b448ad7b63b2698a6d9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc654155eb68b448ad7b63b2698a6d9, type: 3}
