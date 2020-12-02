@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
     public void ResetLevel()
     {
         Debug.Log("Reset Level");
+        ///SceneManager.LoadScene(myCurrentScene);
 
     }
 }
