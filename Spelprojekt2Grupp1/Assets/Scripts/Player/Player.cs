@@ -29,12 +29,18 @@ public class Player : Tile
     [Min(5)]
     int myMaxFallDistance;
 
+    [SerializeField]
+    Animator myAnimationController;
+
+
     Movement myMovement;
 
     private void Start()
     {
         myCoroutineIsNotInAction = true;
         myMovement = new Movement();
+
+        //myAnimationController.SetTrigger("JumpP");
     }
 
     // Update is called once per frame
@@ -124,6 +130,8 @@ public class Player : Tile
                     {
                         if (tile.myName == "PushTile" && myStateIsSolid)
                         {
+                            myAnimationController.SetTrigger("PushP");
+                            yield return new WaitForSeconds(0.5f);
                             yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
                             myCheckFallDistanceThisFrame = false;
                         }
@@ -162,6 +170,8 @@ public class Player : Tile
                 {
                     // Move to target
                     Vector3 lastPos = transform.position;
+
+                    myAnimationController.SetTrigger("JumpP");
                     yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
 
                     var lastTile = TileManager.ourInstance.TGATryGetTileAt(lastPos + Vector3.down);
