@@ -23,6 +23,7 @@ public class PushTile : Tile
 
     public IEnumerator TGAMoveInDirection(Vector3 aDirection)
     {
+        yield return StartCoroutine(ExecuteCurrentTile());
         // Check if next tile is not barrier
         {
             var tile = TileManager.ourInstance.TGATryGetTileAt(transform.position + aDirection);

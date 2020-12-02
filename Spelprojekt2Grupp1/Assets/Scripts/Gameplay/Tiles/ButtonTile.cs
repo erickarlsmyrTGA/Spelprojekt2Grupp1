@@ -7,11 +7,21 @@ public class ButtonTile : Tile
     [SerializeField] Tile myTargetTile;
 
     Movement myMovement;
-    bool myIsPressed;
+    bool myIsPressed = false;
+    bool myCoroutineIsNotInAction;
+
+    private void Start()
+    {
+        myCoroutineIsNotInAction = true;
+    }
 
     private void Update()
     {
-        StartCoroutine(TGAExecute());
+        //if (myCoroutineIsNotInAction)
+        //{
+        //    myCoroutineIsNotInAction = false;
+        //    StartCoroutine(TGAExecute());
+        //}
     }
 
     ButtonTile()
@@ -24,8 +34,11 @@ public class ButtonTile : Tile
 
     public override IEnumerator TGAExecute()
     {
-        myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) != null);
+        myIsPressed = !myIsPressed;
+        //Debug.LogError("executed");
+        //myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) != null);
         yield return StartCoroutine(myTargetTile.TGAExecute(myIsPressed));
         yield return null;
+        myCoroutineIsNotInAction = true;
     }
 }
