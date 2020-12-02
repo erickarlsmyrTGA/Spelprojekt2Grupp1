@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3840561341063649865
 Transform:
@@ -46,7 +46,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &7169844321246533090
 Transform:
@@ -142,6 +142,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: groundTile_Snow
       objectReference: {fileID: 0}
+    - target: {fileID: 599759928114789845, guid: 3a0cad558861d6d4bbf158912bb166f4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3798449026692868298, guid: 3a0cad558861d6d4bbf158912bb166f4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1455148254976109200, guid: 17e792877626d3f4ba04a18caaef4e36,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a0cad558861d6d4bbf158912bb166f4, type: 3}
 --- !u!4 &9117343839398421690 stripped
