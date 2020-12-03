@@ -7,7 +7,6 @@ public class SnowflakeTile : Tile
     bool myIsPickedUp = false;
     [SerializeField] private GameObject mySnowflake = null;
 
-
     SnowflakeTile()
     {
         myName = "Snowflake";
@@ -59,13 +58,16 @@ public class SnowflakeTile : Tile
      * 
      */
 
-    static public int myId { get; private set; }
+    static public int myIdGenerator = 0;
+    public int myId { get; private set; }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        myId = ++myIdGenerator;
+        Debug.Log(myId);
         mySnowflake.SetActive(true);
         myIsPickedUp = false;
         if (mySnowflake == null)
