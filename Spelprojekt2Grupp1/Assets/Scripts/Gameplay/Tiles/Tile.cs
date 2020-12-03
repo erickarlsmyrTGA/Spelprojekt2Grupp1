@@ -113,4 +113,12 @@ public class Tile : MonoBehaviour
     {
         yield return null;
     }
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(Vector3Int.FloorToInt(transform.position), 0.0625f);
+    }
 }
