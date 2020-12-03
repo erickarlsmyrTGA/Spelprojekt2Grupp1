@@ -30,8 +30,16 @@ public class StageManager : MonoBehaviour
 
     public void GoToNextStage()
     {
-        var scene = levels[++myCurrentSceneIndex];
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        if (myCurrentSceneIndex+1 < levels.Length)
+        {
+            var scene = levels[++myCurrentSceneIndex];
+            UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0); // tempfix
+        }
+        
     }
 
     public void ReloadCurrentStage()
