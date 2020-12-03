@@ -103,23 +103,31 @@ public class Player : Tile
         if (myGameIsOn == true)
         {
             Vector3 direction = Vector3.zero;
+            Quaternion rotation = new Quaternion();
+            rotation.eulerAngles = new Vector3(0, 0, 0);
 
             if (Input.GetKeyDown(KeyCode.W) || InputManager.ourInstance.TGAPressedForward())
             {
                 direction += new Vector3(1, 0, 0);
+                rotation.eulerAngles = new Vector3(0, 90, 0);
             }
             if (Input.GetKeyDown(KeyCode.S) || InputManager.ourInstance.TGAPressedBackward())
             {
                 direction += new Vector3(-1, 0, 0);
+                rotation.eulerAngles = new Vector3(0, 270, 0);
             }
             if (Input.GetKeyDown(KeyCode.A) || InputManager.ourInstance.TGAPressedLeft())
             {
                 direction += new Vector3(0, 0, 1);
+                rotation.eulerAngles = new Vector3(0, 0, 0);
             }
             if (Input.GetKeyDown(KeyCode.D) || InputManager.ourInstance.TGAPressedRight())
             {
                 direction += new Vector3(0, 0, -1);
+                rotation.eulerAngles = new Vector3(0, 180, 0);
             }
+            mySolidState.transform.rotation = rotation;
+            myGasState.transform.rotation = rotation;
 
             // Check if next tile is barrier
             {
