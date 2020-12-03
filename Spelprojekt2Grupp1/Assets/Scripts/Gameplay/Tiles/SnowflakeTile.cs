@@ -68,11 +68,15 @@ public class SnowflakeTile : Tile
     {
         myId = ++myIdGenerator;
         Debug.Log(myId);
-        mySnowflake.SetActive(true);
+        
         myIsPickedUp = false;
         if (mySnowflake == null)
         {
             Debug.LogError("mySnowflake is fuckywucky");
+        }
+        else
+        {
+            mySnowflake.SetActive(true);
         }
     }
 
