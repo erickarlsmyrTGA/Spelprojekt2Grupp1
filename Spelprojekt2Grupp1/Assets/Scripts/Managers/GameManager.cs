@@ -147,11 +147,11 @@ public class GameManager : MonoBehaviour
         {
             bool replaceOldData = false;
             // Merge hashsets
-            foreach (var snowflake in someNewData.myCollectables)
+            foreach (var id in someNewData.myCollectables)
             {
-                if (!currentData.myCollectables.Contains(snowflake)) // A brand new flake
+                if (!currentData.myCollectables.Contains(id)) // A brand new flake
                 {
-                    currentData.myCollectables.Add(snowflake);
+                    currentData.myCollectables.Add(id);
                     currentData.myNumCollected++;
                     replaceOldData = true;
                 }

@@ -7,6 +7,7 @@ public class GoalTile : Tile
     GoalTile()
     {
         myName = "Goal";
+        myType = TileType.Ground;
     }
 
     /// <summary>
