@@ -28,13 +28,13 @@ public class LevelSelect : MonoBehaviour
     private int myHatMax = 19;
     private int myHatMin = 14;
 
-    private int myLevelAccessMax = 4; // TODO set 7 as default after beta
+    private int myLevelAccessMax = 3; // TODO set 7 as default after beta
     private int myLevelAccessMin = 0;// TODO set 2 as default after beta
     private int mySelectedLevel = 0;// TODO set 2 as default after beta
     private int myNormalize = 1;
 
 
-    private int[] myBetaLevelSelect = {3, 4, 6, 7, 9};
+    private int[] myBetaLevelSelect = {3, 4, 6, 7};
 
     public void MoveNextLevel()
     {
