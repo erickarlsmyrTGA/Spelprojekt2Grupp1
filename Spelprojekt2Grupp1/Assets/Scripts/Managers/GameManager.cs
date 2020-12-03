@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     public GameData.StageData GetSavedStageData(string aScenePath)
     {
         // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
-        if (myGameData.myStageDataStr == null || myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
+        if (myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
         {
             data = GameData.StageData.ourInvalid;
         }
