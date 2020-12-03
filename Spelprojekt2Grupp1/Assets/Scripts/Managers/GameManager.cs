@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -195,6 +196,35 @@ public class GameManager : MonoBehaviour
 
         // TODO: show current stage's score  
         GameManager.ourInstance.TransitionNextStage();
+    }
+
+    /// <summary>
+    /// Returns a list of cleared stages.
+    /// </summary>
+    /// <returns></returns>
+    public List<string> GetClearedStages()
+    {
+        var stageList = new List<string>();
+        foreach (KeyValuePair<string, GameData.StageData> entry  in myGameData.myStageDataStr)
+        {
+            if (entry.Value.myIsStageCleared)
+            {
+                stageList.Add(entry.Key);
+            }
+            
+        }
+        return stageList;
+    }
+
+    /// <summary>
+    /// Check if stage is cleared
+    /// </summary>
+    /// <param name="aScenePath">A relative scene path</param>
+    /// <returns></returns>
+    public bool IsStageCleared(string aScenePath)
+    {
+        // Ensures key is set before attempting to access bool in StageData.
+        return (myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data) && data.myIsStageCleared);
     }
 
     private void Start()
