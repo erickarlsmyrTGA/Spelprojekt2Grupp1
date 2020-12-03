@@ -5,10 +5,11 @@ using UnityEngine;
 public class CollectableManager : MonoBehaviour
 {
     public GameData.StageData myStageData { get; private set; }
+    
 
     public void OnPickUp(SnowflakeTile collectable)
     {
-        myStageData.myCollectables.Add(collectable);
+        myStageData.myCollectables.Add(collectable.myId);
 
         // Notify UI
     }
