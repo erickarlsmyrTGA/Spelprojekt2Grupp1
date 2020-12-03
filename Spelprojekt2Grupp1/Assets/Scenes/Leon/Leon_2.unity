@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.3915094, g: 0.5456154, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.4575472, g: 0.9486037, b: 1, a: 1}
-  m_AmbientGroundColor: {r: 0, g: 0.33245158, b: 1, a: 1}
+  m_AmbientSkyColor: {r: 0.06003024, g: 0.1323771, b: 0.6698113, a: 1}
+  m_AmbientEquatorColor: {r: 0.29334286, g: 0.34151313, b: 0.6037736, a: 1}
+  m_AmbientGroundColor: {r: 0.083704166, g: 0.11796422, b: 0.31132078, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -5596,6 +5596,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914476640315224441, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5754159314773963998, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
