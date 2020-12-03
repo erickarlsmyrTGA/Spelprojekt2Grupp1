@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1375a0ccac4d4ba0ab456be996717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myIsDebugging: 0
 --- !u!114 &6902148458776097705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,39 +58,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myIsDebugging: 0
-  world1Level1:
-    sceneAsset: {fileID: 102900000, guid: 81601fdf038546e4f9685b312b050124, type: 3}
+  levels:
+  - sceneAsset: {fileID: 102900000, guid: e167291db4becb649b78461aa0579266, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 1.unity
+  - sceneAsset: {fileID: 102900000, guid: 81601fdf038546e4f9685b312b050124, type: 3}
     scenePath: Assets/Scenes/Dennis_Scenes/Level_1.unity
-  world1Level2:
-    sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
     scenePath: Assets/Scenes/Dennis_Scenes/Level_2.unity
-  world1Level3:
-    sceneAsset: {fileID: 102900000, guid: 65ffe241b5de7924bb5a55927055e6b9, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 65ffe241b5de7924bb5a55927055e6b9, type: 3}
     scenePath: Assets/Scenes/Dennis_Scenes/Level_3.unity
-  world1Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level1:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level2:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level3:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level1:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level2:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level3:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+  - sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
+    scenePath: Assets/Scenes/Leon/Leon_1.unity
+  - sceneAsset: {fileID: 102900000, guid: 55817d605ce8dbe44a619a5ea3a8cfe7, type: 3}
+    scenePath: Assets/Scenes/Leon/Leon_2.unity
+  - sceneAsset: {fileID: 102900000, guid: 252445cd314c9f342840c2fcebe17f74, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_4.unity
+  - sceneAsset: {fileID: 102900000, guid: ef0896a60521adf469f303d4ae2bd4e6, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 2.unity
+  - sceneAsset: {fileID: 102900000, guid: 1780dee2b3fe2bb42a0ab8808de2553f, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 3.unity
+  - sceneAsset: {fileID: 102900000, guid: 1b4f91160fcabaa4fb3efb34a4883b92, type: 3}
+    scenePath: Assets/Scenes/Leon/Leon_3.unity
+  - sceneAsset: {fileID: 102900000, guid: 42d9d72c8da0c5a44967efcd8ff5566a, type: 3}
+    scenePath: Assets/Scenes/Leon/Leon_4.unity
+  - sceneAsset: {fileID: 102900000, guid: b3781e551f7837d48be01917c7d62506, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 4.unity
+  - sceneAsset: {fileID: 102900000, guid: 00d9106ff8bd85c46b991fa0f40945ad, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 5.unity
+  - sceneAsset: {fileID: 102900000, guid: 5ee852b47b2941e4284d4547e808033b, type: 3}
+    scenePath: Assets/Scenes/Bo/Bo Level 6.unity
+  - sceneAsset: {fileID: 102900000, guid: d35dbd5d6c700cc40a33ebd953dec0ca, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_5.unity
+  - sceneAsset: {fileID: 102900000, guid: 8afab388d9736c146a08146ffe2c5cba, type: 3}
+    scenePath: Assets/Scenes/Dennis_Scenes/Level_6.unity

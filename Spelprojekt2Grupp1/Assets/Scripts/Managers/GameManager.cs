@@ -138,8 +138,9 @@ public class GameManager : MonoBehaviour
         GameData.StageData currentData = GetSavedStageData(aScenePath); // Gets current save if exists, otherwise get default instance of StageData
         
         // if entirely new data, save it.
-        if (currentData.myIsStageCleared == false && someNewData.myIsStageCleared)
-        {            
+        if (currentData.myIsStageCleared == false)
+        {
+            someNewData.myIsStageCleared = true;
             myGameData.myStageDataStr[aScenePath] = someNewData;
             SaveGameData();
         }
