@@ -17,11 +17,21 @@ public class LevelSelect : MonoBehaviour
     //Image myImageComponent;
 
     private Button myBtn;
-    [SerializeField] public GameObject myPlayButton;
+    [SerializeField] private GameObject myPlayButton;
 
-    int mySelectedLevel = 1;
-    int myLevelAccessMax = 6;
-    int myLevelAccessMin = 1;
+    private int mySnowMax = 7;
+    private int mySnowMin = 2;
+
+    private int myFireMax = 13;
+    private int myFireMin = 8;
+
+    private int myHatMax = 19;
+    private int myHatMin = 14;
+
+    private int myLevelAccessMax = 7;
+    private int myLevelAccessMin = 2;
+    private int mySelectedLevel = 2;
+    private int myNormalize = 1;
 
     public void MoveNextLevel()
     {
@@ -29,7 +39,7 @@ public class LevelSelect : MonoBehaviour
         {
             ++mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
         }
 
     }
@@ -39,9 +49,8 @@ public class LevelSelect : MonoBehaviour
         if (mySelectedLevel > myLevelAccessMin)
         {
             --mySelectedLevel;
-            //myButtonText.text = mySelectedLevel.ToString();
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
 
         }
 
@@ -49,41 +58,41 @@ public class LevelSelect : MonoBehaviour
 
     public void ReturnMainMenu()
     {
-        mySelectedLevel = 1;
-        myLevelAccessMax = 6;
-        myLevelAccessMin = 1;
+        mySelectedLevel = mySnowMin;
+        myLevelAccessMax = mySnowMax;
+        myLevelAccessMin = mySnowMin;
         myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
         SceneManager.LoadScene(0);
     }
 
     public void PlaySelected()
     {
-        //SceneManager.LoadScene(mySelectedLevel);
+        SceneManager.LoadScene(mySelectedLevel);
         Debug.Log("Playing level " + mySelectedLevel);
     }
 
     public void Theme_SnowButton()
     {
-        mySelectedLevel = 1;
-        myLevelAccessMax = 6;
-        myLevelAccessMin = 1;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
+        mySelectedLevel = mySnowMin;
+        myLevelAccessMax = mySnowMax;
+        myLevelAccessMin = mySnowMin;
+        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
     }
 
     public void Theme_FireButton()
     {
-        mySelectedLevel = 7;
-        myLevelAccessMax = 12;
-        myLevelAccessMin = 7;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
+        mySelectedLevel = myFireMin;
+        myLevelAccessMax = myFireMax;
+        myLevelAccessMin = myFireMin;
+        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
     }
 
     public void Theme_HatButton()
     {
-        mySelectedLevel = 13;
-        myLevelAccessMax = 18;
-        myLevelAccessMin = 13;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
+        mySelectedLevel = myHatMin;
+        myLevelAccessMax = myHatMax;
+        myLevelAccessMin = myHatMin;
+        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
     }
 
     // Start is called before the first frame update
