@@ -31,7 +31,7 @@ public class GameData
     [System.Serializable]
     public struct StageData
     {
-        public static StageData ourInvalid => new StageData { myNumAvailable = 0, myNumCollected= 0, myIsStageCleared = false };
+        public static StageData ourInvalid => new StageData { myNumAvailable = 0, myNumCollected= 0, myIsStageCleared = false, myCollectables = new HashSet<SnowflakeTile>()};
 
         public HashSet<SnowflakeTile> myCollectables { get; set; }
         public int myNumAvailable{ get; set; } // number of collectibles in stage

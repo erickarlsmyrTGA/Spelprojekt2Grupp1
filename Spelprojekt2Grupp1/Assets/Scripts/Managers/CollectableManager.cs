@@ -29,14 +29,14 @@ public class CollectableManager : MonoBehaviour
         {
             ourInstance = this;
         }
-
-        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
+                
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
+        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
     }
 
     // Update is called once per frame
