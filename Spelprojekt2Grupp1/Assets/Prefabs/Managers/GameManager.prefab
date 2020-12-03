@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 6291233496677858463}
   - component: {fileID: 6684015931256868823}
   - component: {fileID: 6902148458776097705}
+  - component: {fileID: 6844556133769330661}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1375a0ccac4d4ba0ab456be996717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myIsDebugging: 0
 --- !u!114 &6902148458776097705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,39 +59,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myIsDebugging: 0
-  world1Level1:
-    sceneAsset: {fileID: 102900000, guid: 81601fdf038546e4f9685b312b050124, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_1.unity
-  world1Level2:
-    sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_2.unity
-  world1Level3:
-    sceneAsset: {fileID: 102900000, guid: 65ffe241b5de7924bb5a55927055e6b9, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_3.unity
-  world1Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level1:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level2:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level3:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world2Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level1:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level2:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level3:
-    sceneAsset: {fileID: 0}
-    scenePath: 
-  world3Level4:
-    sceneAsset: {fileID: 0}
-    scenePath: 
+  levels: []
+--- !u!114 &6844556133769330661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684015931256868816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e913a0f31ada54cb9cd0d28279f318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

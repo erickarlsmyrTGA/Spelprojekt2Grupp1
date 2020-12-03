@@ -26,12 +26,13 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Loading data");
                 LoadGameData();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("Deleting data");
                 DeleteSavedGameData();
+                LoadGameData(); // Create new instance
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 Debug.Log("Saving data");
                 SaveGameData();
@@ -120,7 +121,7 @@ public class GameManager : MonoBehaviour
     public GameData.StageData GetSavedStageData(string aScenePath)
     {
         // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
-        if (myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
+        if (!myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
         {
             data = GameData.StageData.ourInvalid;
         }
