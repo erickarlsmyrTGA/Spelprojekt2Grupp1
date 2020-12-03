@@ -34,8 +34,8 @@ Transform:
   - {fileID: 5609781953787764957}
   - {fileID: 8116927565719333246}
   - {fileID: 1678021132450174597}
-  - {fileID: 5754159314773963998}
   - {fileID: 6438079767436110986}
+  - {fileID: 5754159314773963998}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -711,11 +711,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1916001811708299041}
     m_Modifications:
+    - target: {fileID: 7068442868108263061, guid: c51400defe0448d479315987555288df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.0000076
+      objectReference: {fileID: 0}
     - target: {fileID: 7068442868681367963, guid: c51400defe0448d479315987555288df,
         type: 3}
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7068442868681367964, guid: c51400defe0448d479315987555288df,
+        type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 5754159314773963997}
     - target: {fileID: 7068442868681367967, guid: c51400defe0448d479315987555288df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -874,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 3836176989969749188, guid: 0eece67785dbe99499995b6ba25e0f48,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3836176989969749188, guid: 0eece67785dbe99499995b6ba25e0f48,
         type: 3}
@@ -904,3 +914,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8855827072165601306}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5754159314773963997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836176989969749191, guid: 0eece67785dbe99499995b6ba25e0f48,
+    type: 3}
+  m_PrefabInstance: {fileID: 8855827072165601306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa540ad9a87916429cb221a0f4ed1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
