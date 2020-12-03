@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
         Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
     }
 
-    public void OnStageCompleted()
+    public void OnStageCleared()
     {
         UpdateSavedStageData();
 

@@ -15,7 +15,7 @@ public class GoalTile : Tile
     /// <returns></returns>
     public override IEnumerator TGAExecute()
     {        
-        GameManager.ourInstance.OnStageCompleted();
+        GameManager.ourInstance.OnStageCleared();
         yield return null;
     }
 }
