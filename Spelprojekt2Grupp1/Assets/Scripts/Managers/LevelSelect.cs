@@ -28,10 +28,13 @@ public class LevelSelect : MonoBehaviour
     private int myHatMax = 19;
     private int myHatMin = 14;
 
-    private int myLevelAccessMax = 7;
-    private int myLevelAccessMin = 2;
-    private int mySelectedLevel = 2;
+    private int myLevelAccessMax = 4; // TODO set 7 as default after beta
+    private int myLevelAccessMin = 0;// TODO set 2 as default after beta
+    private int mySelectedLevel = 0;// TODO set 2 as default after beta
     private int myNormalize = 1;
+
+
+    private int[] myBetaLevelSelect = {3, 4, 6, 7, 9};
 
     public void MoveNextLevel()
     {
@@ -39,7 +42,7 @@ public class LevelSelect : MonoBehaviour
         {
             ++mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel + myNormalize).ToString(); // TODO set * to - after beta
         }
 
     }
@@ -50,7 +53,7 @@ public class LevelSelect : MonoBehaviour
         {
             --mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel + myNormalize).ToString(); // TODO set * to - after beta
 
         }
 
@@ -67,8 +70,8 @@ public class LevelSelect : MonoBehaviour
 
     public void PlaySelected()
     {
-        SceneManager.LoadScene(mySelectedLevel);
-        Debug.Log("Playing level " + mySelectedLevel);
+        SceneManager.LoadScene(myBetaLevelSelect[mySelectedLevel]);
+        Debug.Log("Playing level " + myBetaLevelSelect[mySelectedLevel]);
     }
 
     public void Theme_SnowButton()
