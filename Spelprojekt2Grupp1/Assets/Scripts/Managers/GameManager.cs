@@ -26,12 +26,13 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Loading data");
                 LoadGameData();
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 Debug.Log("Deleting data");
                 DeleteSavedGameData();
+                LoadGameData(); // Create new instance
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 Debug.Log("Saving data");
                 SaveGameData();
