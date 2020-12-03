@@ -34,10 +34,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ResetLevel()
-    {
-        Debug.Log("Reset Level");
-        ///SceneManager.LoadScene(myCurrentScene);
-
+    {        
+        GameManager.ourInstance.RestartCurrentStage();
     }
 
    public void ActivateOptionsMenu()
