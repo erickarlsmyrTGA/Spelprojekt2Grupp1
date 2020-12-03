@@ -34,7 +34,7 @@ public class LevelSelect : MonoBehaviour
     private int myNormalize = 1;
 
 
-    private int[] myBetaLevelSelect = {3, 4, 6, 7};
+    private int[] myBetaLevelSelect = {2, 4, 6, 7};
 
     public void MoveNextLevel()
     {
