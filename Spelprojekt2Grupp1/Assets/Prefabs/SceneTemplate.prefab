@@ -286,6 +286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1916001811708299041}
     m_Modifications:
+    - target: {fileID: 7652213775283155512, guid: b17060c2ced4fdc488423e9f5c0b76c9,
+        type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 5754159314773963998}
     - target: {fileID: 7652213775283155513, guid: b17060c2ced4fdc488423e9f5c0b76c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 7068442868108263061, guid: c51400defe0448d479315987555288df,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.0000076
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7068442868681367963, guid: c51400defe0448d479315987555288df,
         type: 3}
