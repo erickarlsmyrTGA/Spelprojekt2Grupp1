@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &28876237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5754159314773963998, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 543655871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &43253483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1694,6 +1700,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.6600342
       objectReference: {fileID: 0}
+    - target: {fileID: 8116927565719333247, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 28876237}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c01a63c4c5ff34283f77dac67c57ac, type: 3}
 --- !u!4 &555611109 stripped
