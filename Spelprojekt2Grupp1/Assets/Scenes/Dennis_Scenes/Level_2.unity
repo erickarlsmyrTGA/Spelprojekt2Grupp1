@@ -1011,6 +1011,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 8116927565719333247, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: myPlayer
+      value: 
+      objectReference: {fileID: 1186305426}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c01a63c4c5ff34283f77dac67c57ac, type: 3}
 --- !u!4 &85404152 stripped
@@ -9992,6 +9997,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
     type: 3}
   m_PrefabInstance: {fileID: 1683389918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1186305426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5754159314773963998, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 69624995}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1189755934
 PrefabInstance:
