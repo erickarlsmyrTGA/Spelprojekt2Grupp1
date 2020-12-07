@@ -41,7 +41,7 @@ public class TileManager : MonoBehaviour
         myTiles = new Dictionary<Vector3Int, Tile>();
         foreach (var tile in FindObjectsOfType<Tile>())
         {
-            Vector3Int key = Vector3Int.FloorToInt(tile.transform.position);
+            Vector3Int key = Vector3Int.FloorToInt(tile.transform.position + tile.myPivotOffset);
             if (myTiles.ContainsKey(key))
             {
                 if (myDebugLevel >= 2)
