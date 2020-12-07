@@ -3376,7 +3376,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: groundBlockSnow (56)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5132170865419109684, guid: 97799d992941f934caa3f580aa6bf531, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97799d992941f934caa3f580aa6bf531, type: 3}
 --- !u!1001 &604514702
 PrefabInstance:
