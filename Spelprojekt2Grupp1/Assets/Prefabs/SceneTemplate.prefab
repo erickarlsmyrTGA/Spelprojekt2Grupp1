@@ -210,11 +210,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5754159314773963998}
     m_Modifications:
-    - target: {fileID: 3667421512116475020, guid: ca99b578493f92a4dabc1c607c5b72e0,
-        type: 3}
-      propertyPath: orthographic size
-      value: 3.19
-      objectReference: {fileID: 0}
     - target: {fileID: 3667421512127735680, guid: ca99b578493f92a4dabc1c607c5b72e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -913,6 +908,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LD_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379634398946035890, guid: 0eece67785dbe99499995b6ba25e0f48,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eece67785dbe99499995b6ba25e0f48, type: 3}
