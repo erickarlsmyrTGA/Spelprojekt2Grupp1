@@ -8,6 +8,8 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
+    public AudioManager myAudioManager { get; private set; }
+
     private StageManager myStageManager;
     private GameData myGameData;
 
@@ -244,6 +246,7 @@ public class GameManager : MonoBehaviour
         ourInstance = this;
 
         myStageManager = GetComponent<StageManager>();
+        myAudioManager = GetComponent<AudioManager>();
 
         LoadGameData();
     }
