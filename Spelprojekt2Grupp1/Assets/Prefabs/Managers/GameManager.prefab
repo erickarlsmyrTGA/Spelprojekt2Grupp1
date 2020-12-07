@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6291233496677858463}
   - component: {fileID: 6684015931256868823}
   - component: {fileID: 6902148458776097705}
+  - component: {fileID: 1842239037824839774}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6291233496677858463
 Transform:
@@ -59,35 +60,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myIsDebugging: 0
   levels:
-  - sceneAsset: {fileID: 102900000, guid: e167291db4becb649b78461aa0579266, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 1.unity
-  - sceneAsset: {fileID: 102900000, guid: 81601fdf038546e4f9685b312b050124, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_1.unity
+  - sceneAsset: {fileID: 102900000, guid: 9ba876ee333113a47b22e7e8bd89ab1c, type: 3}
+    scenePath: Assets/Scenes/Demo_Basic_Level.unity
   - sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
     scenePath: Assets/Scenes/Dennis_Scenes/Level_2.unity
-  - sceneAsset: {fileID: 102900000, guid: 65ffe241b5de7924bb5a55927055e6b9, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_3.unity
   - sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
     scenePath: Assets/Scenes/Leon/Leon_1.unity
   - sceneAsset: {fileID: 102900000, guid: 55817d605ce8dbe44a619a5ea3a8cfe7, type: 3}
     scenePath: Assets/Scenes/Leon/Leon_2.unity
-  - sceneAsset: {fileID: 102900000, guid: 252445cd314c9f342840c2fcebe17f74, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_4.unity
-  - sceneAsset: {fileID: 102900000, guid: ef0896a60521adf469f303d4ae2bd4e6, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 2.unity
-  - sceneAsset: {fileID: 102900000, guid: 1780dee2b3fe2bb42a0ab8808de2553f, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 3.unity
-  - sceneAsset: {fileID: 102900000, guid: 1b4f91160fcabaa4fb3efb34a4883b92, type: 3}
-    scenePath: Assets/Scenes/Leon/Leon_3.unity
-  - sceneAsset: {fileID: 102900000, guid: 42d9d72c8da0c5a44967efcd8ff5566a, type: 3}
-    scenePath: Assets/Scenes/Leon/Leon_4.unity
-  - sceneAsset: {fileID: 102900000, guid: b3781e551f7837d48be01917c7d62506, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 4.unity
-  - sceneAsset: {fileID: 102900000, guid: 00d9106ff8bd85c46b991fa0f40945ad, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 5.unity
-  - sceneAsset: {fileID: 102900000, guid: 5ee852b47b2941e4284d4547e808033b, type: 3}
-    scenePath: Assets/Scenes/Bo/Bo Level 6.unity
-  - sceneAsset: {fileID: 102900000, guid: d35dbd5d6c700cc40a33ebd953dec0ca, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_5.unity
-  - sceneAsset: {fileID: 102900000, guid: 8afab388d9736c146a08146ffe2c5cba, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_6.unity
+--- !u!114 &1842239037824839774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684015931256868816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fa4e7e874993248b8f42b7fd2157f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAudioMixer: {fileID: 24100000, guid: 6a34781c2eb37b448b452c017a261e57, type: 2}
+  myMusicMixer: {fileID: -4119943827747823346, guid: 6a34781c2eb37b448b452c017a261e57,
+    type: 2}
+  mySFXMixer: {fileID: -2622711647385543119, guid: 6a34781c2eb37b448b452c017a261e57,
+    type: 2}
+  myVoiceMixer: {fileID: -1555929373386510732, guid: 6a34781c2eb37b448b452c017a261e57,
+    type: 2}
+  myAudio:
+  - myAudioName: 
+    myAudioClip: {fileID: 0}

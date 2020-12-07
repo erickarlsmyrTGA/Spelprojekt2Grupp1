@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0362bba5962ca5478eb5d3e8f7e0e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 1025321349790612041, guid: 2ca334dd8abcb184197e8748e7d8eedf,
-    type: 3}
+  myPlayer: {fileID: 0}
+  mySwipeThreashold: 0.8
