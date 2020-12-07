@@ -250,4 +250,30 @@ public class GameManager : MonoBehaviour
 
         LoadGameData();
     }
+
+    private void PlayMusic(string anAudioName, float someVolume = 0.165f, bool aShouldRestart = false)
+    {
+        if (myCurrentMusicSource != null)
+        {
+            if (myCurrentMusicSource.clip == myAudioManager.GetAudioClip(anAudioName) && !aShouldRestart)
+            {
+                myCurrentMusicSource.volume = someVolume;
+                return;
+            }
+
+            myAudioManager.Stop(myCurrentMusicSource);
+            myCurrentMusicSource = null;
+        }
+
+        myCurrentMusicSource = myAudioManager.PlayMusicClip(anAudioName, someVolume: someVolume, aShouldLoop: true);
+    }
+
+    private void StopMusic()
+    {
+        if (myCurrentMusicSource != null)
+        {
+            myAudioManager.Stop(myCurrentMusicSource);
+            myCurrentMusicSource = null;
+        }
+    }
 }
