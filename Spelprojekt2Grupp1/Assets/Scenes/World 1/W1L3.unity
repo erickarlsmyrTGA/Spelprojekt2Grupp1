@@ -214,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef657d7634a4cd14d9c847e9754de14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
   mySnowflake: {fileID: 1601911043}
 --- !u!1001 &82544531
 PrefabInstance:
@@ -1970,6 +1972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f736f25eb8d655a4a81231a42db268e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
 --- !u!1001 &641090979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2207,6 +2211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef657d7634a4cd14d9c847e9754de14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
   mySnowflake: {fileID: 0}
 --- !u!4 &673915015 stripped
 Transform:
@@ -2810,6 +2816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef657d7634a4cd14d9c847e9754de14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
   mySnowflake: {fileID: 373940280}
 --- !u!1001 &859918917
 PrefabInstance:
@@ -4946,6 +4954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef657d7634a4cd14d9c847e9754de14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
   mySnowflake: {fileID: 1490338732}
 --- !u!4 &1567936031 stripped
 Transform:
@@ -5140,22 +5150,22 @@ PrefabInstance:
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08017761
+      value: -0.07085541
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.12657963
+      value: 0.19707918
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.41494268
+      value: -0.4166358
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.8974251
+      value: -0.8846208
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
@@ -5165,17 +5175,17 @@ PrefabInstance:
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -14.416
+      value: 16.833
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -350.452
+      value: -377.614
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999340, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 48.419003
+      value: 47.812004
       objectReference: {fileID: 0}
     - target: {fileID: 1591502936166999342, guid: 60cd31d7997c72a49977b6be0f8bccad,
         type: 3}
