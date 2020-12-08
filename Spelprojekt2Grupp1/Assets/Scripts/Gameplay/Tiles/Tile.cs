@@ -118,7 +118,7 @@ public class Tile : MonoBehaviour
         yield return null;
     }
 
-
+    public void DrawGizmos() { OnDrawGizmos(); }
 
     private void OnDrawGizmos()
     {
