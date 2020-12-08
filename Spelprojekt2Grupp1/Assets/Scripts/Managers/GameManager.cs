@@ -8,11 +8,15 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ourInstance;
+    public AudioManager myAudioManager { get; private set; }
+
     private StageManager myStageManager;
     private GameData myGameData;
 
     [SerializeField] public bool myIsDebugging = false;
-    
+
+    private AudioSource myCurrentMusicSource;
+
     public void Update()
     {
         if (myIsDebugging)
@@ -244,7 +248,34 @@ public class GameManager : MonoBehaviour
         ourInstance = this;
 
         myStageManager = GetComponent<StageManager>();
+        myAudioManager = GetComponent<AudioManager>();
 
         LoadGameData();
+    }
+
+    private void PlayMusic(string anAudioName, float someVolume = 0.165f, bool aShouldRestart = false)
+    {
+        if (myCurrentMusicSource != null)
+        {
+            if (myCurrentMusicSource.clip == myAudioManager.GetAudioClip(anAudioName) && !aShouldRestart)
+            {
+                myCurrentMusicSource.volume = someVolume;
+                return;
+            }
+
+            myAudioManager.Stop(myCurrentMusicSource);
+            myCurrentMusicSource = null;
+        }
+
+        myCurrentMusicSource = myAudioManager.PlayMusicClip(anAudioName, someVolume: someVolume, aShouldLoop: true);
+    }
+
+    private void StopMusic()
+    {
+        if (myCurrentMusicSource != null)
+        {
+            myAudioManager.Stop(myCurrentMusicSource);
+            myCurrentMusicSource = null;
+        }
     }
 }

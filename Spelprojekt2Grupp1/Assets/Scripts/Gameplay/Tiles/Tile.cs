@@ -7,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public class Tile : MonoBehaviour
 {
+    public Vector3Int myPivotOffset = Vector3Int.zero;
+    [SerializeField]
+    bool myShowPivotHitbox = false;
+
     [System.Flags]
     public enum TileType
     {
@@ -63,7 +67,7 @@ public class Tile : MonoBehaviour
     /// <param name="aPosition">The new position of the Tile</param>
     public void TGASetPosition(Vector3 aPosition)
     {
-        Vector3Int intPosition = Vector3Int.FloorToInt(aPosition);
+        Vector3Int intPosition = Vector3Int.FloorToInt(aPosition + myPivotOffset);
         if (myKey != intPosition)
         {
             TileManager.ourInstance.TGAChangeKey(myKey, intPosition, this);
@@ -114,11 +118,15 @@ public class Tile : MonoBehaviour
         yield return null;
     }
 
-
+    public void DrawGizmos() { OnDrawGizmos(); }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(Vector3Int.FloorToInt(transform.position), 0.0625f);
+        Gizmos.DrawSphere(Vector3Int.FloorToInt(transform.position + myPivotOffset), 0.0625f);
+        if (myShowPivotHitbox)
+        {
+            Gizmos.DrawWireCube(Vector3Int.FloorToInt(transform.position + myPivotOffset), Vector3.one);
+        }
     }
 }
