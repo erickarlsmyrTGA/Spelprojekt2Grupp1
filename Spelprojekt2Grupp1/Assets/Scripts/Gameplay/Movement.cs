@@ -22,10 +22,10 @@ public class Movement
 
          if (tile1 && tile1.myType.HasFlag(Tile.TileType.Ice))
          {
-            Debug.Log("isIce = true");
+           // Debug.Log("isIce = true");
             while (tile1 && tile1.myType.HasFlag(Tile.TileType.Ice) && (tile2 == null || !(tile2.myType.HasFlag(Tile.TileType.Barrier))))
             {
-               Debug.Log("isBarrier = FALSE");
+               //Debug.Log("isBarrier = FALSE");
                direction += aDirection;
                tile1 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + Vector3.down);
                tile2 = TileManager.ourInstance.TGATryGetTileAt(aTransform.position + direction + aDirection);
@@ -33,7 +33,7 @@ public class Movement
          }
       }
 
-      Debug.Log("isIce = DONE");
+      //Debug.Log("isIce = DONE");
 
       //Movement
       Vector3 position = aTransform.position;
