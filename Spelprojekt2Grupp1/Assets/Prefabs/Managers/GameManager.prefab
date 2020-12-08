@@ -61,13 +61,13 @@ MonoBehaviour:
   myIsDebugging: 0
   levels:
   - sceneAsset: {fileID: 102900000, guid: 9ba876ee333113a47b22e7e8bd89ab1c, type: 3}
-    scenePath: Assets/Scenes/Demo_Basic_Level.unity
+    scenePath: Assets/Scenes/World 1/W1L1.unity
   - sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
-    scenePath: Assets/Scenes/Dennis_Scenes/Level_2.unity
+    scenePath: Assets/Scenes/World 1/W1L2.unity
   - sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
-    scenePath: Assets/Scenes/Leon/Leon_1.unity
+    scenePath: Assets/Scenes/World 1/W1L4.unity
   - sceneAsset: {fileID: 102900000, guid: 55817d605ce8dbe44a619a5ea3a8cfe7, type: 3}
-    scenePath: Assets/Scenes/Leon/Leon_2.unity
+    scenePath: Assets/Scenes/World 1/W1L3.unity
 --- !u!114 &1842239037824839774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,5 +88,67 @@ MonoBehaviour:
   myVoiceMixer: {fileID: -1555929373386510732, guid: 6a34781c2eb37b448b452c017a261e57,
     type: 2}
   myAudio:
+  - myAudioName: Magic_Bubble
+    myAudioClip: {fileID: 8300000, guid: 39ad81a5da9918f4a81ae302744cf9cc, type: 3}
+  - myAudioName: Casino_Slot_Sound
+    myAudioClip: {fileID: 8300000, guid: dde6232cad579de4d9e89bb96e4d1242, type: 3}
+  - myAudioName: Button_Press
+    myAudioClip: {fileID: 8300000, guid: fc534a2f82309a24294bcefcd5074489, type: 3}
+  - myAudioName: Fairy _Dust
+    myAudioClip: {fileID: 8300000, guid: 752b1756a3949fc439d1eca97fdb8bca, type: 3}
+  - myAudioName: Chimes_01
+    myAudioClip: {fileID: 8300000, guid: daec857813e61c34bbea502341f9ab4f, type: 3}
+  - myAudioName: Chimes_02
+    myAudioClip: {fileID: 8300000, guid: 96d4a077d13e2ec4c8e0e536254da631, type: 3}
+  - myAudioName: Christmas_Sound
+    myAudioClip: {fileID: 8300000, guid: 3f1dae54ff89e9249b2e990487a1e162, type: 3}
+  - myAudioName: Jingle_Bells_01
+    myAudioClip: {fileID: 8300000, guid: 59eacf72ba47c004c85fac4f2d6a977f, type: 3}
+  - myAudioName: Jingle_Bells_02
+    myAudioClip: {fileID: 8300000, guid: f8af1b5fc05727a448f11919a5666449, type: 3}
+  - myAudioName: Happy_Frog
+    myAudioClip: {fileID: 8300000, guid: 9df3632932219b449a5be988e2ae2ea3, type: 3}
+  - myAudioName: Jingle_Bells03
+    myAudioClip: {fileID: 8300000, guid: ca73aedc523ae5f44879f08997ffd6b3, type: 3}
+  - myAudioName: Jump
+    myAudioClip: {fileID: 8300000, guid: 6e8b241ac3f1d2a448d2eb809403067d, type: 3}
+  - myAudioName: Magic_Dust
+    myAudioClip: {fileID: 8300000, guid: d956b6c21705bc5499a04c7c276506af, type: 3}
+  - myAudioName: Wind_Chimes_01
+    myAudioClip: {fileID: 8300000, guid: 426ebbe00997bcb43bb1e9304c78ba2a, type: 3}
+  - myAudioName: Wind_Chimes_02
+    myAudioClip: {fileID: 8300000, guid: 9fa1ee141eed06049997e728c85232b4, type: 3}
+  - myAudioName: Music_Box
+    myAudioClip: {fileID: 8300000, guid: 66b442bfece978d419943ae7b9a38855, type: 3}
+  - myAudioName: PaperSlide
+    myAudioClip: {fileID: 8300000, guid: 201fdf01e852e6440a04c950f2f14002, type: 3}
+  - myAudioName: Small_Bell
+    myAudioClip: {fileID: 8300000, guid: 0b7a3eae3b4513e44ab73b4a5837c3ba, type: 3}
+  - myAudioName: StarCircus
+    myAudioClip: {fileID: 8300000, guid: 15cc5614c9091264699723ac6314ec20, type: 3}
+  - myAudioName: Steam_01
+    myAudioClip: {fileID: 8300000, guid: f9cd667df06c6a141b8d4ffa15cbf2a8, type: 3}
+  - myAudioName: Steam_02
+    myAudioClip: {fileID: 8300000, guid: 198c5e42ecc65434eb3af00961014e2b, type: 3}
+  - myAudioName: Steam_03
+    myAudioClip: {fileID: 8300000, guid: dceaa2bc898e40445b3a455e9b698b08, type: 3}
+  - myAudioName: Steam_04
+    myAudioClip: {fileID: 8300000, guid: ef9308be0eacba74fbd3a67d52c1d5c5, type: 3}
+  - myAudioName: Thunk_01
+    myAudioClip: {fileID: 8300000, guid: fba2ee7c43427224b9c679c69225e09f, type: 3}
+  - myAudioName: Thunk_02
+    myAudioClip: {fileID: 8300000, guid: 79cd0fca6faf09f4c9be4c8cf0a519d6, type: 3}
+  - myAudioName: Thunk_03
+    myAudioClip: {fileID: 8300000, guid: a60f1d12368749743a3c93b0d7a042eb, type: 3}
+  - myAudioName: Thunk_04
+    myAudioClip: {fileID: 8300000, guid: 85707b614397ad54ea03ae369be9f05f, type: 3}
+  - myAudioName: Thunk_05
+    myAudioClip: {fileID: 8300000, guid: 63d73a1a635b5764da27d3e9012e8633, type: 3}
+  - myAudioName: Whip_01
+    myAudioClip: {fileID: 8300000, guid: 04ea5bf214a965c409daf0f422f84bf8, type: 3}
+  - myAudioName: Whip_02
+    myAudioClip: {fileID: 8300000, guid: cd71a407b097d254b9e173095fc15c4d, type: 3}
+  - myAudioName: Howling_Wind
+    myAudioClip: {fileID: 8300000, guid: 2759fc6dc32657d46a231a608aae0f5a, type: 3}
   - myAudioName: 
     myAudioClip: {fileID: 0}
