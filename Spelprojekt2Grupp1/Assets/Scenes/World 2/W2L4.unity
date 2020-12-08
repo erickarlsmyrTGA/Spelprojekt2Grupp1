@@ -20,9 +20,9 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.90466136, g: 0.23074007, b: 0.17144115, a: 1}
-  m_AmbientEquatorColor: {r: 0.06847818, g: 0.028426038, b: 0.08021983, a: 1}
-  m_AmbientGroundColor: {r: 0.4125427, g: 0.12743773, b: 0.16202943, a: 1}
+  m_AmbientSkyColor: {r: 0.4302111, g: 0.20906019, b: 0.509434, a: 1}
+  m_AmbientEquatorColor: {r: 0.33359167, g: 0.26072446, b: 0.8773585, a: 1}
+  m_AmbientGroundColor: {r: 0.6792453, g: 0.45817018, b: 0.67727095, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
@@ -283,8 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &76126372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,8 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &87870196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -629,8 +625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &167820982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1332,8 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &312092434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1363,7 @@ Transform:
   - {fileID: 752276314}
   - {fileID: 2080143438}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &354257044
 PrefabInstance:
@@ -1466,8 +1458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &357483596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -1486,8 +1476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &361945778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1725,8 +1713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &437334530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1958,8 +1944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &449609767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2131,8 +2115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &493139955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -2151,8 +2133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &503434334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,8 +2460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &593076255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2575,8 +2553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &606135731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2966,8 +2942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &652521496 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -2986,8 +2960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &657378754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -3006,8 +2978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &681844843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3170,8 +3140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &697971938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -3190,8 +3158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &701531413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3591,8 +3557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &786978376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3678,7 +3642,7 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.658
+      value: -0.496
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -3688,7 +3652,7 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.88199985
+      value: 0.813
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -3713,7 +3677,7 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 54
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -3733,17 +3697,17 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4081644
+      value: 0.89600253
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4081644
+      value: 0.89600253
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4081644
+      value: 0.89600253
       objectReference: {fileID: 0}
     - target: {fileID: 5258396508715270059, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -4467,7 +4431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1006886252
 PrefabInstance:
@@ -4589,7 +4553,7 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -4609,17 +4573,17 @@ PrefabInstance:
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.80121154
+      value: 1.1618369
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.88093203
+      value: 1.2774395
       objectReference: {fileID: 0}
     - target: {fileID: 4878035491163792657, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.80121154
+      value: 1.1618369
       objectReference: {fileID: 0}
     - target: {fileID: 5258396508715270059, guid: b27a0237ed850ae499c4963805fb2cbc,
         type: 3}
@@ -4805,8 +4769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1030763599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5122,8 +5084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &1115992765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -5142,8 +5102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1170591540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5289,7 +5247,7 @@ Transform:
   - {fileID: 1709637473}
   - {fileID: 1252099475}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1213816315
 PrefabInstance:
@@ -5840,8 +5798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1307910238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6079,8 +6035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1407181228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6468,12 +6422,12 @@ PrefabInstance:
     - target: {fileID: 5205939250641498331, guid: 5018f31ef8d8ad6439e85545c7319311,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: -1.766
       objectReference: {fileID: 0}
     - target: {fileID: 5205939250641498331, guid: 5018f31ef8d8ad6439e85545c7319311,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.815
+      value: 0.955
       objectReference: {fileID: 0}
     - target: {fileID: 5205939250641498331, guid: 5018f31ef8d8ad6439e85545c7319311,
         type: 3}
@@ -6503,7 +6457,7 @@ PrefabInstance:
     - target: {fileID: 5205939250641498331, guid: 5018f31ef8d8ad6439e85545c7319311,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5205939250641498331, guid: 5018f31ef8d8ad6439e85545c7319311,
         type: 3}
@@ -7560,8 +7514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1639546511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7654,8 +7606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1648479706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7902,8 +7852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1679282125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8006,8 +7954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1709637472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8449,6 +8395,90 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa4021415c103194e8214ad7720e54b9, type: 3}
+--- !u!1001 &1798974368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.392622
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2193386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.3970425
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.80005985
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 53.361004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 363.766
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662293, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -50.894
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662294, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662294, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.43654326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662294, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.47746763
+      objectReference: {fileID: 0}
+    - target: {fileID: 7938106597628662295, guid: 4db2352b7040dde468572a499b355695,
+        type: 3}
+      propertyPath: m_Name
+      value: World 2 Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4db2352b7040dde468572a499b355695, type: 3}
 --- !u!1 &1803863991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -8467,8 +8497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1877352041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9297,8 +9325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &1969332433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -9317,8 +9343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1971943588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9412,8 +9436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &1994096721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9645,8 +9667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &2030786811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9738,7 +9758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &2031005054
 Light:
   m_ObjectHideFlags: 0
@@ -9812,7 +9832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &2045346638
 PrefabInstance:
@@ -10135,8 +10155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &2080143437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10240,8 +10258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1 &2085414229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa4021415c103194e8214ad7720e54b9,
@@ -10260,8 +10276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7f376c420ec8d4783c2add75c2d499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
 --- !u!1001 &2088756437
 PrefabInstance:
   m_ObjectHideFlags: 0
