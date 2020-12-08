@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1800741411993723093}
   - component: {fileID: 3590075914224556164}
   m_Layer: 0
-  m_Name: WorkingOven
+  m_Name: Oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026001397946960136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3079000604579942266}
@@ -48,8 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4043ca8dab1478d439e3e9abc36029f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
   myPlayer: {fileID: 0}
 --- !u!1 &3079000604366272680
 GameObject:
@@ -4864,7 +4862,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: c21d337a5f68484498828ccced7e49a9, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 654473b6f4b5f6a4ab4c3de7afc60c9a, type: 2}
   - {fileID: 2100000, guid: 869e9b974672376498d8a87557a85744, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
