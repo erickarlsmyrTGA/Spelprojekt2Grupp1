@@ -1,17 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class CollectableManager : MonoBehaviour
 {
     public GameData.StageData myStageData { get; private set; }
-    
+    [SerializeField] TextMeshProUGUI myScoreText;
+
+    private int myLocalMaxCount = 0;
 
     public void OnPickUp(SnowflakeTile collectable)
     {
-        myStageData.myCollectables.Add(collectable.myId);
+        if (!myStageData.myCollectables.Contains(collectable.myId))
+        {
+            myStageData.myCollectables.Add(collectable.myId);
 
-        // Notify UI
+            UpdateScoreUI();
+        }        
+    }
+
+    private void UpdateScoreUI()
+    {
+        myScoreText.text = myStageData.myCollectables.Count.ToString() + " / " + myLocalMaxCount.ToString();
+    }
+
+    internal void IncreaseLocalMaxCount()
+    {
+        myLocalMaxCount++;
     }
 
     public static CollectableManager ourInstance
@@ -37,7 +54,8 @@ public class CollectableManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
+        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();        
+        UpdateScoreUI();
     }
 
     // Update is called once per frame
