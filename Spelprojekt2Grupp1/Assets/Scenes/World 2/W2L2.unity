@@ -6647,6 +6647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: level2_groundCube (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 8627193346841573028, guid: 0909265141aa0b3418fab09cdca4f63d,
+        type: 3}
+      propertyPath: myShowPivotHitbox
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0909265141aa0b3418fab09cdca4f63d, type: 3}
 --- !u!4 &1192426491 stripped
