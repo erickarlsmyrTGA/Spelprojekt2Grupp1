@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     private GameData myGameData;
 
     [SerializeField] public bool myIsDebugging = false;
-    
+
+    private AudioSource myCurrentMusicSource;
+
     public void Update()
     {
         if (myIsDebugging)
