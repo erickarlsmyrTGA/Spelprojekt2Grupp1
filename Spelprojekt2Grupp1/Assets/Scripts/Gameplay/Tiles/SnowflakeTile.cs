@@ -19,9 +19,10 @@ public class SnowflakeTile : Tile
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         myId = ++myIdGenerator;
+        CollectableManager.ourInstance.IncreaseLocalMaxCount();
         Debug.Log(myId);
         
         myIsPickedUp = false;
