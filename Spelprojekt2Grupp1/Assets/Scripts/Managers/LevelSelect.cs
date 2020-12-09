@@ -19,22 +19,19 @@ public class LevelSelect : MonoBehaviour
     private Button myBtn;
     [SerializeField] private GameObject myPlayButton;
 
-    private int mySnowMax = 7;
+    private int mySnowMax = 5;
     private int mySnowMin = 2;
 
-    private int myFireMax = 13;
-    private int myFireMin = 8;
+    private int myFireMax = 9;
+    private int myFireMin = 6;
 
-    private int myHatMax = 19;
-    private int myHatMin = 14;
+    private int myHatMax = 13;
+    private int myHatMin = 10;
 
-    private int myLevelAccessMax = 3; // TODO set 7 as default after beta
-    private int myLevelAccessMin = 0;// TODO set 2 as default after beta
-    private int mySelectedLevel = 0;// TODO set 2 as default after beta
+    private int myLevelAccessMax = 5;
+    private int myLevelAccessMin = 2;
+    private int mySelectedLevel = 2;
     private int myNormalize = 1;
-
-
-    private int[] myBetaLevelSelect = {2, 4, 6, 7};
 
     public void MoveNextLevel()
     {
@@ -42,9 +39,8 @@ public class LevelSelect : MonoBehaviour
         {
             ++mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel + myNormalize).ToString(); // TODO set * to - after beta
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
         }
-
     }
 
     public void MovePreviousLevel()
@@ -53,7 +49,7 @@ public class LevelSelect : MonoBehaviour
         {
             --mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel + myNormalize).ToString(); // TODO set * to - after beta
+            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
 
         }
 
@@ -70,8 +66,8 @@ public class LevelSelect : MonoBehaviour
 
     public void PlaySelected()
     {
-        SceneManager.LoadScene(myBetaLevelSelect[mySelectedLevel]);
-        Debug.Log("Playing level " + myBetaLevelSelect[mySelectedLevel]);
+        SceneManager.LoadScene(mySelectedLevel);
+        Debug.Log("Playing level " + mySelectedLevel);
     }
 
     public void Theme_SnowButton()

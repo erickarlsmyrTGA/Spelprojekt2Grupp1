@@ -9,10 +9,4 @@ public class GroundTile : Tile
         myName = "Ground";
         myType = TileType.Ground | TileType.Barrier;
     }
-
-    public override IEnumerator TGAExecute()
-    {
-        GameManager.ourInstance.myAudioManager.PlaySFXClip("Thunk_05");
-        return base.TGAExecute();
-    }
 }

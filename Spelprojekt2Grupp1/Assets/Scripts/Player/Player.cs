@@ -142,6 +142,8 @@ public class Player : Tile
                             yield return new WaitForSeconds(0.5f);
                             yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
                             myCheckFallDistanceThisFrame = false;
+
+                            GameManager.ourInstance.myAudioManager.PlaySFXClip("Thunk_03");
                         }
                         else if (tile.myName == "Ladder" && myStateIsSolid)
                         {
@@ -255,6 +257,8 @@ public class Player : Tile
         {
             Debug.Log("now I'm a cloud");
 
+            GameManager.ourInstance.myAudioManager.PlaySFXClip("MrCloud_Transform");
+
             mySolidState.SetActive(false);
             myGasState.SetActive(true);
 
@@ -272,6 +276,8 @@ public class Player : Tile
         if (myStateIsSolid != true)
         {
             Debug.Log("now I'm a snowman");
+
+            GameManager.ourInstance.myAudioManager.PlaySFXClip("Frosty_Transform");
 
             myGasState.SetActive(false);
             mySolidState.SetActive(true);

@@ -43,6 +43,8 @@ public class SnowflakeTile : Tile
             myIsPickedUp = true;
             CollectableManager.ourInstance.OnPickUp(this);
             mySnowflake.SetActive(false);
+
+            GameManager.ourInstance.myAudioManager.PlaySFXClip("Magic_Bubble");
         }
 
         yield return null;
