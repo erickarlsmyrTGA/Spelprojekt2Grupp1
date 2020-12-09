@@ -32,6 +32,16 @@ public class CameraController : MonoBehaviour
         {
             Rotate();
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.Rotate(0, 90, 0, Space.World);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            transform.Rotate(0, -90, 0, Space.World);
+        }
+
         Snap();
     }
 
