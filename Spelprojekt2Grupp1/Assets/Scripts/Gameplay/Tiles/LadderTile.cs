@@ -64,6 +64,8 @@ public class LadderTile : Tile
 
     private void OnDrawGizmos()
     {
+        base.DrawGizmos();
+
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, 0.125f);
         Gizmos.color = Color.white;
