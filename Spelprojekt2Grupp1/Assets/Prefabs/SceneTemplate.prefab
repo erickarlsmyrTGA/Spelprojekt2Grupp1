@@ -364,6 +364,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CollectableManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8726250911468149461, guid: 5b65315814eb8e14398aca8e8c16758a,
+        type: 3}
+      propertyPath: myScoreText
+      value: 
+      objectReference: {fileID: 262298136544784032}
     - target: {fileID: 8726250911468149462, guid: 5b65315814eb8e14398aca8e8c16758a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,6 +847,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4269553350049910037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &262298136544784032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4099224425334989749, guid: c51400defe0448d479315987555288df,
+    type: 3}
+  m_PrefabInstance: {fileID: 4269553350049910037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8855827072165601306
 PrefabInstance:
   m_ObjectHideFlags: 0
