@@ -14,7 +14,11 @@ public class Movement
    public IEnumerator MoveInDirection(Transform aTransform, Vector3 aDirection, float aSpeed)
    {
       Vector3 direction = aDirection;
-      bool isSolid = aTransform.gameObject.GetComponent<Player>().myStateIsSolid;
+      bool isSolid = true;
+      if (aTransform.gameObject.GetComponent<Player>() != null)
+      {
+         isSolid = aTransform.gameObject.GetComponent<Player>().myStateIsSolid;
+      }
 
       //Handling Ice Tiles
       if (direction.y == 0 && direction != Vector3.zero && isSolid == true)
