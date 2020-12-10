@@ -31,6 +31,8 @@ public class Player : Tile
 
     [SerializeField]
     Animator myAnimationController;
+    [SerializeField]
+    Animator myGasAnimationController;
 
 
     Movement myMovement;
@@ -182,6 +184,7 @@ public class Player : Tile
                     Vector3 lastPos = transform.position;
 
                     myAnimationController.SetTrigger("JumpP");
+                    myGasAnimationController.SetTrigger("FloatP");
                     yield return StartCoroutine(myMovement.MoveInDirection(transform, direction, myMoveSpeed));
 
                     var lastTile = TileManager.ourInstance.TGATryGetTileAt(lastPos + Vector3.down);
