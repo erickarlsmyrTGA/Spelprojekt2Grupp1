@@ -76,6 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa540ad9a87916429cb221a0f4ed1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
+  myStateIsSolid: 1
   myGameIsOn: 1
   mySolidState: {fileID: 5085079588255209559}
   myGasState: {fileID: 8150683315934016369}
@@ -83,6 +86,7 @@ MonoBehaviour:
   myGravity: 10
   myMaxFallDistance: 5
   myAnimationController: {fileID: 1737932110}
+  myGasAnimationController: {fileID: 7456494624750316701}
 --- !u!95 &1737932110
 Animator:
   serializedVersion: 3
@@ -306,6 +310,12 @@ PrefabInstance:
 --- !u!4 &6985209636857816351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6113442520161878925, guid: 6736c92ccfae4b343aa1d49ae295b122,
+    type: 3}
+  m_PrefabInstance: {fileID: 3758039154224473746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7456494624750316701 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6007228961897384463, guid: 6736c92ccfae4b343aa1d49ae295b122,
     type: 3}
   m_PrefabInstance: {fileID: 3758039154224473746}
   m_PrefabAsset: {fileID: 0}
