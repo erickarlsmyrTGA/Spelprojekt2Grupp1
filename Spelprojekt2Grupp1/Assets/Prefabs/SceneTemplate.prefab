@@ -714,6 +714,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1916001811708299041}
     m_Modifications:
+    - target: {fileID: 874447170169810910, guid: c51400defe0448d479315987555288df,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.7271881
+      objectReference: {fileID: 0}
     - target: {fileID: 7068442868108263061, guid: c51400defe0448d479315987555288df,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -727,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 7068442868681367963, guid: c51400defe0448d479315987555288df,
         type: 3}
       propertyPath: m_Name
-      value: PauseCanvas
+      value: PlayerUI
       objectReference: {fileID: 0}
     - target: {fileID: 7068442868681367964, guid: c51400defe0448d479315987555288df,
         type: 3}
