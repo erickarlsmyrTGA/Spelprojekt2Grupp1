@@ -6017,7 +6017,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowflake 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 309895273377969012, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
 --- !u!4 &676561801 stripped
 Transform:
@@ -7251,7 +7252,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowflake 1 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 309895273377969012, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
 --- !u!1001 &802387457
 PrefabInstance:
@@ -9301,7 +9303,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snowflake 1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 309895273377969012, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 213a6d45c8e18b44b898e9714195a8e2, type: 3}
 --- !u!4 &1017923381 stripped
 Transform:
@@ -13075,16 +13078,17 @@ Transform:
   - {fileID: 1262150767}
   - {fileID: 936656246}
   - {fileID: 1191288399}
+  - {fileID: 633889239}
   - {fileID: 388066424}
   - {fileID: 568863249}
   - {fileID: 901039307}
   - {fileID: 2000585916}
-  - {fileID: 633889239}
   - {fileID: 1896829599}
   - {fileID: 134712544}
   - {fileID: 1108619221}
   - {fileID: 1682819405}
   - {fileID: 1707468676}
+  - {fileID: 1258752958}
   - {fileID: 333815094}
   - {fileID: 1108510133}
   - {fileID: 288640131}
@@ -13092,7 +13096,6 @@ Transform:
   - {fileID: 18589384}
   - {fileID: 1213500906}
   - {fileID: 1458948855}
-  - {fileID: 1258752958}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
