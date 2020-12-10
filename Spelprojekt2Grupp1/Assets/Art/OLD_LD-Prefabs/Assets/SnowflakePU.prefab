@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257956338}
   m_LocalRotation: {x: -0, y: -0.42424515, z: -0, w: 0.9055474}
-  m_LocalPosition: {x: -0.039, y: 0.16600037, z: -0.059}
+  m_LocalPosition: {x: 0.034, y: 0.205, z: -0.028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5917425431642997818}
@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.35362348, b: 0.6132076, a: 1}
-  m_Intensity: 4
+  m_Intensity: 5
   m_Range: 0.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 8421003216575863637, guid: a8c64ce0bbcfab74c851c42464c693c1,
         type: 3}
       propertyPath: m_Name
-      value: SnowflakePU (1)
+      value: SnowflakePU
       objectReference: {fileID: 0}
     - target: {fileID: 9193739527311409647, guid: a8c64ce0bbcfab74c851c42464c693c1,
         type: 3}
