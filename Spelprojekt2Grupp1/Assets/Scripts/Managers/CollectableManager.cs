@@ -31,6 +31,11 @@ public class CollectableManager : MonoBehaviour
         myLocalMaxCount++;
     }
 
+    internal bool IsSnowflakePickedUp(int myId)
+    {
+        return myStageData.myCollectables?.Contains(myId) ?? false;
+    }
+
     public static CollectableManager ourInstance
     { 
         get; 
@@ -46,15 +51,14 @@ public class CollectableManager : MonoBehaviour
         else
         {
             ourInstance = this;
-        }
-                
+            myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
+        }        
     }
 
 
     // Start is called before the first frame update
     void Start()
-    {
-        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();        
+    {               
         UpdateScoreUI();
     }
 

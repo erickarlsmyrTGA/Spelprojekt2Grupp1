@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SnowflakeTile : Tile
 {
-    bool myIsPickedUp = false;
+    bool myIsPickedUpThisPlay = false;
     [SerializeField] private GameObject mySnowflake = null;
 
     SnowflakeTile()
@@ -21,11 +21,22 @@ public class SnowflakeTile : Tile
     // Start is called before the first frame update
     void Awake()
     {
-        myId = ++myIdGenerator;
+        myId = ++myIdGenerator; // If order is not guaranteed - set Id:s manually in Serialized Field
         CollectableManager.ourInstance.IncreaseLocalMaxCount();
         Debug.Log(myId);
-        
-        myIsPickedUp = false;
+        // Check if already picked up
+        bool isPickedUp = CollectableManager.ourInstance.IsSnowflakePickedUp(myId);
+        if (isPickedUp)
+        {
+            // enable transparancy
+            var material = mySnowflake.GetComponentInChildren<Renderer>().material;
+            material.DisableKeyword("_EMISSION");
+            Color color = material.color;
+            color.a = 0.5f;
+            material.SetColor("_Color", color);
+        }
+
+
         if (mySnowflake == null)
         {
             Debug.LogError("mySnowflake is fuckywucky");
@@ -38,14 +49,13 @@ public class SnowflakeTile : Tile
 
     public override IEnumerator TGAExecute()
     {
-        if (myIsPickedUp == false)
+        if (myIsPickedUpThisPlay == false) // 
         {
-            myIsPickedUp = true;
+            myIsPickedUpThisPlay = true;
             CollectableManager.ourInstance.OnPickUp(this);
-            mySnowflake.SetActive(false);
-
             GameManager.ourInstance.myAudioManager.PlaySFXClip("Magic_Bubble");
-        }
+        }        
+        mySnowflake.SetActive(false);
 
         yield return null;
 

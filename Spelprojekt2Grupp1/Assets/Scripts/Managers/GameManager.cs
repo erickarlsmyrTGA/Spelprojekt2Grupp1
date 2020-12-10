@@ -27,24 +27,23 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                Debug.Log("Loading data");
+                Log("Loading data");
                 LoadGameData();
             }
             if (Input.GetKeyDown(KeyCode.T))
             {
-                Debug.Log("Deleting data");
+                Log("Deleting data");
                 DeleteSavedGameData();
                 LoadGameData(); // Create new instance
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Debug.Log("Saving data");
+                Log("Saving data");
                 SaveGameData();
             }
             if (Input.GetKeyDown(KeyCode.I))
             {
-                Debug.Log("Inspecting");
-                Debug.Log(myGameData.ToString());
+                Log("Inspecting");
             }
             if (Input.GetKeyDown(KeyCode.M))
             {
@@ -84,13 +83,12 @@ public class GameManager : MonoBehaviour
             FileStream file = File.Open(filePath, FileMode.Open);
             myGameData = (GameData)bf.Deserialize(file);
             file.Close();
-            Debug.Log("Game data loaded!");
+            Log("Game data loaded!");
         }
         else
         {
             myGameData = new GameData();
-            //Debug.LogError("There is no save data!");
-            Debug.Log("Fresh file created!");
+            Log("Fresh file created!");
         }
     }
 
@@ -100,7 +98,7 @@ public class GameManager : MonoBehaviour
         if (File.Exists(filePath))
         {
             File.Delete(filePath);
-            Debug.Log("File deleted");
+            Log("File deleted");
         }
         
     }
@@ -115,7 +113,7 @@ public class GameManager : MonoBehaviour
         FileStream file = File.Create(filePath);
         bf.Serialize(file, myGameData);
         file.Close();
-        Debug.Log("Game data saved!");
+        Log("Game data saved!");
     }
 
 
@@ -280,5 +278,12 @@ public class GameManager : MonoBehaviour
             myAudioManager.Stop(myCurrentMusicSource);
             myCurrentMusicSource = null;
         }
+    }
+
+    private void Log(string aString)
+    {
+#if UNITY_EDITOR
+        Debug.Log(aString);
+#endif
     }
 }
