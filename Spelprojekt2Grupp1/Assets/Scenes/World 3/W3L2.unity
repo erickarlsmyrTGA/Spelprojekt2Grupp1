@@ -2725,6 +2725,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a62dbac28f0de3459e729bf413eee48, type: 3}
+--- !u!1 &862331047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3289214475115610764, guid: b149096dd5773254e86257c5c1950ce8,
+    type: 3}
+  m_PrefabInstance: {fileID: 391280018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &862331048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862331047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f01dd22ddb4e2cb40bdc64bf203ccaf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
+  myStartPos: {x: -1, y: 1, z: 1}
+  myEndPos: {x: -1, y: 1, z: 3}
+  myIsPressed: 0
+  myIsMoving: 1
 --- !u!1001 &863098115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4278,18 +4302,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1252006176}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1275557586 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 952242695944751534, guid: b149096dd5773254e86257c5c1950ce8,
-    type: 3}
-  m_PrefabInstance: {fileID: 391280018}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc90fb7c6b3b6fd4091b0c06883f3611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1291400449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5957,7 +5969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
-  myTargetTile: {fileID: 1275557586}
+  myTargetTile: {fileID: 862331048}
 --- !u!1001 &1835184952
 PrefabInstance:
   m_ObjectHideFlags: 0
