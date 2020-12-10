@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : Tile
 {
     bool myCoroutineIsNotInAction;
-    bool myStateIsSolid = true;
+    public bool myStateIsSolid = true;
     public bool myGameIsOn = true;
 
     bool myCheckFallDistanceThisFrame = true;
