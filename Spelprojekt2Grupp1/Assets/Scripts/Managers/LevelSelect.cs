@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelSelect : MonoBehaviour
 {
+
     private Button myBtn;
     [SerializeField] private GameObject myPlayButton;
+    [SerializeField] private TextMeshProUGUI myLevelText;
+    private int myWorld = 1;
+    private int myLevel = 1;
 
     private int mySnowMax = 5;
     private int mySnowMin = 2;
@@ -36,7 +41,9 @@ public class LevelSelect : MonoBehaviour
         {
             ++mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+            ++myLevel;
+            myLevelText.SetText(myWorld + "-" + myLevel);
         }
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
@@ -59,7 +66,9 @@ public class LevelSelect : MonoBehaviour
         {
             --mySelectedLevel;
             Debug.Log(mySelectedLevel);
-            myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+            --myLevel;
+            myLevelText.SetText(myWorld + "-" + myLevel);
         }
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
@@ -81,7 +90,6 @@ public class LevelSelect : MonoBehaviour
         mySelectedLevel = mySnowMin;
         myLevelAccessMax = mySnowMax;
         myLevelAccessMin = mySnowMin;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
         SceneManager.LoadScene(0);
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
@@ -103,7 +111,10 @@ public class LevelSelect : MonoBehaviour
         mySelectedLevel = mySnowMin;
         myLevelAccessMax = mySnowMax;
         myLevelAccessMin = mySnowMin;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        myWorld = 1;
+        myLevel = 1;
+        myLevelText.SetText(myWorld + "-" + myLevel);
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
@@ -124,7 +135,10 @@ public class LevelSelect : MonoBehaviour
         mySelectedLevel = myFireMin;
         myLevelAccessMax = myFireMax;
         myLevelAccessMin = myFireMin;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        myWorld = 2;
+        myLevel = 1;
+        myLevelText.SetText(myWorld + "-" + myLevel);
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
@@ -145,7 +159,10 @@ public class LevelSelect : MonoBehaviour
         mySelectedLevel = myHatMin;
         myLevelAccessMax = myHatMax;
         myLevelAccessMin = myHatMin;
-        myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        myWorld = 3;
+        myLevel = 1;
+        myLevelText.SetText(myWorld + "-" + myLevel);
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
