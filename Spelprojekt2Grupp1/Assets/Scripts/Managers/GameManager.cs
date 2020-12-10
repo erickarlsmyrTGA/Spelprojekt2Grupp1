@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Load data when game is started. Always in memory.
     /// </summary>
-    void LoadGameData()
+    public void LoadGameData()
     {
         string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
         if (File.Exists(filePath))
@@ -90,16 +90,19 @@ public class GameManager : MonoBehaviour
         {
             myGameData = new GameData();
             //Debug.LogError("There is no save data!");
+            Debug.Log("Fresh file created!");
         }
     }
 
-    void DeleteSavedGameData()
+    public void DeleteSavedGameData()
     {
         string filePath = Application.persistentDataPath + "/AChristmasCarrotSaveData.dat";
         if (File.Exists(filePath))
         {
             File.Delete(filePath);
-        }        
+            Debug.Log("File deleted");
+        }
+        
     }
 
     /// <summary>
