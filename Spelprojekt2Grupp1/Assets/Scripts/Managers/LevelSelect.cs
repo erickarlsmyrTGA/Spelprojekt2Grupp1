@@ -6,16 +6,6 @@ using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
-    //[SerializeField] private GameObject mySnowButton;
-    //[SerializeField] private GameObject myFireButton;
-    //[SerializeField] private GameObject myHatButton;
-
-    //[SerializeField] private GameObject myLeftButton;
-    //[SerializeField] private GameObject myRightButton;
-
-    //[SerializeField] public Sprite mySprite;
-    //Image myImageComponent;
-
     private Button myBtn;
     [SerializeField] private GameObject myPlayButton;
 
@@ -33,13 +23,33 @@ public class LevelSelect : MonoBehaviour
     private int mySelectedLevel = 2;
     private int myNormalize = 1;
 
+    
+
+    public void PlaySelected()
+    {
+        SceneManager.LoadScene(mySelectedLevel);
+    }
+
     public void MoveNextLevel()
     {
-        if(mySelectedLevel < myLevelAccessMax)
+        if (mySelectedLevel < myLevelAccessMax)
         {
             ++mySelectedLevel;
             Debug.Log(mySelectedLevel);
             myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+        }
+
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
         }
     }
 
@@ -50,9 +60,20 @@ public class LevelSelect : MonoBehaviour
             --mySelectedLevel;
             Debug.Log(mySelectedLevel);
             myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
-
         }
 
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
+        }
     }
 
     public void ReturnMainMenu()
@@ -62,12 +83,19 @@ public class LevelSelect : MonoBehaviour
         myLevelAccessMin = mySnowMin;
         myBtn.GetComponentInChildren<Text>().text = "Level " + mySelectedLevel.ToString();
         SceneManager.LoadScene(0);
-    }
 
-    public void PlaySelected()
-    {
-        SceneManager.LoadScene(mySelectedLevel);
-        Debug.Log("Playing level " + mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
+        }
     }
 
     public void Theme_SnowButton()
@@ -76,6 +104,19 @@ public class LevelSelect : MonoBehaviour
         myLevelAccessMax = mySnowMax;
         myLevelAccessMin = mySnowMin;
         myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
+        }
     }
 
     public void Theme_FireButton()
@@ -84,6 +125,19 @@ public class LevelSelect : MonoBehaviour
         myLevelAccessMax = myFireMax;
         myLevelAccessMin = myFireMin;
         myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
+        }
     }
 
     public void Theme_HatButton()
@@ -92,13 +146,25 @@ public class LevelSelect : MonoBehaviour
         myLevelAccessMax = myHatMax;
         myLevelAccessMin = myHatMin;
         myBtn.GetComponentInChildren<Text>().text = "Level " + (mySelectedLevel - myNormalize).ToString();
+
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
+        if (isLevelUnlocked == true || mySelectedLevel == 2)
+        {
+            myBtn.interactable = true;
+
+            Debug.Log("Playing level " + mySelectedLevel);
+        }
+        else
+        {
+            myBtn.interactable = false;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         myBtn = myPlayButton.GetComponent<Button>();
-
     }
 
     //// Update is called once per frame
