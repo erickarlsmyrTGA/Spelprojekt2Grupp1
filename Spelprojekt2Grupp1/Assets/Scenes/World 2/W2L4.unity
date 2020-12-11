@@ -10592,6 +10592,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 146066877384759330, guid: f6b962f056da95345a51bb2140a9395b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3289214475115610764, guid: f6b962f056da95345a51bb2140a9395b,
         type: 3}
       propertyPath: m_Name
@@ -10627,6 +10632,11 @@ PrefabInstance:
       propertyPath: myPlayer
       value: 
       objectReference: {fileID: 1069644935}
+    - target: {fileID: 7094509551433175971, guid: f6b962f056da95345a51bb2140a9395b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8567998533586547743, guid: f6b962f056da95345a51bb2140a9395b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10680,6 +10690,11 @@ PrefabInstance:
     - target: {fileID: 8567998533586547743, guid: f6b962f056da95345a51bb2140a9395b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717725235246463425, guid: f6b962f056da95345a51bb2140a9395b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
