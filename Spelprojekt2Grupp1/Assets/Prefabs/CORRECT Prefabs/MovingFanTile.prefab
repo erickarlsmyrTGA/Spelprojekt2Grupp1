@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8567998533586547743}
+  - component: {fileID: 4360980921764622324}
   m_Layer: 0
   m_Name: MovingFanTile
   m_TagString: Untagged
@@ -27,28 +28,31 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8168923113183123201}
   - {fileID: 7977964852340757027}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &952242695944751534
+--- !u!114 &4360980921764622324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7094509551433175971}
+  m_GameObject: {fileID: 3289214475115610764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc90fb7c6b3b6fd4091b0c06883f3611, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cf218773b0e8cc4fb9d6aa4b1767d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
-  myFanStrength: {x: 0, y: 1, z: 0}
+  myFanStrength: {x: 0, y: 0, z: 0}
+  myFanSpeed: 0
+  myIsPressed: 0
+  myIsMoving: 0
+  myStartPos: {x: 0, y: 0, z: 0}
+  myEndPos: {x: 0, y: 0, z: 0}
   myPlayer: {fileID: 0}
-  myFanSpeed: 1
 --- !u!1001 &952242695287523265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,7 +98,7 @@ PrefabInstance:
     - target: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
         type: 3}
@@ -124,12 +128,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5132170865419109684, guid: 97799d992941f934caa3f580aa6bf531, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97799d992941f934caa3f580aa6bf531, type: 3}
---- !u!1 &7094509551433175971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8017473274258166882, guid: 97799d992941f934caa3f580aa6bf531,
-    type: 3}
-  m_PrefabInstance: {fileID: 952242695287523265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7977964852340757027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
@@ -141,7 +139,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8567998533586547743}
+    m_TransformParent: {fileID: 7977964852340757027}
     m_Modifications:
     - target: {fileID: 1565635298727811273, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
@@ -201,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 4822964192864537202, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4822964192864537202, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
@@ -245,9 +243,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe448c4a5e18754d881c6061df13277, type: 3}
---- !u!4 &8168923113183123201 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4822964192864537202, guid: dbe448c4a5e18754d881c6061df13277,
-    type: 3}
-  m_PrefabInstance: {fileID: 3725396269294460275}
-  m_PrefabAsset: {fileID: 0}
