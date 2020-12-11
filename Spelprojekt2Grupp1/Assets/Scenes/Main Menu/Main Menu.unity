@@ -2405,6 +2405,7 @@ GameObject:
   - component: {fileID: 1559706886}
   - component: {fileID: 1559706885}
   - component: {fileID: 1559706884}
+  - component: {fileID: 1559706887}
   m_Layer: 5
   m_Name: Clear Game Data Button
   m_TagString: Untagged
@@ -2475,19 +2476,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1585379204}
-        m_MethodName: DeleteSavedGameData
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 1585379204}
-        m_MethodName: LoadGameData
+      - m_Target: {fileID: 1559706887}
+        m_MethodName: DeleteSaves
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2534,16 +2524,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559706882}
   m_CullTransparentMesh: 0
---- !u!114 &1585379204 stripped
+--- !u!114 &1559706887
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6684015931256868823, guid: c49a3ace6d3c8524da00f7fe817156af,
-    type: 3}
-  m_PrefabInstance: {fileID: 1986292108}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1559706882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e1375a0ccac4d4ba0ab456be996717, type: 3}
+  m_Script: {fileID: 11500000, guid: 253043699a8f2964ab5659fc558248fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1655684090
@@ -2944,6 +2934,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902148458776097705, guid: c49a3ace6d3c8524da00f7fe817156af,
+        type: 3}
+      propertyPath: myIsDebugging
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49a3ace6d3c8524da00f7fe817156af, type: 3}
