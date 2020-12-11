@@ -1334,6 +1334,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: carrot
       objectReference: {fileID: 0}
+    - target: {fileID: 5695480406331859923, guid: 3063514982865b441827d8b0af469c54,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 322b3db2f4c6d724fbf62e63eb0f409e, type: 2}
+    - target: {fileID: 5695480406331859923, guid: 3063514982865b441827d8b0af469c54,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2594aba821fcad34fb32911267d314da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3063514982865b441827d8b0af469c54, type: 3}
 --- !u!1001 &370355105
@@ -3108,6 +3118,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2942596955414507685, guid: 9671e92dc3e8d2b468a408342d23fa59,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 322b3db2f4c6d724fbf62e63eb0f409e, type: 2}
     - target: {fileID: 4629976762454648605, guid: 9671e92dc3e8d2b468a408342d23fa59,
         type: 3}
       propertyPath: myPlayer
@@ -3182,6 +3197,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3079000604579942268, guid: f6fb022924ae0e04c96f867401fdcee0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 58d370fb2e7c74348a3dbac6af9d8934, type: 2}
+    - target: {fileID: 3079000604579942268, guid: f6fb022924ae0e04c96f867401fdcee0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 322b3db2f4c6d724fbf62e63eb0f409e, type: 2}
     - target: {fileID: 3590075914224556164, guid: f6fb022924ae0e04c96f867401fdcee0,
         type: 3}
       propertyPath: myPlayer
@@ -4463,6 +4488,16 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7204467037647493140, guid: f6b962f056da95345a51bb2140a9395b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fec2ba1697ff057419cfd88670fcd08a, type: 2}
+    - target: {fileID: 7204467037647493140, guid: f6b962f056da95345a51bb2140a9395b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fec2ba1697ff057419cfd88670fcd08a, type: 2}
     - target: {fileID: 8567998533586547743, guid: f6b962f056da95345a51bb2140a9395b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4868,6 +4903,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1127495554674666209, guid: b02c38f1724ddef44b29168040da9d69,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 322b3db2f4c6d724fbf62e63eb0f409e, type: 2}
+    - target: {fileID: 1127495554674666209, guid: b02c38f1724ddef44b29168040da9d69,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2594aba821fcad34fb32911267d314da, type: 2}
     - target: {fileID: 1636671418705352377, guid: b02c38f1724ddef44b29168040da9d69,
         type: 3}
       propertyPath: m_Name
@@ -6391,6 +6436,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2594aba821fcad34fb32911267d314da, type: 2}
+    - target: {fileID: 7983865323645280213, guid: 97799d992941f934caa3f580aa6bf531,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 322b3db2f4c6d724fbf62e63eb0f409e, type: 2}
     - target: {fileID: 8017473274258166882, guid: 97799d992941f934caa3f580aa6bf531,
         type: 3}
       propertyPath: m_Name
