@@ -46,7 +46,7 @@ public class LevelSelect : MonoBehaviour
             myLevelText.SetText(myWorld + "-" + myLevel);
         }
 
-        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel - 1);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
         if (isLevelUnlocked == true || mySelectedLevel == 2)
         {
@@ -71,7 +71,7 @@ public class LevelSelect : MonoBehaviour
             myLevelText.SetText(myWorld + "-" + myLevel);
         }
 
-        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel - 1);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
         if (isLevelUnlocked == true || mySelectedLevel == 2)
         {
