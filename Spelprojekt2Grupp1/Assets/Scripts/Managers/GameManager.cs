@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
         LoadGameData();
     }
 
-    private void PlayMusic(string anAudioName, float someVolume = 0.165f, bool aShouldRestart = false)
+    public void PlayMusic(string anAudioName, float someVolume = 0.165f, bool aShouldRestart = false)
     {
         if (myCurrentMusicSource != null)
         {
