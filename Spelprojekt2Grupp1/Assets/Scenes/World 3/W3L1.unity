@@ -16992,6 +16992,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1993300620}
     m_Modifications:
+    - target: {fileID: 361353488, guid: dbe448c4a5e18754d881c6061df13277, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 361353488, guid: dbe448c4a5e18754d881c6061df13277, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: acbe6a995aa54ad4b8dffc1394b0746c, type: 2}
     - target: {fileID: 4504812958056787943, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -17046,6 +17054,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504812958625057323, guid: dbe448c4a5e18754d881c6061df13277,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4822964192864537202, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
@@ -29248,6 +29261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4504812958625057323, guid: dbe448c4a5e18754d881c6061df13277,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4822964192864537202, guid: dbe448c4a5e18754d881c6061df13277,
         type: 3}
