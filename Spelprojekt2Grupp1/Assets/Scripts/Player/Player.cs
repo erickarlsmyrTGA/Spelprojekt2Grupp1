@@ -42,6 +42,12 @@ public class Player : Tile
         myCoroutineIsNotInAction = true;
         myMovement = new Movement();
 
+        //if()
+        //{
+
+        //}
+        GameManager.ourInstance.PlayMusic("World1_Music", 1.0f, true);
+
         //myAnimationController.SetTrigger("JumpP");
     }
 
@@ -140,6 +146,8 @@ public class Player : Tile
                     {
                         if (tile.myName == "PushTile" && myStateIsSolid)
                         {
+                            GameManager.ourInstance.myAudioManager.PlaySFXClip("Thunk_03");
+
                             myAnimationController.SetTrigger("PushP");
                             yield return new WaitForSeconds(0.5f);
                             yield return StartCoroutine(((PushTile)tile).TGAMoveInDirection(direction));
@@ -181,6 +189,8 @@ public class Player : Tile
                 else
                 {
                     // Move to target
+                    GameManager.ourInstance.myAudioManager.PlaySFXClip("Thunk_05"); // TODO add delay
+
                     Vector3 lastPos = transform.position;
 
                     myAnimationController.SetTrigger("JumpP");

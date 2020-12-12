@@ -16,9 +16,9 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] Sprite myW2L2;
     [SerializeField] Sprite myW2L3;
     [SerializeField] Sprite myW2L4;
-    //[SerializeField] Sprite myW3L1;
-    //[SerializeField] Sprite myW3L2;
-    //[SerializeField] Sprite myW3L3;
+    [SerializeField] Sprite myW3L1;
+    [SerializeField] Sprite myW3L2;
+    [SerializeField] Sprite myW3L3;
     [SerializeField] Sprite myW3L4;
 
     private List<Sprite> mySprites = new List<Sprite>();
@@ -217,9 +217,9 @@ public class LevelSelect : MonoBehaviour
         mySprites.Add(myW2L2);
         mySprites.Add(myW2L3);
         mySprites.Add(myW2L4);
-        //mySprites.Add(myW3L1);
-        //mySprites.Add(myW3L2);
-        //mySprites.Add(myW3L3);
+        mySprites.Add(myW3L1);
+        mySprites.Add(myW3L2);
+        mySprites.Add(myW3L3);
         mySprites.Add(myW3L4);
     }
 

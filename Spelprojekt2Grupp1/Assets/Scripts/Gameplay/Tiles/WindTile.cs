@@ -27,7 +27,7 @@ public class WindTile : Tile
         Debug.Log("Wind Tile activated");
         if (myPlayer.IsSolidState == false)
         {
-            GameManager.ourInstance.myAudioManager.PlaySFXClip("PaperSlide");
+            GameManager.ourInstance.myAudioManager.PlaySFXClip("PaperSlide", 1.0f, 1.5f);
             yield return StartCoroutine(myPlayer.TGAMovement.MoveInDirection(myPlayer.transform, myFanStrength, myFanSpeed));
         }
     }

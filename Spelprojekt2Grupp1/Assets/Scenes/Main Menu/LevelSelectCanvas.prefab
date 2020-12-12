@@ -92,10 +92,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 40.1
+  m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -362,10 +362,10 @@ RectTransform:
   m_Father: {fileID: 6552291539610315576}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.019000001, y: 0.34530917}
-  m_AnchorMax: {x: 0.18400002, y: 0.4621546}
-  m_AnchoredPosition: {x: 0.1329956, y: 1.9228973}
-  m_SizeDelta: {x: -0.2131195, y: -2.3440857}
+  m_AnchorMin: {x: 0.409, y: 0.29010352}
+  m_AnchorMax: {x: 0.58000004, y: 0.40800002}
+  m_AnchoredPosition: {x: -0.8764992, y: 0.5}
+  m_SizeDelta: {x: -2.2131195, y: -3.3440857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6552291539487803608
 CanvasRenderer:
@@ -1429,9 +1429,9 @@ MonoBehaviour:
   myW2L2: {fileID: 21300000, guid: 7c12f474c28d8f54e89fd2d303ece22b, type: 3}
   myW2L3: {fileID: 21300000, guid: 757acf8ad5317c34c9fcb96fc939525e, type: 3}
   myW2L4: {fileID: 21300000, guid: 88572b3780da011448cbad6e09d1ad3d, type: 3}
-  myW3L1: {fileID: 0}
-  myW3L2: {fileID: 0}
-  myW3L3: {fileID: 0}
+  myW3L1: {fileID: 21300000, guid: 61fb9eb047537854e94cec8b6549f70c, type: 3}
+  myW3L2: {fileID: 21300000, guid: 8651d78ebc7711849a0f9c3b9ea7bbe7, type: 3}
+  myW3L3: {fileID: 21300000, guid: d53569748322ec94bb38bcae04a10c52, type: 3}
   myW3L4: {fileID: 21300000, guid: 9addda34b183f4e4aa1baeca3a0a11f3, type: 3}
   myPlayButton: {fileID: 6552291540625877815}
   myLevelText: {fileID: 7991483946862084470}
