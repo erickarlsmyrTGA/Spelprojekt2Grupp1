@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1842239037824839774}
   - component: {fileID: 2442871851890368236}
   - component: {fileID: 2481104663993724278}
+  - component: {fileID: 4834215085763846180}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myIsDebugging: 0
   myFadeImage: {fileID: 2481104663993724278}
-  myFadeTime: 1
+  myFadeTime: 0.75
 --- !u!114 &6902148458776097705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -236,3 +237,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!223 &4834215085763846180
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684015931256868816}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
