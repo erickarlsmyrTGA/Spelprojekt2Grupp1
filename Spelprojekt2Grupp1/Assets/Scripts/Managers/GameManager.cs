@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     private GameData myGameData;
 
     [SerializeField] public bool myIsDebugging = false;
+    [SerializeField] Image myFadeImage;
+
+   private float myFadeTime;
 
     private AudioSource myCurrentMusicSource;
 
@@ -183,13 +187,23 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadStage(int aStageIndex)
     {
+      //SceneManager.LoadScene(...);
+      float t = 1;
 
-        //SceneManager.LoadScene(...);
+      while (t > 0)
+      {
+         t = Mathf.Clamp(t - Time.deltaTime / myFadeTime, 0, 1);
 
-        // Wait for next frame when the scene is fully loaded and active
-        yield return null;
+         Color current = myFadeImage.color;
+         current.a = t;
 
-        OnStageBegin(aStageIndex);
+         myFadeImage.color = current;
+         yield return null;
+      }
+
+      OnStageBegin(aStageIndex);
+
+      // Wait for next frame when the scene is fully loaded and active
     }
 
     private void OnStageBegin(int aStageIndex)
