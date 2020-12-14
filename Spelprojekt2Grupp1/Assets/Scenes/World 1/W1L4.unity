@@ -2591,6 +2591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
+  myPlayer: {fileID: 1125448795}
 --- !u!1001 &543655871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2666,17 +2667,17 @@ PrefabInstance:
     - target: {fileID: 2914476640321028725, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2914476640321028725, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2914476640321028725, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2914476640321028725, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
@@ -4690,6 +4691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
+  myPlayer: {fileID: 1125448795}
 --- !u!1001 &994755437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5265,6 +5267,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1961236151}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1125448795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5754159314773963997, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 543655871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa540ad9a87916429cb221a0f4ed1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1126693440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3183356070869510399, guid: 09b9ed9c3fb2bbf4cbab4bb9f870400f,
