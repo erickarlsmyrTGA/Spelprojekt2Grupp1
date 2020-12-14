@@ -253,23 +253,23 @@ public class GameManager : MonoBehaviour
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel <= 1)
         {
-            GameManager.ourInstance.PlayMusic("Happy_Frog", 1.0f, true);
+            GameManager.ourInstance.PlayMusic("Happy_Frog", 0.8f, true);
         }
         else if (currentLevel == 2)
         {
-            GameManager.ourInstance.PlayMusic("First_Level_Music", 1.0f, true);
+            GameManager.ourInstance.PlayMusic("First_Level_Music", 0.8f, true);
         }
         else if (currentLevel >= 3 && currentLevel <= 5)
         {
-            GameManager.ourInstance.PlayMusic("World1_Music", 1.0f, true);
+            GameManager.ourInstance.PlayMusic("World1_Music", 0.8f, true);
         }
         else if (currentLevel >= 6 && currentLevel <= 9)
         {
-            GameManager.ourInstance.PlayMusic("World2_Music", 1.0f, true);
+            GameManager.ourInstance.PlayMusic("World2_Music", 0.8f, true);
         }
         else if (currentLevel >= 10 && currentLevel <= 13)
         {
-            GameManager.ourInstance.PlayMusic("World3_Music", 1.0f, true);
+            GameManager.ourInstance.PlayMusic("World3_Music", 0.8f, true);
         }
     }
 
