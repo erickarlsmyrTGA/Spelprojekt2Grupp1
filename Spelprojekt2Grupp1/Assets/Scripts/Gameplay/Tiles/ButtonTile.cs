@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ButtonTile : Tile
 {
+    [SerializeField] private Player myPlayer;
+
     [SerializeField] Tile myTargetTile;
 
     Movement myMovement;
@@ -34,11 +36,15 @@ public class ButtonTile : Tile
 
     public override IEnumerator TGAExecute()
     {
-        myIsPressed = !myIsPressed;
-        //Debug.LogError("executed");
-        //myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) != null);
-        yield return StartCoroutine(myTargetTile.TGAExecute(myIsPressed));
-        yield return null;
-        myCoroutineIsNotInAction = true;
+        if (myPlayer.IsSolidState == true)
+        {
+            myIsPressed = !myIsPressed;
+            //Debug.LogError("executed");
+            //myIsPressed = (TileManager.ourInstance.TGATryGetTileAt(transform.position + Vector3.up) != null);
+            yield return StartCoroutine(myTargetTile.TGAExecute(myIsPressed));
+            yield return null;
+            myCoroutineIsNotInAction = true;
+        }
+
     }
 }
