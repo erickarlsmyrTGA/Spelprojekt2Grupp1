@@ -19,8 +19,6 @@ public class FPS : MonoBehaviour
             myQueue.Dequeue();
         }
 
-
-
         myText.text = (myQueue.Sum()/myQueue.Count()).ToString() + "\t";
     }
 }
