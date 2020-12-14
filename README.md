@@ -1,3 +1,3 @@
-# Spelprojekt2Grupp1
+# SnowTale Studios
 
-hello guys
+this is a readme
