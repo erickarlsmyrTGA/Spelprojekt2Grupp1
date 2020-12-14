@@ -1847,7 +1847,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: level2_groundCube (59)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8627193346841573028, guid: 0909265141aa0b3418fab09cdca4f63d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0909265141aa0b3418fab09cdca4f63d, type: 3}
 --- !u!1001 &157239980
 PrefabInstance:
@@ -12014,6 +12015,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.6600342
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951815876554892053, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951815878080600998, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.2999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951815878188369976, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.2999878
       objectReference: {fileID: 0}
     - target: {fileID: 8019573799582914907, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
