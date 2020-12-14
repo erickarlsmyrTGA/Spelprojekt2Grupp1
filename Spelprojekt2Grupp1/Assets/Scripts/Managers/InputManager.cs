@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour
 
     [SerializeField] Transform myPlayer;
     [SerializeField] float mySwipeThreashold = 0.75f;
+    [SerializeField] float myMovementThreashold = 0.1f;
     Touch myTouch;
     Vector2 myStartCoords;
     TouchState myCurrentTouchState;
@@ -187,6 +188,15 @@ public class InputManager : MonoBehaviour
                 myCurrentTouchState = TouchState.Rotating;
                 return;
             }
+            if (myStartCoords.y <= myMovementThreashold)
+            {
+                myPresssedForward = false;
+                myPresssedBackward = false;
+                myPresssedRight = false;
+                myPresssedLeft = false;
+                myCurrentTouchState = TouchState.Released;
+                return;
+            }
         }
         else
         {
@@ -333,6 +343,8 @@ public class InputManager : MonoBehaviour
                         myPresssedBackward = true;
                     }
                 }
+
+
             }
         }
 

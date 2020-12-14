@@ -1081,19 +1081,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 3.3000183
       objectReference: {fileID: 0}
-    - target: {fileID: 8116927565719333247, guid: c1c01a63c4c5ff34283f77dac67c57ac,
-        type: 3}
-      propertyPath: myPlayer
-      value: 
-      objectReference: {fileID: 69624996}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c01a63c4c5ff34283f77dac67c57ac, type: 3}
---- !u!4 &69624996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1057297923171510440, guid: c1c01a63c4c5ff34283f77dac67c57ac,
-    type: 3}
-  m_PrefabInstance: {fileID: 69624995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &85404152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6573174507307283758, guid: 8a62dbac28f0de3459e729bf413eee48,
