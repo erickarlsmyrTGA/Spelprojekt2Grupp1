@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool myIsDebugging = false;
     [SerializeField] Image myFadeImage;
 
-   private float myFadeTime;
+   [SerializeField] private float myFadeTime; 
 
     private AudioSource myCurrentMusicSource;
 
