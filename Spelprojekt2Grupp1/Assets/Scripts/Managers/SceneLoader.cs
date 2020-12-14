@@ -3,26 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] private GameObject myMainMenu;
+    [SerializeField] private GameObject mySettingsMenu;
+    [SerializeField] private GameObject myCredits;
+
     public void PlayButton()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
         SceneManager.LoadScene(1);
     }
 
-    public void MainMenuButton()
+    public void EnterSettings()
     {
-        SceneManager.LoadScene(0);
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
+        myMainMenu.SetActive(false);
+        mySettingsMenu.SetActive(true);
     }
 
-    public void SelectLevel()
+    public void ExitSettings()
     {
-
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Return");
+        myMainMenu.SetActive(true);
+        mySettingsMenu.SetActive(false);
     }
 
-    public void Credits()
+    public void EnterCredits()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
+        myMainMenu.SetActive(false);
+        myCredits.SetActive(true);
+    }
 
+    public void ExitCredits()
+    {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Return");
+        myMainMenu.SetActive(true);
+        myCredits.SetActive(false);
     }
 
     public void QuitGame()
