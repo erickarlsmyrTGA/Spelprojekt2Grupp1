@@ -7,18 +7,18 @@ using UnityEngine.UI;
 public class FPS : MonoBehaviour
 {
     [SerializeField] Text myText;
-    Queue<int> myQueue = new Queue<int>();
+    Queue<float> myQueue = new Queue<float>();
 
 
     void Update()
     {
-        myQueue.Enqueue((int)(1 / Time.deltaTime));
+        myQueue.Enqueue(1 / Time.deltaTime);
 
         if (myQueue.Count > 144)
         {
             myQueue.Dequeue();
         }
 
-        myText.text = (myQueue.Sum()/myQueue.Count()).ToString() + "\t";
+        myText.text = ((int)(myQueue.Sum() / myQueue.Count())).ToString() + "\t";
     }
 }
