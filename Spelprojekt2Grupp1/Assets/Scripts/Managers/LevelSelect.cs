@@ -49,11 +49,13 @@ public class LevelSelect : MonoBehaviour
 
     public void PlaySelected()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
         SceneManager.LoadScene(mySelectedLevel);
     }
 
     public void MoveNextLevel()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
         if (mySelectedLevel < myLevelAccessMax)
         {
             ++mySelectedLevel;
@@ -81,6 +83,7 @@ public class LevelSelect : MonoBehaviour
 
     public void MovePreviousLevel()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Return");
         if (mySelectedLevel > myLevelAccessMin)
         {
             --mySelectedLevel;
@@ -108,6 +111,8 @@ public class LevelSelect : MonoBehaviour
 
     public void ReturnMainMenu()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Return");
+
         mySelectedLevel = mySnowMin;
         myLevelAccessMax = mySnowMax;
         myLevelAccessMin = mySnowMin;
@@ -129,6 +134,8 @@ public class LevelSelect : MonoBehaviour
 
     public void Theme_SnowButton()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
+
         mySelectedLevel = mySnowMin;
         myLevelAccessMax = mySnowMax;
         myLevelAccessMin = mySnowMin;
@@ -155,6 +162,8 @@ public class LevelSelect : MonoBehaviour
 
     public void Theme_FireButton()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
+
         mySelectedLevel = myFireMin;
         myLevelAccessMax = myFireMax;
         myLevelAccessMin = myFireMin;
@@ -181,6 +190,8 @@ public class LevelSelect : MonoBehaviour
 
     public void Theme_HatButton()
     {
+        GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
+
         mySelectedLevel = myHatMin;
         myLevelAccessMax = myHatMax;
         myLevelAccessMin = myHatMin;
