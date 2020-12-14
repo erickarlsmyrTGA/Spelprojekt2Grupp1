@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool myIsDebugging = false;
     [SerializeField] Image myFadeImage;
 
-   [SerializeField] private float myFadeTime; 
+    [SerializeField] private float myFadeTime;
 
     private AudioSource myCurrentMusicSource;
 
@@ -67,7 +67,6 @@ public class GameManager : MonoBehaviour
     public void TransitionNextStage()
     {
         myStageManager.GoToNextStage();
-        // TODO: use coroutine LoadStage - but if above works ok, scratch this for reducing complexity
     }
 
     public void RestartCurrentStage()
@@ -176,39 +175,66 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void TransitionToStage(int aStageIndex)
+    public void TransitionToStage(string aScenePath)
     {
         // TODO: Start coroutine for LoadStage async
+        StartCoroutine(LoadStage(aScenePath));
+
     }
 
     public void TransitionToMainMenu()
     {
     }
 
-    private IEnumerator LoadStage(int aStageIndex)
+    private IEnumerator LoadStage(string aScenePath)
     {
-      //SceneManager.LoadScene(...);
-      float t = 1;
+        //SceneManager.LoadScene(...);
+        float t = 0;
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScenePath);
+        asyncLoad.allowSceneActivation = false;        
+        while (t < 1)
+        {
 
-      while (t > 0)
-      {
-         t = Mathf.Clamp(t - Time.deltaTime / myFadeTime, 0, 1);
+            t = Mathf.Clamp(t + Time.deltaTime / myFadeTime, 0, 1);
 
-         Color current = myFadeImage.color;
-         current.a = t;
+            Color current = myFadeImage.color;
+            current.a = t;
 
-         myFadeImage.color = current;
-         yield return null;
-      }
+            myFadeImage.color = current;
+            yield return null;
+        }
+        yield return (asyncLoad.progress > 0.90f);
+        StartCoroutine(FadeIn());
+        asyncLoad.allowSceneActivation = true;
+        //OnStageBegin();
+        //SceneManager.LoadSceneAsync(aScenePath);
+        
 
-      OnStageBegin(aStageIndex);
-
-      // Wait for next frame when the scene is fully loaded and active
+        // Wait for next frame when the scene is fully loaded and active
     }
 
-    private void OnStageBegin(int aStageIndex)
+    private IEnumerator FadeIn()
+    
     {
-        Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
+        float t = 1;
+        while (t > 0)
+        {
+            t = Mathf.Clamp(t - Time.deltaTime / myFadeTime, 0, 1);
+
+            Color current = myFadeImage.color;
+            current.a = t;
+
+            myFadeImage.color = current;
+            yield return null;
+        }
+    }
+
+    private void OnStageBegin()
+    {
+        //Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
+        Color current = myFadeImage.color;
+        current.a = 0;
+        myFadeImage.color = current;
     }
 
     public void OnStageCleared()
@@ -226,13 +252,13 @@ public class GameManager : MonoBehaviour
     public List<string> GetClearedStages()
     {
         var stageList = new List<string>();
-        foreach (KeyValuePair<string, GameData.StageData> entry  in myGameData.myStageDataStr)
+        foreach (KeyValuePair<string, GameData.StageData> entry in myGameData.myStageDataStr)
         {
             if (entry.Value.myIsStageCleared)
             {
                 stageList.Add(entry.Key);
             }
-            
+
         }
         return stageList;
     }

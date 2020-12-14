@@ -50,7 +50,8 @@ public class LevelSelect : MonoBehaviour
     public void PlaySelected()
     {
         GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Press");
-        SceneManager.LoadScene(mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        GameManager.ourInstance.TransitionToStage(path);
     }
 
     public void MoveNextLevel()
