@@ -58,7 +58,7 @@ public class SettingsDataManager : MonoBehaviour
             writer.Write(json);
         }
 #if UNITY_EDITOR
-        Debug.Log("Data saved to drive.");
+        Debug.Log("Options settings saved!");
 #endif
     }
 
@@ -71,6 +71,9 @@ public class SettingsDataManager : MonoBehaviour
             string json = File.ReadAllText(fileName);
             JsonUtility.FromJsonOverwrite(json, mySettingsData);            
             return true;
+#if UNITY_EDITOR
+            Debug.Log("Options settings loaded!");
+#endif
         }
 
         return false;
