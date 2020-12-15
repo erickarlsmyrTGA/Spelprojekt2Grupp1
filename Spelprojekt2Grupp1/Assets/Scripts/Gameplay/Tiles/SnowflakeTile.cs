@@ -13,7 +13,6 @@ public class SnowflakeTile : Tile
         myType = TileType.Barrier | TileType.Ground;
     }
    
-    static public int myIdGenerator = 0;
     public int myId { get; private set; }
 
 
@@ -21,7 +20,7 @@ public class SnowflakeTile : Tile
     // Start is called before the first frame update
     void Awake()
     {
-        myId = ++myIdGenerator; // If order is not guaranteed - set Id:s manually in Serialized Field
+        myId = CollectableManager.ourInstance.GetLocalMaxCount(); // If order is not guaranteed - set Id:s manually in Serialized Field
         CollectableManager.ourInstance.IncreaseLocalMaxCount();
         // Check if already picked up
         bool isPickedUp = CollectableManager.ourInstance.IsSnowflakePickedUp(myId);

@@ -26,6 +26,11 @@ public class CollectableManager : MonoBehaviour
         myScoreText.text = myStageData.myCollectables.Count.ToString() + " / " + myLocalMaxCount.ToString();
     }
 
+    public int GetLocalMaxCount()
+    {
+        return myLocalMaxCount;
+    }
+
     internal void IncreaseLocalMaxCount()
     {
         myLocalMaxCount++;
@@ -51,8 +56,13 @@ public class CollectableManager : MonoBehaviour
         else
         {
             ourInstance = this;
-            myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
+            OnBeforeStageBegin();
         }        
+    }
+
+    public void OnBeforeStageBegin()
+    {
+        myStageData = GameManager.ourInstance.GetSavedCurrentStageData();
     }
 
 

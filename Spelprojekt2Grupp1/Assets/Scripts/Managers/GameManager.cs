@@ -266,6 +266,7 @@ public class GameManager : MonoBehaviour
 
     private void OnStageBegin()
     {
+        CollectableManager.ourInstance.OnBeforeStageBegin();
         StartOrChangeMusic();        
     }
 
