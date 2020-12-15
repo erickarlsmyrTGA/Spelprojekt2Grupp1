@@ -307,32 +307,45 @@ public class GameManager : MonoBehaviour
         return (myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data) && data.myIsStageCleared);
     }
 
+    public int myCurrentlyPlaying = -1;
+
     private void Start()
     {
+        myCurrentlyPlaying = -1;
         StartOrChangeMusic();
     }
 
-    public void StartOrChangeMusic()
+
+    public void StartOrChangeMusic(int aBuildIndex = -1)
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        int currentLevel = aBuildIndex > -1 ? aBuildIndex : SceneManager.GetActiveScene().buildIndex;
+        
+        if (currentLevel == myCurrentlyPlaying)
+            return;
+
         if (currentLevel <= 1)
         {
+            myCurrentlyPlaying = currentLevel;
             GameManager.ourInstance.PlayMusic("Happy_Frog", 0.8f, true);
         }
         else if (currentLevel == 2)
         {
+            myCurrentlyPlaying = currentLevel;
             GameManager.ourInstance.PlayMusic("First_Level_Music", 0.8f, true);
         }
         else if (currentLevel >= 3 && currentLevel <= 5)
         {
+            myCurrentlyPlaying = currentLevel;
             GameManager.ourInstance.PlayMusic("World1_Music", 0.8f, true);
         }
         else if (currentLevel >= 6 && currentLevel <= 9)
         {
+            myCurrentlyPlaying = currentLevel;
             GameManager.ourInstance.PlayMusic("World2_Music", 0.8f, true);
         }
         else if (currentLevel >= 10 && currentLevel <= 13)
         {
+            myCurrentlyPlaying = currentLevel;
             GameManager.ourInstance.PlayMusic("World3_Music", 0.8f, true);
         }
     }
