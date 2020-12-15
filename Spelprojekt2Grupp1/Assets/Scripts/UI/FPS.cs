@@ -14,7 +14,7 @@ public class FPS : MonoBehaviour
     {
         myQueue.Enqueue(1 / Time.deltaTime);
 
-        if (myQueue.Count > 144)
+        if (myQueue.Count > 60)
         {
             myQueue.Dequeue();
         }
