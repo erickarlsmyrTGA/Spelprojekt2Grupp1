@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2442871851890368236}
   - component: {fileID: 2481104663993724278}
   - component: {fileID: 4834215085763846180}
+  - component: {fileID: 1153756688250714627}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -110,8 +111,6 @@ MonoBehaviour:
   myMusicMixer: {fileID: -4119943827747823346, guid: 6a34781c2eb37b448b452c017a261e57,
     type: 2}
   mySFXMixer: {fileID: -2622711647385543119, guid: 6a34781c2eb37b448b452c017a261e57,
-    type: 2}
-  myVoiceMixer: {fileID: -1555929373386510732, guid: 6a34781c2eb37b448b452c017a261e57,
     type: 2}
   myAudio:
   - myAudioName: Magic_Bubble
@@ -258,3 +257,15 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &1153756688250714627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684015931256868816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a62d8bae5ea54e4db8fbf69b49c9774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

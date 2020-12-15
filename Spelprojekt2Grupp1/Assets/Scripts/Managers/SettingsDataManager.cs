@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class SettingsDataManager : MonoBehaviour
 {
 
-    [SerializeField] private Slider myMusicVolumeSlider = null;
-    [SerializeField] private Slider mySFXVolumeSlider = null;
+    private Slider myMusicVolumeSlider = null;
+    private Slider mySFXVolumeSlider = null;
 
     public static SettingsDataManager ourInstance
     {
@@ -29,8 +29,6 @@ public class SettingsDataManager : MonoBehaviour
             ourInstance = this;
         }
         Load();
-        myMusicVolumeSlider.value = MusicVolume;
-        mySFXVolumeSlider.value = SFXVolume;
     }
 
     private SettingsData mySettingsData = new SettingsData();
@@ -38,6 +36,16 @@ public class SettingsDataManager : MonoBehaviour
 
     private static readonly string myFileName = "settingsData.conf";
 
+
+    public void SetMusicVolumeSlider(Slider aSlider)
+    {
+        myMusicVolumeSlider = aSlider;
+    }
+
+    public void SetSFXVolumeSlider(Slider aSlider)
+    {
+        mySFXVolumeSlider = aSlider;
+    }
 
 
     private static string GetFileName() => $"{Application.persistentDataPath}/{myFileName}";
@@ -78,7 +86,23 @@ public class SettingsDataManager : MonoBehaviour
 
         return false;
     }
-   
+
+    public void UpdateSFXData()
+    {
+        mySettingsData.mySFXVolume = mySFXVolumeSlider.value;
+    }
+
+    public void UpdateMusicData()
+    {
+        mySettingsData.myMusicVolume = myMusicVolumeSlider.value;
+    }
+
+    public void UpdateSliders()
+    {
+        myMusicVolumeSlider.value = mySettingsData.myMusicVolume;
+        mySFXVolumeSlider.value = mySettingsData.mySFXVolume;
+    }
+
     public void Delete() => File.Delete(GetFileName());
 
         
