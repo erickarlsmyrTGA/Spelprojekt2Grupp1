@@ -8349,8 +8349,8 @@ MonoBehaviour:
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
   myScene:
-    sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
-    scenePath: Assets/Scenes/World 1/W1L2.unity
+    sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
+    scenePath: Assets/Scenes/World 1/W1L4.unity
 --- !u!1001 &1387056612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12554,6 +12554,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -2.3399658
       objectReference: {fileID: 0}
+    - target: {fileID: 3990797539822330571, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.6569824
+      objectReference: {fileID: 0}
     - target: {fileID: 5754159314773963998, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -12574,6 +12579,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.34631348
       objectReference: {fileID: 0}
+    - target: {fileID: 6438079766945588600, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.1499634
+      objectReference: {fileID: 0}
     - target: {fileID: 6438079767141906061, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12588,6 +12598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.23754883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951815876571676235, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 6951815876994454250, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
@@ -12608,6 +12623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.50219727
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951815878077815306, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.795166
       objectReference: {fileID: 0}
     - target: {fileID: 6951815878174141836, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
