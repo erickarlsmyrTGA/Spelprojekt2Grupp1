@@ -241,15 +241,15 @@ public class GameManager : MonoBehaviour
         yield return (asyncLoad.progress > 0.90f);
         StartCoroutine(FadeIn());
         asyncLoad.allowSceneActivation = true;
-        //OnStageBegin();
+        OnStageBegin();
         //SceneManager.LoadSceneAsync(aScenePath);
-        
+
 
         // Wait for next frame when the scene is fully loaded and active
     }
 
     private IEnumerator FadeIn()
-    
+
     {
         float t = 1;
         while (t > 0)
@@ -266,10 +266,7 @@ public class GameManager : MonoBehaviour
 
     private void OnStageBegin()
     {
-        //Debug.Assert(CollectableManager.ourInstance != null, "No instance of CollectableManager found!");
-        Color current = myFadeImage.color;
-        current.a = 0;
-        myFadeImage.color = current;
+        StartOrChangeMusic();        
     }
 
     public void OnStageCleared()
@@ -310,6 +307,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
+    {
+        StartOrChangeMusic();
+    }
+
+    public void StartOrChangeMusic()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel <= 1)

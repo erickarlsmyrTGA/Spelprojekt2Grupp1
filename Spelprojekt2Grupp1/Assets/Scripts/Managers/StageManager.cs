@@ -38,6 +38,7 @@ public class StageManager : MonoBehaviour
         }
         else
         {
+            GameManager.ourInstance.StartOrChangeMusic();
             UnityEngine.SceneManagement.SceneManager.LoadScene(0); // tempfix
         }
         
