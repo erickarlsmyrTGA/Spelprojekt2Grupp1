@@ -21,11 +21,14 @@ public class LevelSelect : MonoBehaviour
     [SerializeField] Sprite myW3L3;
     [SerializeField] Sprite myW3L4;
 
+    [SerializeField] private GameObject myPlayButton;
+    [SerializeField] private TextMeshProUGUI myLevelText;
+    [SerializeField] private TextMeshProUGUI myFlakeCounterText;
+
     private List<Sprite> mySprites = new List<Sprite>();
 
     private Button myBtn;
-    [SerializeField] private GameObject myPlayButton;
-    [SerializeField] private TextMeshProUGUI myLevelText;
+
     private int myWorld = 1;
     private int myLevel = 1;
 
@@ -42,10 +45,6 @@ public class LevelSelect : MonoBehaviour
     private int myLevelAccessMin = 2;
     private int mySelectedLevel = 2;
     private int myNormalize = 1;
-
-
-
-    
 
     public void PlaySelected()
     {
@@ -221,6 +220,7 @@ public class LevelSelect : MonoBehaviour
     void Start()
     {
         myBtn = myPlayButton.GetComponent<Button>();
+
         mySprites.Add(myW1L1);
         mySprites.Add(myW1L2);
         mySprites.Add(myW1L3);
