@@ -319,33 +319,30 @@ public class GameManager : MonoBehaviour
     public void StartOrChangeMusic(int aBuildIndex = -1)
     {
         int currentLevel = aBuildIndex > -1 ? aBuildIndex : SceneManager.GetActiveScene().buildIndex;
-        
-        if (currentLevel == myCurrentlyPlaying)
-            return;
 
-        if (currentLevel <= 1)
+        if (currentLevel <= 1 && myCurrentlyPlaying != 1)
         {
-            myCurrentlyPlaying = currentLevel;
+            myCurrentlyPlaying = 1;
             GameManager.ourInstance.PlayMusic("Happy_Frog", 0.8f, true);
         }
-        else if (currentLevel == 2)
+        else if (currentLevel == 2 && myCurrentlyPlaying != 2)
         {
-            myCurrentlyPlaying = currentLevel;
+            myCurrentlyPlaying = 2;
             GameManager.ourInstance.PlayMusic("First_Level_Music", 0.8f, true);
         }
-        else if (currentLevel >= 3 && currentLevel <= 5)
+        else if (currentLevel >= 3 && currentLevel <= 5 && myCurrentlyPlaying != 3)
         {
-            myCurrentlyPlaying = currentLevel;
+            myCurrentlyPlaying = 3;
             GameManager.ourInstance.PlayMusic("World1_Music", 0.8f, true);
         }
-        else if (currentLevel >= 6 && currentLevel <= 9)
+        else if (currentLevel >= 6 && currentLevel <= 9 && myCurrentlyPlaying != 4)
         {
-            myCurrentlyPlaying = currentLevel;
+            myCurrentlyPlaying = 4;
             GameManager.ourInstance.PlayMusic("World2_Music", 0.8f, true);
         }
-        else if (currentLevel >= 10 && currentLevel <= 13)
+        else if (currentLevel >= 10 && currentLevel <= 13 && myCurrentlyPlaying != 5)
         {
-            myCurrentlyPlaying = currentLevel;
+            myCurrentlyPlaying = 5;
             GameManager.ourInstance.PlayMusic("World3_Music", 0.8f, true);
         }
     }
