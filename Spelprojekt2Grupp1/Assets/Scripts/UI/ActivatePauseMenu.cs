@@ -77,6 +77,8 @@ public class ActivatePauseMenu : MonoBehaviour
     {
         GameManager.ourInstance.myAudioManager.PlaySFXClip("Pop_Return");
         Debug.Log("Loading menu...");
-        SceneManager.LoadScene(0);
+        GameManager.ourInstance.StartOrChangeMusic();
+        SceneManager.LoadScene(0); // TODO: use fader - update StageManager
+
     }
 }
