@@ -39,7 +39,9 @@ public class InputManager : MonoBehaviour
         Holding,
         Swiping,
         Rotating,
-        Released
+        Released,
+        AutoRotateL,
+        AutoRotateR
     }
 
     // Start is called before the first frame update
@@ -181,11 +183,28 @@ public class InputManager : MonoBehaviour
         {
             if (myStartCoords.y >= mySwipeThreashold)
             {
+                float tenthOfHeight = (Screen.height * 0.1f) / Screen.width;
+
                 myPresssedForward = false;
                 myPresssedBackward = false;
                 myPresssedRight = false;
                 myPresssedLeft = false;
-                myCurrentTouchState = TouchState.Rotating;
+
+                if (myStartCoords.x <= tenthOfHeight)
+                {
+                    myCurrentTouchState = TouchState.AutoRotateL;
+                    Debug.LogError("rotate left");
+                }
+                else if (1 - tenthOfHeight <= myStartCoords.x)
+                {
+                    myCurrentTouchState = TouchState.AutoRotateR;
+                    Debug.LogError("rotate right");
+                }
+                else
+                {
+                    myCurrentTouchState = TouchState.Rotating;
+                }
+
                 return;
             }
             if (myStartCoords.y <= myMovementThreashold)
