@@ -11,8 +11,7 @@ public class AudioManager : MonoBehaviour
     public enum AudioType
     {
         Music,
-        SFX,
-        Voice,
+        SFX,        
     }
 
     [System.Serializable]
@@ -23,37 +22,23 @@ public class AudioManager : MonoBehaviour
         public AudioClip myAudioClip;
     }
 
-    #region Private Serializable Fields
-
     [SerializeField] private AudioMixer myAudioMixer;
 
     [Header("Mixers")]
     [SerializeField] private AudioMixerGroup myMusicMixer;
     [SerializeField] private AudioMixerGroup mySFXMixer;
-    [SerializeField] private AudioMixerGroup myVoiceMixer;
 
     [SerializeField] private Audio[] myAudio;
 
-    #endregion
-
+    private SettingsDataManager mySettingsDataManager = null;
     private static readonly int ourAudioCount = 16;
-
     private GameObject myAudioRoot;
-
     private Dictionary<string, AudioClip> myAudioStore = new Dictionary<string, AudioClip>();
-
     private Queue<AudioSource> myFreeAudioSourceQueue = new Queue<AudioSource>(ourAudioCount);
-
     private List<AudioSource> myPlayingSources = new List<AudioSource>(ourAudioCount);
 
 
     #region Public Methods
-
-    public void SetMasterVolume(float aVolume)
-    {
-        myAudioMixer.SetFloat(name: "MasterVolume", value: MapVolumeToMixerVolume(aVolume));
-    }
-
     public void SetMusicVolume(float aVolume)
     {
         myAudioMixer.SetFloat(name: "MusicVolume", value: MapVolumeToMixerVolume(aVolume));
@@ -64,30 +49,22 @@ public class AudioManager : MonoBehaviour
         myAudioMixer.SetFloat(name: "SFXVolume", value: MapVolumeToMixerVolume(aVolume));
     }
 
-    public void SetVoiceVolume(float aVolume)
-    {
-        myAudioMixer.SetFloat(name: "VoiceVolume", value: MapVolumeToMixerVolume(aVolume));
-    }
-
     public float MapVolumeToMixerVolume(float aVolume)
     {
-        // aVolume 0 -> 100
-
+        // aVolume 0 -> 1
         // More accurate db scaling than linear with volume slider
-        float percentage = Mathf.Clamp01(aVolume / 100.0f);
+        float percentage = Mathf.Clamp01(aVolume);
         float volume = Mathf.Log10(Mathf.Lerp(0.0001f, 1.0f, percentage)) * 20.0f;
-
         return volume;
     }
 
     public void SetVolumesFromOptionsDataManager()
     {
-        // TODO: read from saved sound settings
-        //OptionsDataManager optionsDataManager = OptionsDataManager.ourInstance;
-        //SetMasterVolume(optionsDataManager.MasterVolume);
-        //SetMusicVolume(optionsDataManager.MusicVolume);
-        //SetSFXVolume(optionsDataManager.SFXVolume);
-        //SetVoiceVolume(optionsDataManager.VoiceVolume);
+        if (mySettingsDataManager != null)
+        {
+            SetMusicVolume(mySettingsDataManager.MusicVolume);
+            SetSFXVolume(mySettingsDataManager.SFXVolume);
+        }        
     }
 
     #region Play Clips
@@ -163,12 +140,6 @@ public class AudioManager : MonoBehaviour
         return Play2D(GetAudioClip(anAudioName), AudioType.SFX, aPitch, someVolume, aShouldLoop);
     }
 
-    //-------------------------------------------------
-    public AudioSource PlayVoiceClip(string anAudioName, float aPitch = 1.0f, float someVolume = 1.0f, bool aShouldLoop = false)
-    {
-        return Play2D(GetAudioClip(anAudioName), AudioType.Voice, aPitch, someVolume, aShouldLoop);
-    }
-
     #endregion
 
     #region General
@@ -239,8 +210,6 @@ public class AudioManager : MonoBehaviour
                 return myMusicMixer;
             case AudioType.SFX:
                 return mySFXMixer;
-            case AudioType.Voice:
-                return myVoiceMixer;
         }
 
 #if UNITY_EDITOR
@@ -348,6 +317,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        mySettingsDataManager = SettingsDataManager.ourInstance;        
         SetVolumesFromOptionsDataManager();
     }
 
