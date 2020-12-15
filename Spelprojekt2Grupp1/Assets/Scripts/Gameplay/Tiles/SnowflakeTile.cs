@@ -23,7 +23,6 @@ public class SnowflakeTile : Tile
     {
         myId = ++myIdGenerator; // If order is not guaranteed - set Id:s manually in Serialized Field
         CollectableManager.ourInstance.IncreaseLocalMaxCount();
-        Debug.Log(myId);
         // Check if already picked up
         bool isPickedUp = CollectableManager.ourInstance.IsSnowflakePickedUp(myId);
         if (isPickedUp)
@@ -49,7 +48,7 @@ public class SnowflakeTile : Tile
 
     public override IEnumerator TGAExecute()
     {
-        if (myIsPickedUpThisPlay == false) // 
+        if (myIsPickedUpThisPlay == false)
         {
             myIsPickedUpThisPlay = true;
             CollectableManager.ourInstance.OnPickUp(this);
