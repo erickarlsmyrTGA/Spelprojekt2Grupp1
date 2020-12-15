@@ -219,6 +219,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6142721718717126777}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &488566212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7313897588733235518, guid: a905ec9d418004748b0b0e1e09de0a40,
+    type: 3}
+  m_PrefabInstance: {fileID: 6142721718717126777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d26704a712fa14d928dca7d223eb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &611545518 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1842239037824839774, guid: c49a3ace6d3c8524da00f7fe817156af,
@@ -428,19 +440,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f883e9d2487ebb408891b6d29180513, type: 3}
---- !u!1 &1819762586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6142721718530132687, guid: a905ec9d418004748b0b0e1e09de0a40,
+--- !u!114 &1819762591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2737869922070435747, guid: a905ec9d418004748b0b0e1e09de0a40,
     type: 3}
   m_PrefabInstance: {fileID: 6142721718717126777}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1819762591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819762586}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 364262351b7c7374cbd24697456c8fd3, type: 3}
@@ -1039,6 +1045,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142721719867090301, guid: a905ec9d418004748b0b0e1e09de0a40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 488566212}
+    - target: {fileID: 6142721719867090301, guid: a905ec9d418004748b0b0e1e09de0a40,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonPressedSound
       objectReference: {fileID: 0}
     - target: {fileID: 6142721720048010788, guid: a905ec9d418004748b0b0e1e09de0a40,
         type: 3}
