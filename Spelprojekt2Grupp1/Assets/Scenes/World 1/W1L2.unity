@@ -2702,27 +2702,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 663604418}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &669776090 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8488334520964103680, guid: 97799d992941f934caa3f580aa6bf531,
-    type: 3}
-  m_PrefabInstance: {fileID: 487011914}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &669776094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669776090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef657d7634a4cd14d9c847e9754de14b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
-  mySnowflake: {fileID: 0}
 --- !u!4 &673915015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
@@ -8736,6 +8715,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368330917924927588, guid: c1c01a63c4c5ff34283f77dac67c57ac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 3990797539822330571, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
