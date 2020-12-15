@@ -31,7 +31,7 @@ public class GameData
     [System.Serializable]
     public struct StageData
     {
-        public static StageData ourInvalid => new StageData { myNumAvailable = 0, myNumCollected= 0, myIsStageCleared = false, myCollectables = new List<int>()};
+        public static StageData ourInvalid => new StageData { myNumAvailable = -1, myNumCollected= 0, myIsStageCleared = false, myCollectables = new List<int>()};
 
         public List<int> myCollectables { get; set; }
         public int myNumAvailable{ get; set; } // number of collectibles in stage

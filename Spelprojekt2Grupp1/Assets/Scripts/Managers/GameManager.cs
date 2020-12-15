@@ -8,6 +8,33 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    #region DUCT TAPE HACKS
+
+    public static List<int> ourPickupsPerStage = new List<int>()
+            {
+                0, 0,       // offset for buildindex
+                2, 3, 4, 3, // World 1
+                3, 1, 3, 1, // World 2
+                3, 1, 2, 3, // World 3
+            };
+
+    public static int ourTotalPickups
+    {
+        get
+        {
+            int sum = 0;
+            foreach (var num in ourPickupsPerStage)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+    }
+
+    #endregion
+
+
+
     public static GameManager ourInstance;
     public AudioManager myAudioManager { get; private set; }
 
@@ -144,11 +171,16 @@ public class GameManager : MonoBehaviour
     public void UpdateSavedStageData(string aScenePath, GameData.StageData someNewData)
     {
         GameData.StageData currentData = GetSavedStageData(aScenePath); // Gets current save if exists, otherwise get default instance of StageData
-        
+
         // if entirely new data, save it.
         if (currentData.myIsStageCleared == false)
         {
             someNewData.myIsStageCleared = true;
+
+            // TEMP HACK for setting correct number of available snowflakes (hard-coded)
+            var idx = SceneUtility.GetBuildIndexByScenePath(aScenePath);
+            someNewData.myNumAvailable = ourPickupsPerStage[idx];
+
             myGameData.myStageDataStr[aScenePath] = someNewData;
             SaveGameData();
         }
@@ -167,6 +199,9 @@ public class GameManager : MonoBehaviour
             }
             if (replaceOldData)
             {
+                // TEMP HACK for setting correct number of available snowflakes (hard-coded)
+                var idx = SceneUtility.GetBuildIndexByScenePath(aScenePath);
+                currentData.myNumAvailable = ourPickupsPerStage[idx];
                 myGameData.myStageDataStr[aScenePath] = currentData;
                 SaveGameData();
             }
