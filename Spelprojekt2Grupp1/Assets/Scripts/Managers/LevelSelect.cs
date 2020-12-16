@@ -145,7 +145,7 @@ public class LevelSelect : MonoBehaviour
         myWorld = 1;
         myLevel = 1;
         myLevelText.SetText(myWorld + "-" + myLevel);
-        SetSnowflakeCounterText(mySelectedLevel-1);
+        SetSnowflakeCounterText(mySelectedLevel);
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
