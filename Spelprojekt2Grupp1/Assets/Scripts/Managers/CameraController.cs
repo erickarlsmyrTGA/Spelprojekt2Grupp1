@@ -137,8 +137,6 @@ public class CameraController : MonoBehaviour
     {
         float percentage = 0.0f;
 
-        yield return new WaitForSeconds(1.0f);
-
         Quaternion rotation = transform.rotation;
         Quaternion initRotation = rotation;
         Quaternion target = rotation;
