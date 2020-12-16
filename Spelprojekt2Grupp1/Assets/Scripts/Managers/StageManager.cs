@@ -37,6 +37,10 @@ public class StageManager : MonoBehaviour
         buildIndex++;
         if (buildIndex >= 2 && buildIndex <= 13)
         {
+            if (buildIndex == 13)
+            {
+                buildIndex = 17; // Roll credits!
+            }
             var scenepath = SceneUtility.GetScenePathByBuildIndex(buildIndex);
             GameManager.ourInstance.TransitionToStage(scenepath); // yeah, I know
         }
