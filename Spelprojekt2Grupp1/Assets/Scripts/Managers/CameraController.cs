@@ -26,11 +26,33 @@ public class CameraController : MonoBehaviour
     [SerializeField] float mySnapSpeed = 20f;
     [SerializeField] float myRotateSpeed = 100;
 
+    bool myIsAutoRotating;
+    [SerializeField]
+    float myAutoRotationSpeed = 1.0f;
+
     void Update()
     {
         if (InputManager.ourInstance.TGATouchingScreen())
         {
-            Rotate();
+            if (InputManager.ourInstance.TGACurrentTouchState() == InputManager.TouchState.Rotating)
+            {
+                Rotate();
+            }
+            else if (!myIsAutoRotating)
+            {
+                if (InputManager.ourInstance.TGACurrentTouchState() == InputManager.TouchState.AutoRotateL)
+                {
+                    myIsAutoRotating = true;
+                    InputManager.ourInstance.TGASetCurrentTouchState(InputManager.TouchState.Released);
+                    StartCoroutine(AutoRotate(90.0f));
+                }
+                else if (InputManager.ourInstance.TGACurrentTouchState() == InputManager.TouchState.AutoRotateR)
+                {
+                    myIsAutoRotating = true;
+                    InputManager.ourInstance.TGASetCurrentTouchState(InputManager.TouchState.Released);
+                    StartCoroutine(AutoRotate(-90.0f));
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -108,5 +130,28 @@ public class CameraController : MonoBehaviour
         int index = ClosestSnapPoint();
 
         return mySnapPoints[index];
+    }
+
+    IEnumerator AutoRotate(float aYRotation)
+    {
+        float percentage = 0.0f;
+
+        yield return new WaitForSeconds(1.0f);
+
+        Quaternion rotation = transform.rotation;
+        Quaternion initRotation = rotation;
+        Quaternion target = rotation;
+        target.eulerAngles = transform.eulerAngles + new Vector3(0, aYRotation, 0);
+
+        while (percentage < 1.0f)
+        {
+            rotation.eulerAngles = Vector3.Lerp(rotation.eulerAngles, target.eulerAngles, percentage);
+            transform.rotation = rotation;
+            percentage += Time.deltaTime * myAutoRotationSpeed;
+            yield return null;
+        }
+        transform.rotation = target;
+
+        myIsAutoRotating = false;
     }
 }

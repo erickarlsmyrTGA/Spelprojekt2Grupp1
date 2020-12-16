@@ -374,6 +374,11 @@ public class InputManager : MonoBehaviour
         return myCurrentTouchState;
     }
 
+    public void TGASetCurrentTouchState(TouchState aTouchState)
+    {
+        myCurrentTouchState = aTouchState;
+    }
+
     Vector2 DeltaTouchPos()
     {
         return myTouch.deltaPosition;
