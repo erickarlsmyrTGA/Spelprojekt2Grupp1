@@ -29,19 +29,21 @@ public class StageManager : MonoBehaviour
             
         }
     }
-
+        
     public void GoToNextStage()
     {
-        if (myCurrentSceneIndex+1 < levels.Length)
+        var currentScene = SceneManager.GetActiveScene();
+        var buildIndex = SceneUtility.GetBuildIndexByScenePath(currentScene.path);
+        buildIndex++;
+        if (buildIndex >= 2 && buildIndex <= 16)
         {
-            var scene = levels[++myCurrentSceneIndex];
-            GameManager.ourInstance.TransitionToStage(scene.ScenePath); // yeah, I know
-            //UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+            var scenepath = SceneUtility.GetScenePathByBuildIndex(buildIndex);
+            GameManager.ourInstance.TransitionToStage(scenepath); // yeah, I know
         }
         else
         {
-            GameManager.ourInstance.StartOrChangeMusic();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0); // tempfix
+            var scene = SceneManager.GetSceneAt(0); // Goto main menu
+            GameManager.ourInstance.TransitionToStage(scene.path);
         }
         
     }
