@@ -21,7 +21,7 @@ RenderSettings:
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.08076719, g: 0.15761842, b: 0.31132078, a: 1}
-  m_AmbientEquatorColor: {r: 0.060074773, g: 0.11332585, b: 0.2830189, a: 1}
+  m_AmbientEquatorColor: {r: 0.12482198, g: 0.23837696, b: 0.5188679, a: 1}
   m_AmbientGroundColor: {r: 0.07737864, g: 0.07320221, b: 0.3301887, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
@@ -922,7 +922,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.31372547, g: 0.42488173, b: 0.7254902, a: 1}
-  m_Intensity: 1.25
+  m_Intensity: 1.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -931,7 +931,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.788
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -11827,8 +11827,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.318419, b: 0.6698113, a: 1}
-  m_Intensity: 5
-  m_Range: 10
+  m_Intensity: 7
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -11884,7 +11884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941392293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.71, y: -1.88, z: 2.11}
+  m_LocalPosition: {x: -4.374, y: 1.16, z: 0.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 261083841}
