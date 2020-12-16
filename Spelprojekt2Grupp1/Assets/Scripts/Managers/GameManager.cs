@@ -349,6 +349,11 @@ public class GameManager : MonoBehaviour
             myCurrentlyPlaying = 5;
             GameManager.ourInstance.PlayMusic("World3_Music", 0.8f, true);
         }
+        else if (currentLevel == 17) // end game credits
+        {
+            myCurrentlyPlaying = 1;
+            GameManager.ourInstance.PlayMusic("Happy_Frog", 0.8f, true);
+        }
     }
 
     private void Awake()
