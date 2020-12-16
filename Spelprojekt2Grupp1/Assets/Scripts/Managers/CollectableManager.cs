@@ -23,7 +23,7 @@ public class CollectableManager : MonoBehaviour
 
     private void UpdateScoreUI()
     {
-        myScoreText.text = myStageData.myCollectables.Count.ToString() + " / " + myLocalMaxCount.ToString();
+        myScoreText.text = myStageData.myCollectables.Count.ToString() + "/" + myLocalMaxCount.ToString();
     }
 
     public int GetLocalMaxCount()
