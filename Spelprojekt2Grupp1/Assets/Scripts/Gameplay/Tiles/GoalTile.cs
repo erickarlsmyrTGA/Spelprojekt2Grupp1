@@ -7,6 +7,9 @@ public class GoalTile : Tile
     [SerializeField]
     private Player myPlayer;
 
+    [SerializeField]
+    SceneReference myNextScene = null;
+
     GoalTile()
     {
         myName = "Goal";
@@ -24,8 +27,8 @@ public class GoalTile : Tile
 
 
     private void OnValidate()
-    {        
-        myPlayer = FindObjectOfType<Player>();        
+    {
+        myPlayer = FindObjectOfType<Player>();
     }
 
 
@@ -37,9 +40,15 @@ public class GoalTile : Tile
     {
         if (myPlayer.IsSolidState)
         {
-        //GameManager.ourInstance.myAudioManager.PlaySFXClip("Christmas_Sound", 1.0f, 0.7f);
-        GameManager.ourInstance.OnStageCleared();
-        yield return null;
+            if (myNextScene != null)
+            {
+                GameManager.ourInstance.TransitionToStage(myNextScene.ScenePath);
+            }
+            else
+            {
+                GameManager.ourInstance.OnStageCleared();
+            }
         }
+        yield return null;
     }
 }
