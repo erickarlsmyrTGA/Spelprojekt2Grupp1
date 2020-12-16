@@ -35,7 +35,7 @@ public class StageManager : MonoBehaviour
         var currentScene = SceneManager.GetActiveScene();
         var buildIndex = SceneUtility.GetBuildIndexByScenePath(currentScene.path);
         buildIndex++;
-        if (buildIndex >= 2 && buildIndex <= 16)
+        if (buildIndex >= 2 && buildIndex <= 13)
         {
             var scenepath = SceneUtility.GetScenePathByBuildIndex(buildIndex);
             GameManager.ourInstance.TransitionToStage(scenepath); // yeah, I know
