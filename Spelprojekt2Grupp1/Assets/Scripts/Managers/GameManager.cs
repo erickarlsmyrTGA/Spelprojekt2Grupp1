@@ -156,9 +156,15 @@ public class GameManager : MonoBehaviour
     public GameData.StageData GetSavedStageData(string aScenePath)
     {
         // Attempt to fetch saved data if exists, otherwise get new instance of stage data.
-        if (!myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData data))
-        {
-            data = GameData.StageData.ourInvalid;
+        GameData.StageData data = GameData.StageData.ourInvalid;
+
+        if (myGameData.myStageDataStr.TryGetValue(aScenePath, out GameData.StageData original))
+        {            
+            // manual deep copy
+            data.myCollectables = new List<int>(original.myCollectables);
+            data.myIsStageCleared = original.myIsStageCleared;
+            data.myNumAvailable = original.myNumAvailable;
+            data.myNumCollected = original.myNumCollected;
         }
         return data;
     }
