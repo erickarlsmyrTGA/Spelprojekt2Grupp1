@@ -6126,7 +6126,7 @@ PrefabInstance:
     - target: {fileID: 1296417333654819473, guid: 6907e3f6290d9d54c9cc77a6c06a3c91,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.05
+      value: 3.003
       objectReference: {fileID: 0}
     - target: {fileID: 1296417333654819473, guid: 6907e3f6290d9d54c9cc77a6c06a3c91,
         type: 3}
@@ -14686,6 +14686,9 @@ MonoBehaviour:
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
   myPlayer: {fileID: 2123286792}
+  myNextScene:
+    sceneAsset: {fileID: 0}
+    scenePath: 
 --- !u!1001 &1500844211
 PrefabInstance:
   m_ObjectHideFlags: 0
