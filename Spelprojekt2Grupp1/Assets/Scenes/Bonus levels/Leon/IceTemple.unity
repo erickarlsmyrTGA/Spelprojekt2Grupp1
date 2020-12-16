@@ -8836,6 +8836,9 @@ MonoBehaviour:
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
   myPlayer: {fileID: 415279600}
+  myNextScene:
+    sceneAsset: {fileID: 102900000, guid: 24581087e189df942aa1d76f85528409, type: 3}
+    scenePath: Assets/Scenes/World 1/W1L2.unity
 --- !u!4 &1462348555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6573174507307283758, guid: 8a62dbac28f0de3459e729bf413eee48,

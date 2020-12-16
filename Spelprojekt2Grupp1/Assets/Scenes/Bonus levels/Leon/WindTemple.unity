@@ -33989,6 +33989,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3063514982865b441827d8b0af469c54, type: 3}
+--- !u!1 &2066423021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4968120815912261281, guid: 3063514982865b441827d8b0af469c54,
+    type: 3}
+  m_PrefabInstance: {fileID: 2066423020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066423022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066423021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f736f25eb8d655a4a81231a42db268e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
+  myPlayer: {fileID: 120378273}
+  myNextScene:
+    sceneAsset: {fileID: 102900000, guid: 1f18e878d1d1f17478c43edfa1eb37e2, type: 3}
+    scenePath: Assets/Scenes/World 2/W2L1.unity
 --- !u!4 &2069168188 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6573174507307283758, guid: 8a62dbac28f0de3459e729bf413eee48,
