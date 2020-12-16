@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static List<int> ourPickupsPerStage = new List<int>()
             {
                 0, 0,       // offset for buildindex
-                2, 3, 4, 3, // World 1
+                2, 3, 3, 3, // World 1
                 3, 1, 3, 1, // World 2
                 3, 1, 2, 3, // World 3
             };
