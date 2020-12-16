@@ -35,9 +35,9 @@ public class StageManager : MonoBehaviour
         var currentScene = SceneManager.GetActiveScene();
         var buildIndex = SceneUtility.GetBuildIndexByScenePath(currentScene.path);
         buildIndex++;
-        if (buildIndex >= 2 && buildIndex <= 13)
+        if (buildIndex >= 2 && buildIndex <= 14)
         {
-            if (buildIndex == 13)
+            if (buildIndex == 14)
             {
                 buildIndex = 17; // Roll credits!
             }
