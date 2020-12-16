@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 1354643226107132422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 15, z: 1}
+  m_LocalScale: {x: 1, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 3540904802893590832}
   m_RootOrder: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3540904802893590834}
   - component: {fileID: 3540904802893590833}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Swipe Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
