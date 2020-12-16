@@ -218,7 +218,6 @@ public class GameManager : MonoBehaviour
 
     public void TransitionToStage(string aScenePath)
     {
-        // TODO: Start coroutine for LoadStage async
         StartCoroutine(LoadStage(aScenePath));
 
     }
@@ -229,7 +228,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator LoadStage(string aScenePath)
     {
-        //SceneManager.LoadScene(...);
         float t = 0;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScenePath);
         asyncLoad.allowSceneActivation = false;        
@@ -248,10 +246,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FadeIn());
         asyncLoad.allowSceneActivation = true;
         asyncLoad.completed += OnStageBeginAsync;
-        //SceneManager.LoadSceneAsync(aScenePath);
-
-
-        // Wait for next frame when the scene is fully loaded and active
     }
 
     private IEnumerator FadeIn()
