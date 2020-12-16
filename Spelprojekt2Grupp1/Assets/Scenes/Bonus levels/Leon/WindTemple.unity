@@ -34027,13 +34027,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2066423021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f736f25eb8d655a4a81231a42db268e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 814e031afd2bbde43ad86cbcc7d7ff6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
-  myPlayer: {fileID: 120378273}
-  myNextScene:
+  myScene:
     sceneAsset: {fileID: 102900000, guid: 1f18e878d1d1f17478c43edfa1eb37e2, type: 3}
     scenePath: Assets/Scenes/World 2/W2L1.unity
 --- !u!4 &2069168188 stripped

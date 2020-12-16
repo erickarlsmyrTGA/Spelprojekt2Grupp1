@@ -1073,13 +1073,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 83921879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f736f25eb8d655a4a81231a42db268e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 814e031afd2bbde43ad86cbcc7d7ff6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myPivotOffset: {x: 0, y: 0, z: 0}
   myShowPivotHitbox: 0
-  myPlayer: {fileID: 573930579}
-  myNextScene:
+  myScene:
     sceneAsset: {fileID: 102900000, guid: b3781e551f7837d48be01917c7d62506, type: 3}
     scenePath: Assets/Scenes/World 3/W3L2.unity
 --- !u!4 &85170249 stripped
@@ -22159,7 +22158,7 @@ PrefabInstance:
     - target: {fileID: 6951815876571676235, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: -5.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 6951815876994454250, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
