@@ -14,9 +14,7 @@ public class ActivatePauseMenu : MonoBehaviour
    {
       if (aPause == true)
       {
-         myPlayer.myGameIsOn = false;
-         myPauseMenu.SetActive(true);
-         Debug.Log("Pausad!");
+         EnterPauseMenu();
       }
    }
 
@@ -24,9 +22,7 @@ public class ActivatePauseMenu : MonoBehaviour
    {
       if (aFocus == false)
       {
-         myPlayer.myGameIsOn = false;
-         myPauseMenu.SetActive(true);
-         Debug.Log("Ur Fokus!");
+         EnterPauseMenu();
       }
    }
 
