@@ -177,7 +177,7 @@ public class LevelSelect : MonoBehaviour
 
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
-        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel-1);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
         if (isLevelUnlocked == true || mySelectedLevel == 2)
         {
@@ -205,7 +205,7 @@ public class LevelSelect : MonoBehaviour
         SetSnowflakeCounterText(mySelectedLevel - 1);
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
-        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
+        string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel-1);
         bool isLevelUnlocked = GameManager.ourInstance.IsStageCleared(path);
         if (isLevelUnlocked == true || mySelectedLevel == 2)
         {
