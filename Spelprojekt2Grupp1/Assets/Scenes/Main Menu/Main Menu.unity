@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Design
+  m_text: Level Design
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 910ab83ac3d9a4f458e6d4fceb9b133a, type: 2}
   m_sharedMaterial: {fileID: -6342583233037102094, guid: 910ab83ac3d9a4f458e6d4fceb9b133a,
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.000015258789, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1302,10 +1302,10 @@ RectTransform:
   m_Father: {fileID: 8643139106230535938}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3263822, y: 0.9176841}
-  m_AnchorMax: {x: 0.66080594, y: 0.9742657}
-  m_AnchoredPosition: {x: 1.3008003, y: 0.19999695}
-  m_SizeDelta: {x: -7.009613, y: -5.5099792}
+  m_AnchorMin: {x: 0.26880592, y: 0.9176841}
+  m_AnchorMax: {x: 0.72840303, y: 0.978297}
+  m_AnchoredPosition: {x: 0.3880005, y: -0.80000305}
+  m_SizeDelta: {x: -4.462364, y: -7.5099792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2514597756394991578
 MonoBehaviour:
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.4
+  m_fontSize: 25.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2386,7 +2386,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6142721720016377267}
+      - m_Target: {fileID: 8598432433755574199}
         m_MethodName: PlayButton
         m_Mode: 1
         m_Arguments:
@@ -2694,7 +2694,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.4
+  m_fontSize: 27.2
   m_fontSizeBase: 35.9
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.2
+  m_fontSize: 18
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3238,7 +3238,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 64.9
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3668,21 +3668,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.00018310547}
   m_SizeDelta: {x: 0.000091552734, y: 0.00030517578}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6142721720016377267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6142721720016377269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f7f7277b6ad444784bfe7fcdfeb704, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myMainMenu: {fileID: 6142721720016377269}
-  mySettingsMenu: {fileID: 6142721720036658353}
-  myCredits: {fileID: 0}
 --- !u!1 &6142721720016377269
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3677,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6142721720016377266}
-  - component: {fileID: 6142721720016377267}
   m_Layer: 5
   m_Name: Main Menu
   m_TagString: Untagged
@@ -4220,7 +4204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programmerare
+  m_text: Programming
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 910ab83ac3d9a4f458e6d4fceb9b133a, type: 2}
   m_sharedMaterial: {fileID: -6342583233037102094, guid: 910ab83ac3d9a4f458e6d4fceb9b133a,
