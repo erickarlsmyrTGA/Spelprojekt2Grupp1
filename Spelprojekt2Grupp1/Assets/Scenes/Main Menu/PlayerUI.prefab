@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.036463507, y: 0.88225144}
   m_AnchorMax: {x: 0.25322995, y: 0.9924794}
-  m_AnchoredPosition: {x: -1.6000061, y: -1.612793}
+  m_AnchoredPosition: {x: -1.5999756, y: -1.612793}
   m_SizeDelta: {x: -0.5653076, y: -10.108288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4443169980237802939
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.4
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1445,6 +1445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6573372627928373023}
   - component: {fileID: 6573372627928373008}
+  - component: {fileID: 7764497217493575288}
   m_Layer: 5
   m_Name: Sound Slider
   m_TagString: Untagged
@@ -1535,6 +1536,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7764497217493575288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6573372627928373022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8d216a5df40ab419cc6832cb1ed45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6573372627947344556
 GameObject:
   m_ObjectHideFlags: 0
