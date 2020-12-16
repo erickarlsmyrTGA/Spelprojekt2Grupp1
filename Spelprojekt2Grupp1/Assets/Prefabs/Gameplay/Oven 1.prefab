@@ -9821,4 +9821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4043ca8dab1478d439e3e9abc36029f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
   myPlayer: {fileID: 0}
+  myOvenPoof: {fileID: 0}

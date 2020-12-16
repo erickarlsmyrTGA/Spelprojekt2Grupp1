@@ -46,6 +46,7 @@ public class GoalTile : Tile
             }
             else
             {
+                GameManager.ourInstance.myAudioManager.PlaySFXClip("Carrot_Pickup");
                 GameManager.ourInstance.OnStageCleared();
             }
         }
