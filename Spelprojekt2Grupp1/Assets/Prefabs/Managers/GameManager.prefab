@@ -57,6 +57,7 @@ MonoBehaviour:
   myIsDebugging: 0
   myFadeImage: {fileID: 2481104663993724278}
   myFadeTime: 0.75
+  myCurrentlyPlaying: -1
 --- !u!114 &6902148458776097705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,10 +116,6 @@ MonoBehaviour:
   myAudio:
   - myAudioName: Magic_Bubble
     myAudioClip: {fileID: 8300000, guid: 39ad81a5da9918f4a81ae302744cf9cc, type: 3}
-  - myAudioName: Casino_Slot_Sound
-    myAudioClip: {fileID: 8300000, guid: dde6232cad579de4d9e89bb96e4d1242, type: 3}
-  - myAudioName: Button_Press
-    myAudioClip: {fileID: 8300000, guid: fc534a2f82309a24294bcefcd5074489, type: 3}
   - myAudioName: Fairy _Dust
     myAudioClip: {fileID: 8300000, guid: 752b1756a3949fc439d1eca97fdb8bca, type: 3}
   - myAudioName: Chimes_01
@@ -151,14 +148,6 @@ MonoBehaviour:
     myAudioClip: {fileID: 8300000, guid: 0b7a3eae3b4513e44ab73b4a5837c3ba, type: 3}
   - myAudioName: StarCircus
     myAudioClip: {fileID: 8300000, guid: 15cc5614c9091264699723ac6314ec20, type: 3}
-  - myAudioName: Steam_01
-    myAudioClip: {fileID: 8300000, guid: f9cd667df06c6a141b8d4ffa15cbf2a8, type: 3}
-  - myAudioName: Steam_02
-    myAudioClip: {fileID: 8300000, guid: 198c5e42ecc65434eb3af00961014e2b, type: 3}
-  - myAudioName: Steam_03
-    myAudioClip: {fileID: 8300000, guid: dceaa2bc898e40445b3a455e9b698b08, type: 3}
-  - myAudioName: Steam_04
-    myAudioClip: {fileID: 8300000, guid: ef9308be0eacba74fbd3a67d52c1d5c5, type: 3}
   - myAudioName: Thunk_01
     myAudioClip: {fileID: 8300000, guid: fba2ee7c43427224b9c679c69225e09f, type: 3}
   - myAudioName: Thunk_02
