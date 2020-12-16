@@ -63,6 +63,7 @@ public class LevelSelect : MonoBehaviour
 
             ++myLevel;
             myLevelText.SetText(myWorld + "-" + myLevel);
+            SetSnowflakeCounterText(mySelectedLevel);
         }
 
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
@@ -91,6 +92,7 @@ public class LevelSelect : MonoBehaviour
 
             --myLevel;
             myLevelText.SetText(myWorld + "-" + myLevel);
+            SetSnowflakeCounterText(mySelectedLevel);
         }
 
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
@@ -143,7 +145,7 @@ public class LevelSelect : MonoBehaviour
         myWorld = 1;
         myLevel = 1;
         myLevelText.SetText(myWorld + "-" + myLevel);
-
+        SetSnowflakeCounterText(mySelectedLevel-1);
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
@@ -171,6 +173,7 @@ public class LevelSelect : MonoBehaviour
         myWorld = 2;
         myLevel = 1;
         myLevelText.SetText(myWorld + "-" + myLevel);
+        SetSnowflakeCounterText(mySelectedLevel - 1);
 
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
@@ -199,7 +202,7 @@ public class LevelSelect : MonoBehaviour
         myWorld = 3;
         myLevel = 1;
         myLevelText.SetText(myWorld + "-" + myLevel);
-
+        SetSnowflakeCounterText(mySelectedLevel - 1);
         myBtn.image.sprite = mySprites[mySelectedLevel - 2];
 
         string path = SceneUtility.GetScenePathByBuildIndex(mySelectedLevel);
@@ -216,11 +219,19 @@ public class LevelSelect : MonoBehaviour
         }
     }
 
+    private void SetSnowflakeCounterText(int aBuildIndex)
+    {
+        var scenePath = SceneUtility.GetScenePathByBuildIndex(aBuildIndex);
+        var numCollected = GameManager.ourInstance.GetSavedStageData(scenePath).myNumCollected;
+        var numAvailable = GameManager.ourPickupsPerStage[aBuildIndex];
+        myFlakeCounterText.SetText(numCollected + "/" + numAvailable);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         myBtn = myPlayButton.GetComponent<Button>();
-
+        SetSnowflakeCounterText(2); // level 1
         mySprites.Add(myW1L1);
         mySprites.Add(myW1L2);
         mySprites.Add(myW1L3);

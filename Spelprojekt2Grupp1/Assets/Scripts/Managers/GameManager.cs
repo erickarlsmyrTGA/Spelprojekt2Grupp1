@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
             // TEMP HACK for setting correct number of available snowflakes (hard-coded)
             var idx = SceneUtility.GetBuildIndexByScenePath(aScenePath);
             someNewData.myNumAvailable = ourPickupsPerStage[idx];
-
+            someNewData.myNumCollected = someNewData.myCollectables.Count;
             myGameData.myStageDataStr[aScenePath] = someNewData;
             SaveGameData();
         }
@@ -265,8 +265,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnStageBegin()
-    {
-        CollectableManager.ourInstance.OnBeforeStageBegin();
+    {        
         StartOrChangeMusic();        
     }
 
