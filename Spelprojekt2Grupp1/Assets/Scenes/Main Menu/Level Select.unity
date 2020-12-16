@@ -227,10 +227,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157916017174243363, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.4452057
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157916017174243363, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.7139511
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480357620110903750, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480357620110903750, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.2375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480357620110903750, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 32.01573
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480357620110903750, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.4750938
+      objectReference: {fileID: 0}
     - target: {fileID: 6552291539487803615, guid: ea59f564df607224bb1803df195fc3a2,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.87649536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552291539763533133, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.17500305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552291539967083159, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.17500305
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552291540001436528, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.5751343
       objectReference: {fileID: 0}
     - target: {fileID: 6552291540625877814, guid: ea59f564df607224bb1803df195fc3a2,
         type: 3}
@@ -346,6 +391,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelSelectCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872982478364849878, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872982478364849878, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 26.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872982478364849878, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872982478364849878, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162752646668710639, guid: ea59f564df607224bb1803df195fc3a2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.7000122
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea59f564df607224bb1803df195fc3a2, type: 3}
@@ -768,6 +838,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496475066}
   m_CullTransparentMesh: 0
+--- !u!1 &667486824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8079471436195357057, guid: ea59f564df607224bb1803df195fc3a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 24922187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &667486828
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667486824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &717243876
 GameObject:
   m_ObjectHideFlags: 0
