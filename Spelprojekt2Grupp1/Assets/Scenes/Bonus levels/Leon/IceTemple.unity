@@ -4169,8 +4169,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: carrot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4780155936038615911, guid: 3063514982865b441827d8b0af469c54, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3063514982865b441827d8b0af469c54, type: 3}
+--- !u!1 &634185678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5335463578769388898, guid: 3063514982865b441827d8b0af469c54,
+    type: 3}
+  m_PrefabInstance: {fileID: 634185677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &634185679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634185678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814e031afd2bbde43ad86cbcc7d7ff6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPivotOffset: {x: 0, y: 0, z: 0}
+  myShowPivotHitbox: 0
+  myScene:
+    sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
+    scenePath: Assets/Scenes/World 1/W1L4.unity
 --- !u!4 &636527224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7169844321246533090, guid: 97799d992941f934caa3f580aa6bf531,
@@ -8809,36 +8833,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 725998431}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1455804930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4968120815912261281, guid: 3063514982865b441827d8b0af469c54,
-    type: 3}
-  m_PrefabInstance: {fileID: 634185677}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1455804931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2193029421269660159, guid: 3063514982865b441827d8b0af469c54,
     type: 3}
   m_PrefabInstance: {fileID: 634185677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1455804932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455804930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f736f25eb8d655a4a81231a42db268e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPivotOffset: {x: 0, y: 0, z: 0}
-  myShowPivotHitbox: 0
-  myPlayer: {fileID: 415279600}
-  myNextScene:
-    sceneAsset: {fileID: 102900000, guid: 18b88a71da4bdf04991135835770e66a, type: 3}
-    scenePath: Assets/Scenes/World 1/W1L4.unity
 --- !u!4 &1462348555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6573174507307283758, guid: 8a62dbac28f0de3459e729bf413eee48,
@@ -12681,7 +12681,7 @@ PrefabInstance:
     - target: {fileID: 6951815876571676235, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: -5.0000305
       objectReference: {fileID: 0}
     - target: {fileID: 6951815876994454250, guid: c1c01a63c4c5ff34283f77dac67c57ac,
         type: 3}
