@@ -241,7 +241,7 @@ public class GameManager : MonoBehaviour
         yield return (asyncLoad.progress > 0.90f);
         StartCoroutine(FadeIn());
         asyncLoad.allowSceneActivation = true;
-        OnStageBegin();
+        asyncLoad.completed += OnStageBeginAsync;
         //SceneManager.LoadSceneAsync(aScenePath);
 
 
@@ -262,6 +262,11 @@ public class GameManager : MonoBehaviour
             myFadeImage.color = current;
             yield return null;
         }
+    }
+
+    private void OnStageBeginAsync(AsyncOperation obj)
+    {
+        OnStageBegin();
     }
 
     private void OnStageBegin()
