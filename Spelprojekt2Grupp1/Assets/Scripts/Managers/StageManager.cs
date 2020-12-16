@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
+
 public class StageManager : MonoBehaviour
 {
     [Tooltip("Show scene selector in-game")]
@@ -46,8 +48,8 @@ public class StageManager : MonoBehaviour
 
     public void ReloadCurrentStage()
     {
-        var scene = levels[myCurrentSceneIndex];
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.path);
     }
 
     public bool HasNextStage()
