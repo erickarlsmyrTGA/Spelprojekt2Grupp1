@@ -15,7 +15,9 @@ public class PortalTile : Tile
     public override IEnumerator TGAExecute()
     {
         // TODO: Use GameManager instead
-        UnityEngine.SceneManagement.SceneManager.LoadScene(myScene);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(myScene);
+        GameManager.ourInstance.TransitionToStage(myScene.ScenePath);
+        // Must check that it doesn't collide with the coroutine of stage transition
         yield return null;
     }
 }
