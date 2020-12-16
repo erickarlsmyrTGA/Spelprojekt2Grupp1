@@ -28,6 +28,7 @@ public class CameraController : MonoBehaviour
 
     bool myIsAutoRotating;
     [SerializeField]
+    [Tooltip("0.0625 Is a good speed. // Grafikerna approves")]
     float myAutoRotationSpeed = 1.0f;
 
     void Update()
