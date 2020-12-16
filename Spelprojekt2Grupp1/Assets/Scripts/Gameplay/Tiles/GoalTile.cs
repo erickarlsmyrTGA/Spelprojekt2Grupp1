@@ -40,7 +40,7 @@ public class GoalTile : Tile
     {
         if (myPlayer.IsSolidState)
         {
-            if (myNextScene != null)
+            if (myNextScene.ScenePath != "")
             {
                 GameManager.ourInstance.TransitionToStage(myNextScene.ScenePath);
             }
